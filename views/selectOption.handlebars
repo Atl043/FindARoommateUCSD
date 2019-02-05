@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>Test Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../public/css/bootstrap-theme.min.css" rel="stylesheet">
+    {{!--
+    <link href="/css/introHCI.css" rel="stylesheet"> --}}
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1></h1>
+        </div>
+
+        <ol>
+            {{#each projects}}
+            <li><a href="#{{id}}">{{name}}</a></li>
+            {{/each}}
+        </ol>
+        <h4>Projects</h4>
+        <!-- divs are invisible structuring elements that stack vertically by default. Use them to organize your code -->
+        <!-- img tags are images. Lorem Pixel will deliver random images; handy! -->
+        <!-- a are anchors, also known as hyperlinks. Use the href attribute to tell the browser where to go when the user clicks -->
+        {{#each projects}}
+        <div class="project" id="{{id}}">
+            <a href="project/{{name}}" class="thumbnail">
+                <img src="images/{{image}}" ... />
+                <p>{{name}}</p>
+            </a>
+        </div>
+        {{/each}}
+    </div>
+</body>
+{{!-- javascript --}}
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="../public/js/bootstrap.min.js"></script>
+
+</html>
