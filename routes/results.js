@@ -1,6 +1,6 @@
 
 /*
- * GET home page.
+ * GET results page.
  */
 
 exports.viewResults = function (req, res) {
