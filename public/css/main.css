@@ -14,6 +14,8 @@
 .top p {
     text-align: center;
     font-size: 1em; /* 16px/16=1em */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
 }
 .top {
     position: fixed;
@@ -26,11 +28,11 @@
     margin-top: 1.5em;
 }
 .accordion {
-  background-color: #eee;
+  background-color: rgb(196, 129, 28);
   color: #444;
   cursor: pointer;
   padding: 18px;
-  width: 100%;
+  /* width: 100%; */
   text-align: left;
   border: none;
   outline: none;
@@ -151,7 +153,7 @@
 
 /* The dots/bullets/indicators */
 .dot {
-    margin-top: -10px;
+  margin-top: -10px;
   cursor: pointer;
   height: 15px;
   width: 15px;
@@ -196,31 +198,39 @@ body{
 
 .search {
   width: 100%;
-  position: relative
+  /* position: relative */
 }
 
 .searchTerm {
-  float: left;
-  width: 100%;
-  border: 3px solid #00B4CC;
+  /* float: left; */
+  width: 80%;
+  /* border: 3px solid #00B4CC; */
+  border: 2px solid;
   padding: 5px;
-  height: 20px;
+  height: auto;
   border-radius: 5px;
   outline: none;
-  color: #9DBFAF;
+  text-align: center
+  /* color: #9DBFAF; */
 }
 .startDate {
-  width: 70%;
-  border: 3px solid #00B4CC;
+  /* float:left; */
+  /* width: 70%; */
+  /* border: 3px solid #00B4CC; */
+  border: 2px solid;
   padding: 5px;
   height: 20px;
   border-radius: 5px;
   outline: none;
-  color: #9DBFAF;
+  /* color: #9DBFAF; */
+}
+.startingDateRow{
+  margin-top: 1em;
+  text-align: center;
 }
 
 .searchTerm:focus{
-  color: #00B4CC;
+  color: black;
 }
 
 .searchButton {
@@ -246,3 +256,73 @@ body{
   transform: translate(-50%, -50%);
 }
 /* end of search bar css */
+
+/* checkbox css */
+
+/* Customize the label (the container) */
+.checkboxContainer {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkboxContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.checkboxContainer:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkboxContainer input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkboxContainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkboxContainer .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
