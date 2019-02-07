@@ -31,7 +31,7 @@
   background-color: rgb(196, 129, 28);
   color: #444;
   cursor: pointer;
-  padding: 18px;
+  padding: 10px;
   /* width: 100%; */
   text-align: left;
   border: none;
@@ -192,7 +192,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 body{
-  background: #f2f2f2;
+  background: white;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -210,7 +210,8 @@ body{
   height: auto;
   border-radius: 5px;
   outline: none;
-  text-align: center
+  margin-left: 1em;
+  /* text-align: center */
   /* color: #9DBFAF; */
 }
 .startDate {
@@ -226,7 +227,13 @@ body{
 }
 .startingDateRow{
   margin-top: 1em;
-  text-align: center;
+  margin-left: 1em;
+  padding: 5px;
+  height: auto;
+  border-radius: 5px;
+  outline: none;
+  
+  /* text-align: center; */
 }
 
 .searchTerm:focus{
