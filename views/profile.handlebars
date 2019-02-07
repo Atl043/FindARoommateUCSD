@@ -7,35 +7,65 @@
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="../css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="../css/main.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	{{!--
 	<link href="/css/introHCI.css" rel="stylesheet"> --}}
 </head>
 
 <body>
+	{{!-- Top Title --}}
 	<div id="topTitle" class="top">
-		<a href="/" style="color: black"> Find a Roommate </a>
+		<a href="/"> <b>Find a Roommate</b> </a>
+		<hr style="height:1px;border:none;color:#333;background-color:#333;">
 	</div>
+	{{!-- <hr style="height:1px;border:none;color:#333;background-color:#333;"> --}}
+	{{!-- end of top title --}}
 	<div class="container">
 		{{!-- Search Bar --}}
 		<div class="searchbar" id="search">
 			<div class="">
 				<div class="search">
-					<input style="width:80%;border-style: ridge;" type="text" class="searchTerm"
-					 name="search" placeholder="Search Area...">
-					<button style="width:15%;" type="submit" class="searchButton">
-						<i class="fa fa-search"></i>
-					</button>
-					<br />
-					<div style="margin-top:5px;" class="row">
+					<div>
+						<input type="text" class="searchTerm" name="search"
+							placeholder="Search Area...">
+						<a href="/results">
+							<button type="submit" class="searchButton">
+								<i class="fa fa-search"></i>
+								{{!-- Search --}}
+							</button>
+						</a>
+					</div>
+					<div style="" class="row startingDateRow">
 						<div>
 							Starting Date:
-							<input style="border-style: ridge;" type="date" class="searchTerm" name="date">
+							<input style="" type="date" class="startDate"
+								name="date">
 							<button class="accordion">
 								Preferences</button>
-						</div>
-						<div class="panel">
 
+							<div class="panel">
+								<p>Pick more options</p>
+								<label class="checkboxContainer">Living room
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+
+								<label class="checkboxContainer">Single
+									<input type="checkbox" checked="checked">
+									<span class="checkmark"></span>
+								</label>
+
+								<label class="checkboxContainer">Double
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+
+								<label class="checkboxContainer">Triple
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -44,21 +74,70 @@
 		{{!-- End of Search Bar --}}
 
 		{{!-- Start of Profile --}}
-		<div>
-			<p> Profile <p>
-					<a href="/">
-						<button class="backButton">
-							Back
-						</button>
-					</a>
+		<div class="row">
+			<div class="col-xs-6">
+				<p> Profile: </p>
+			</div>
+			<div class="col-xs-6" style="text-align:right">
+				<a href="/">
+					<button class="backButton">
+						Back
+					</button>
+				</a>
+			</div>
 		</div>
 		{{!-- End of Profile --}}
 
 		{{!-- Start of apartments --}}
 		<div class="apartment-container">
-			<div class="picPerson">
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0"
+						class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+				</ol>
+				<div class="carousel-inner">
+					<div class="item active">
+						<a href="/profile">
+							<img class="picHouse"
+								src="https://cdn.houseplans.com/product/o2d2ui14afb1sov3cnslpummre/w1024.jpg?v=15&fbclid=IwAR0CrvFqX3hdIS3-P-I843cO0bNS2XKjg8fbrHBF_khIG-PmKCczs7Rkglo">
+						</a>
+					</div>
+					<div class="item">
+						<a href="/profile">
+							<img class="picHouse" src="images/apartment2.jpg">
+						</a>
+					</div>
+				</div>
+				<!-- Next and previous buttons -->
+				<a class="left carousel-control" href="#myCarousel"
+					data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+					<span class="sr-only"></span>
+				</a>
+				<a class="right carousel-control" href="#myCarousel"
+					data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+					<span class="sr-only"></span>
+				</a>
 			</div>
 		</div>
+		{{!-- End of Apartments --}}
+		{{!-- start of map --}}
+		<div class="">
+			<div class="mapouter">
+				<div class="gmap_canvas">
+					<iframe width="600" height="500" id="gmap_canvas"
+						src="https://maps.google.com/maps?q=la%20scalla&t=&z=13&ie=UTF8&iwloc=&output=embed"
+						frameborder="0" scrolling="no" marginheight="0"
+						marginwidth="0">
+					</iframe>
+				</div>
+			</div>
+		</div>
+		{{!-- end of map --}}
 	</div>
 </body>
 {{!-- javascript --}}

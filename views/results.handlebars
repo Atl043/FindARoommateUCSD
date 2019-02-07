@@ -7,35 +7,65 @@
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="../css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="../css/main.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	{{!--
 	<link href="/css/introHCI.css" rel="stylesheet"> --}}
 </head>
 
 <body>
+	{{!-- Top Title --}}
 	<div id="topTitle" class="top">
-		<a href="/" style="color: black"> Find a Roommate </a>
+		<a href="/"> <b>Find a Roommate</b> </a>
+		<hr style="height:1px;border:none;color:#333;background-color:#333;">
 	</div>
+	{{!-- <hr style="height:1px;border:none;color:#333;background-color:#333;"> --}}
+	{{!-- end of top title --}}
 	<div class="container">
 		{{!-- Search Bar --}}
 		<div class="searchbar" id="search">
 			<div class="">
 				<div class="search">
-					<input style="width:80%;border-style: ridge;" type="text" class="searchTerm"
-					 name="search" placeholder="Search Area...">
-					<button style="width:15%;" type="submit" class="searchButton">
-						<i class="fa fa-search"></i>
-					</button>
-					<br />
-					<div style="margin-top:auto;" class="row">
+					<div>
+						<input type="text" class="searchTerm" name="search"
+							placeholder="Search Area...">
+						<a href="/results">
+							<button type="submit" class="searchButton">
+								<i class="fa fa-search"></i>
+								{{!-- Search --}}
+							</button>
+						</a>
+					</div>
+					<div style="" class="row startingDateRow">
 						<div>
 							Starting Date:
-							<input style="border-style: ridge;" type="date" class="searchTerm" name="date">
+							<input style="" type="date" class="startDate"
+								name="date">
 							<button class="accordion">
 								Preferences</button>
-						</div>
-						<div class="panel">
 
+							<div class="panel">
+								<p>Pick more options</p>
+								<label class="checkboxContainer">Living room
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+
+								<label class="checkboxContainer">Single
+									<input type="checkbox" checked="checked">
+									<span class="checkmark"></span>
+								</label>
+
+								<label class="checkboxContainer">Double
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+
+								<label class="checkboxContainer">Triple
+									<input type="checkbox">
+									<span class="checkmark"></span>
+								</label>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -45,12 +75,12 @@
 
 		{{!-- Start of "Showing Results" and "back" --}}
 		<div>
-			<p> Showing Results <p>
-					<a href="/">
-						<button class="backButton">
-							Back
-						</button>
-					</a>
+			Showing Results:
+			<a href="/">
+				<button class="backButton">
+					Back
+				</button>
+			</a>
 		</div>
 		{{!-- End of "Showing Results" and "back" --}}
 
@@ -64,7 +94,8 @@
 
 			</div>
 			<div class="col-xs-10" style="border:3px;border-style:solid">
-				<img class="picHouse" src="https://images.pexels.com/photos/439391/pexels-photo-439391.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+				<img class="picHouse"
+					src="https://images.pexels.com/photos/439391/pexels-photo-439391.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
 			</div>
 			</a>
 		</div>
