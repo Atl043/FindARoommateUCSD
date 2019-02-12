@@ -1,7 +1,7 @@
 <html>
 
 <head>
-	<title>results</title>
+	<title>login</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -14,24 +14,50 @@
 </head>
 
 <body>
-	{{!-- Top Title --}}
-	<div id="topTitle" class="top">
-		<a href="/"> <b>Find a Roommate</b> </a>
-		<hr style="height:1px;border:none;color:#333;background-color:#333;">
+<div id="login">
+	<div>
+		<loginHeader>Find a Roommate</loginHeader>
 	</div>
-	{{!-- <hr style="height:1px;border:none;color:#333;background-color:#333;"> --}}
-	{{!-- end of top title --}}
-	{{!-- login --}}
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=352041492055393&autoLogAppEvents=1';
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	<div class="fb-login-button" data-size="large" data-button-type="continue_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
+	<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{your-app-id}',
+      cookie     : true,
+      xfbml      : true,
+      version    : '{api-version}'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
 
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+	<div>
+		<schoolEmail>Sign in with your school email <br/>to find schoolmates</schoolEmail>
+	</div>
+</div>
 </body>
+
 {{!-- javascript --}}
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/slides.js"></script>
 <script src="../js/accordian.js"></script>
-<script>
-	showSlides(1);
-</script>
-
 
 </html>

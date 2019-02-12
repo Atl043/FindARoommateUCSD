@@ -237,6 +237,30 @@ body{
   transform: rotate(45deg);
 }
 
+#login {
+  background-color: rgba(228,240,230,1);
+}
+.loginHeader {
+  left: 12px;
+  top: 132px;
+  box-sizing: border-box;
+  width: 353px;
+  text-align: center;
+  font-family: PT Serif Caption;
+  font-size: 40px;
+  color: rgba(112,112,112,1);
+  }
+.schoolEmail {
+    left: 51px;
+    top: 529px;
+    box-sizing: border-box;
+    width: 275px;
+    text-align: center;
+    font-family: PT Serif;
+    font-size: 20px;
+    color: rgba(112,112,112,1);
+  }
+
 /* end of checkbox */
 
 /* start of map.google */
