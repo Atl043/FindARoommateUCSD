@@ -12,6 +12,11 @@
     margin-left: auto;
 }
 
+.col-xs-2 {
+  height:50px;
+  display:inline-block;
+}
+
 .lh-condensed { line-height: 1.25; }
 
 .top a {
@@ -136,7 +141,11 @@ body{
   padding-top:15px;
   padding-bottom: 15px;
   /* color: #9DBFAF; */
+  width:110px;
+  font-size:11px;
+  background-color:rgba(255, 255, 255, 0.507);
 }
+
 .startingDateRow{
   display:inline-block;
   margin-top: 1em;
@@ -194,6 +203,27 @@ body{
   user-select: none;
 }
 
+.col-xs-6 {
+  /* margin-top:10px; */
+  /* margin-left:20px; */
+  /* margin-right:20px; */
+  justify-content: center;
+  background-color:grey;
+  
+}
+
+.col-xs-6 p {
+  margin-top:10px;
+  margin-left:20px;
+  margin-right:20px;
+  
+}
+
+.col-xs-6-h h5 {
+  margin-top:40px;
+  margin-left:35px;
+
+}
 /* Hide the browser's default checkbox */
 .checkboxContainer input {
   position: absolute;

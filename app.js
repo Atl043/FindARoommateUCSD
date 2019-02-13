@@ -14,7 +14,6 @@ var profile = require('./routes/profile')
 var login = require('./routes/login');
 var user = require('./routes/user');
 var settings = require('./routes/settings');
-
 var createProfile = require('./routes/createProfile');
 // Example route
 // var user = require('./routes/user');
@@ -47,7 +46,6 @@ app.get('/profile', profile.viewProfile);
 app.get('/login', login.viewLogin);
 app.get('/user', user.view_userProfile);
 app.get('/settings', settings.viewSettings);
-
 
 app.get('/createProfile', createProfile.viewCreateProfile);
 // Example route
