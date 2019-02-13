@@ -133,6 +133,8 @@ body{
   height: 20px;
   border-radius: 10px;
   outline: none;
+  padding-top:15px;
+  padding-bottom: 15px;
   /* color: #9DBFAF; */
 }
 .startingDateRow{
@@ -140,7 +142,7 @@ body{
   margin-top: 1em;
   margin-left: 1em;
   padding: 5px;
-  height: auto;
+  height: 20px;
   border-radius: 10px;
   outline: none;
   
@@ -335,7 +337,7 @@ nav ul {
 
 nav li {
   width:30%;
-  font-weight: bold;
+  /* font-weight: bold; */
   display:inline-block;
   /* margin-left:50px; */
   padding-top:20px;
@@ -393,4 +395,11 @@ nav a:hover::before {
   width:100%;
   background-color:rgb(250, 250, 250);
   text-align: center;
+}
+
+h2 {
+  text-align:center;
+  margin-top:20px;
+  font-weight:bold;
+  /* font-size:16pt; */
 }

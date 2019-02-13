@@ -46,7 +46,7 @@ app.get('/results', results.viewResults);
 app.get('/profile', profile.viewProfile);
 app.get('/login', login.viewLogin);
 app.get('/user', user.view_userProfile);
-app.get('./settings', settings.viewSettings);
+app.get('/settings', settings.viewSettings);
 
 
 app.get('/createProfile', createProfile.viewCreateProfile);
