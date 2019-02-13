@@ -12,12 +12,9 @@ var index = require('./routes/index');
 var results = require('./routes/results')
 var profile = require('./routes/profile')
 var login = require('./routes/login');
-<<<<<<< HEAD
 var user = require('./routes/user');
 
-=======
 var createProfile = require('./routes/createProfile');
->>>>>>> b28b5ec805fd9abb849f9016b1c42db60402a66f
 // Example route
 // var user = require('./routes/user');
 
@@ -47,13 +44,10 @@ app.get('/', index.view);
 app.get('/results', results.viewResults);
 app.get('/profile', profile.viewProfile);
 app.get('/login', login.viewLogin);
-<<<<<<< HEAD
 app.get('/user', user.view_userProfile);
 
-=======
 
 app.get('/createProfile', createProfile.viewCreateProfile);
->>>>>>> b28b5ec805fd9abb849f9016b1c42db60402a66f
 // Example route
 // app.get('/users', user.list);
 
