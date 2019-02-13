@@ -12,6 +12,8 @@ var index = require('./routes/index');
 var results = require('./routes/results')
 var profile = require('./routes/profile')
 var login = require('./routes/login');
+var user = require('./routes/user');
+
 // Example route
 // var user = require('./routes/user');
 
@@ -41,6 +43,8 @@ app.get('/', index.view);
 app.get('/results', results.viewResults);
 app.get('/profile', profile.viewProfile);
 app.get('/login', login.viewLogin);
+app.get('/user', user.view_userProfile);
+
 // Example route
 // app.get('/users', user.list);
 

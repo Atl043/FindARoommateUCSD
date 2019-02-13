@@ -1,7 +1,7 @@
 <html>
 
 <head>
-	<title>results</title>
+	<title>Results</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -14,11 +14,27 @@
 </head>
 
 <body>
-	{{!-- Top Title --}}
+	<header>
+		<div class = "nav-container">
+
+			<!-- INSERT LOGO/IMAGE HERE -->
+			<h2>FindARoommate</h2>
+			<nav>
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/user">My Profile</a></li>
+					<li><a href="#">Settings</a></li> <!-- PLACEHOLDER LINK FOR SETTINGS PAGE (change '#' to '/settings') -->
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+
+	{{!-- Top Title
 	<div id="topTitle" class="top">
 		<a href="/"> <b>Find a Roommate</b> </a>
 		<hr style="height:1px;border:none;color:#333;background-color:#333;">
-	</div>
+	</div> --}}
 	{{!-- <hr style="height:1px;border:none;color:#333;background-color:#333;"> --}}
 	{{!-- end of top title --}}
 	<div class="container">
@@ -74,14 +90,16 @@
 		{{!-- End of Search Bar --}}
 
 		{{!-- Start of "Showing Results" and "back" --}}
-		<div>
+
+		<!-- I DIDN'T THINK WE NEEDED A BACK BUTTON NOW THAT WE HAVE THE NAVBAR -->
+		{{!-- <div>
 			Showing Results:
 			<a href="/">
 				<button class="backButton">
 					Back
 				</button>
 			</a>
-		</div>
+		</div> --}}
 		{{!-- End of "Showing Results" and "back" --}}
 
 		{{!-- Start of apartments --}}

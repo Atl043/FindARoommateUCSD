@@ -42,6 +42,7 @@
   border: none;
   outline: none;
   transition: 0.4s;
+  border-radius:10px;
 }
 
 .active, .accordion:hover {
@@ -95,11 +96,14 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 body{
+  margin:0;
   background: white;
   font-family: 'Open Sans', sans-serif;
 }
 
 .search {
+  margin-top:20px;
+  margin-right:20px;
   width: 100%;
   /* position: relative */
 }
@@ -111,7 +115,7 @@ body{
   border: 2px solid;
   padding: 5px;
   height: auto;
-  border-radius: 5px;
+  border-radius: 10px;
   outline: none;
   margin-left: 1em;
   /* text-align: center */
@@ -124,16 +128,17 @@ body{
   border: 2px solid;
   padding: 5px;
   height: 20px;
-  border-radius: 5px;
+  border-radius: 10px;
   outline: none;
   /* color: #9DBFAF; */
 }
 .startingDateRow{
+  display:inline-block;
   margin-top: 1em;
   margin-left: 1em;
   padding: 5px;
   height: auto;
-  border-radius: 5px;
+  border-radius: 10px;
   outline: none;
   
   /* text-align: center; */
@@ -146,15 +151,16 @@ body{
 .searchButton {
   position: absolute;  
   /* right: -50px; */
-  width: 40px;
+  width: 52px;
   height: 36px;
   border: 1px solid #00B4CC;
   background: #00B4CC;
   text-align: center;
   color: #fff;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 20px;
+  margin-left:5px;
 }
 
 /*Resize the wrap to see the search bar change!*/
@@ -281,3 +287,88 @@ body{
 	width: 100%;
 }
 /* end of maps.google */
+
+/* BEGINNING OF NAVBAR */
+.nav-container {
+  width:100%;
+  margin:0 auto;
+  align-content: center;
+}
+
+.nav-container h2 {
+  /* margin-top:20px; */
+  /* margin-left:20px; */
+  margin-top:0px;
+  margin-bottom:0px;
+  text-align: center;
+  padding-top:20px;
+  font-weight:bold;
+}
+
+
+header {
+  background-color:#07dab6; /* or other color */
+}
+
+header::after {
+  content:'';
+  display: table;
+  clear:both;
+}
+
+nav {
+  text-align: center;
+  text-decoration: none;
+}
+
+nav ul {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+nav li {
+  font-weight: bold;
+  display:inline-block;
+  /* margin-left:50px; */
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-right:20px;
+  /* padding-left:20px; */
+
+  position:relative;
+  text-decoration: none;
+  text-align:center;
+}
+
+nav a {
+  color:#374144;
+  text-decoration:none;
+  align-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+nav a:hover {
+  color:#374144;
+  text-decoration:none;
+  text-align:center;
+}
+
+nav a::before {
+  content: "";
+  display: block;
+  height: 5px;
+  background-color: #374144 ;
+  text-align:center;
+  position: absolute;
+  bottom:0;
+  width: 0%;
+
+  transition: all ease-in-out 200ms;
+}
+
+nav a:hover::before {
+  width:100%;
+  text-align:center;
+}
