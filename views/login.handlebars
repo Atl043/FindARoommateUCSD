@@ -20,7 +20,7 @@
 
 <body>
 	<header>
-		<div class ="nav-container">
+		<div class="nav-container">
 
 			<!-- INSERT LOGO/IMAGE HERE -->
 			<h2>FindARoommate</h2>
@@ -32,7 +32,8 @@
 		</div>
 		{{!-- <a href="/auth/facebook">Login with Facebook</a> --}}
 
-		<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" style="text-align:center;">
+		<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"
+			style="text-align:center;">
 		</div>
 		<a href="/login" onclick="signOut();">Sign out GOOGLE TEST</a>
 		<div>
@@ -44,30 +45,7 @@
 
 {{!-- javascript --}}
 <script>
-	function onSignIn(googleUser) {
-		// Useful data for your client-side scripts:
-		var profile = googleUser.getBasicProfile();
-		fullname = profile.getName();
-		given_name = profile.getGivenName();
-		family_name = profile.getFamilyName();
-		img_url = profile.getImageUrl();
-		email = profile.getEmail();
-
-		console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-		console.log('Full Name: ' + profile.getName());
-		console.log('Given Name: ' + profile.getGivenName());
-		console.log('Family Name: ' + profile.getFamilyName());
-		console.log("Image URL: " + profile.getImageUrl());
-		console.log("Email: " + profile.getEmail());
-
-		user_d = {fullname, given_name, family_name, img_url, email};
-		$(this).user.push(user_d)
-		
-
-		// The ID token you need to pass to your backend:
-		var id_token = googleUser.getAuthResponse().id_token;
-		console.log("ID Token: " + id_token);
-	}
+	
 </script>
 <script>
 	function signOut() {
@@ -80,5 +58,6 @@
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/accordian.js"></script>
+<script src="../js/google.js"></script>
 
 </html>

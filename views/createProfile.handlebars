@@ -34,7 +34,7 @@
 
 <body class="bg-light" data-gr-c-s-loaded="true">
     <header>
-        <div class = "nav-container">
+        <div class="nav-container">
 
             <!-- INSERT LOGO/IMAGE HERE -->
             <h2>FindARoommate</h2>
@@ -42,11 +42,12 @@
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/user">My Profile</a></li>
-                    <li><a href="/settings">Settings</a></li> <!-- PLACEHOLDER LINK FOR SETTINGS PAGE (change '#' to '/settings') -->
+                    <li><a href="/settings">Settings</a></li>
+                    <!-- PLACEHOLDER LINK FOR SETTINGS PAGE (change '#' to '/settings') -->
                 </ul>
             </nav>
         </div>
-	</header>
+    </header>
     <div class="container">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
@@ -713,17 +714,22 @@
                     </div>
                 </div>
             </div>
-
-            {{!-- <footer class="my-5 pt-5 text-muted text-center text-small">
-            <p class="mb-1">© 2017-2019 Company Name</p>
-            <ul class="list-inline">
-                <li class="list-inline-item"><a href="#">Privacy</a></li>
-                <li class="list-inline-item"><a href="#">Terms</a></li>
-                <li class="list-inline-item"><a href="#">Support</a></li>
-            </ul>
-        </footer> --}}
         </div>
         <script src="js/form-validation.js"></script>
+        <script>
+
+            function temp() {
+                if (localStorage.getItem('name') != null) {
+                    let name = localStorage.getItem('name');
+                    console.log("name " + name);
+                }
+                if (localStorage.getItem('email') != null) {
+                    let email = localStorage.getItem('email');
+                    console.log("email " + email);
+                }
+            }
+            temp()
+        </script>
 </body>
 {{!-- javascript --}}
 <script src="https://code.jquery.com/jquery.js"></script>
