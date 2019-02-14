@@ -30,10 +30,11 @@
 	</header>
 
 <div class="user_body">
+	{{#each user}}
 	<ul>
 		{{!-- <div class="user_li"> --}}
-		<li><img class="picPerson" src="/images/maleGeneric.jpg"></li>
-		<li>Name</li>
+		<li><img class="picPerson" src={{img_url}}></li>
+		<li>{{fullname}}</li>
 		{{!-- </div> --}}
 		<!-- INSERT USER IMAGE HERE -->
 		<li>Offering/Searching</li>
@@ -48,8 +49,14 @@
 			</li>
 		</div>
 		<li>Description</li>
-		<li>email</li>
+		<li>{{email}}</li>
 	</ul>
+	{{/each}}
+	<div class="btn-container">
+		<div class="edit-profile_btn">
+			<h5><a href="/createProfile">Edit Profile</a></h5>
+		</div>
+	</div>
 </div>
 
 	

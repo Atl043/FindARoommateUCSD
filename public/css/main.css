@@ -64,15 +64,29 @@
   overflow: hidden;
 }
 
+.g-signin2 {
+  text-align:center;
+  /* margin-top:40px; */
+  align-content: center;
+  align-items: center;
+  align-self: center;
+}
+#login {
+  text-align:center;
+  margin-top:40px;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+}
 .picPerson{
-    max-height: 100%; 
-    max-width: 100%; 
-    object-fit: contain
+    max-height: 250px; 
+    max-width: 250px; 
+    object-fit: contain;
 }
 .picHouse{
     max-height: 100%; 
     max-width: 100%; 
-    object-fit: contain
+    object-fit: contain;
 }
 
 .jumbotron {
@@ -201,6 +215,21 @@ body{
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.btn-container {
+  padding-top:20px;
+  background-color: grey;
+  text-align:center;
+  text-decoration:none;
+  padding-bottom:20px;
+}
+
+.edit-profile-btn {
+  padding-top:20px;
+  text-align:center;
+  padding-bottom:20px;
+
 }
 
 .col-xs-6 {
@@ -342,7 +371,7 @@ body{
 
 
 header {
-  background-color:#07dab6; /* or other color */
+  background-color:#E4F0E6;/*#07dab6;  or other color */
 }
 
 header::after {
