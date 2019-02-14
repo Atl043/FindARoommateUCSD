@@ -384,20 +384,13 @@
                                     with Smoker</label>
                             </div>
                             <label class="custom-control-label" for="cleanness">
-                                Cleanliness (1-10)
+                                Cleanliness
                             </label>
                             <select class="custom-select custom-select-lg mb-3"
                                 id="cleanness">
-                                <option value="1" selected>1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
+                                <option value="1" selected>Messy</option>
+                                <option value="2">Kind of Clean</option>
+                                <option value="3">Neat Freak</option>
                             </select>
                             <div class="mb-3">
                                 <label for="roommatePreference">Other Roommate
@@ -439,7 +432,7 @@
                                 <div class="col-md-6 mb-3">
                                     <label for="userName">Name</label>
                                     <input type="text" class="form-control"
-                                        id="userName"
+                                        id="userNamelooking"
                                         placeholder="input name here" value=""
                                         required="">
                                     <div class="invalid-feedback">
@@ -451,7 +444,7 @@
                             <div class="mb-3">
                                 <label for="email">Email</label>
                                 <input type="email" class="form-control"
-                                    id="email" placeholder="you@ucsd.edu"
+                                    id="emaillooking" placeholder="you@ucsd.edu"
                                     required="">
                                 <div class="invalid-feedback">
                                     Please enter a valid email address
@@ -691,20 +684,13 @@
                             </div>
                             <label class="custom-control-label"
                                 for="cleannesslooking">
-                                Cleanliness (1-10)
+                                Cleanliness
                             </label>
                             <select class="custom-select custom-select-lg mb-3"
                                 id="cleannesslooking">
-                                <option value="1" selected>1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
+                                <option value="1" selected>Messy</option>
+                                <option value="2">Kind of Clean</option>
+                                <option value="3">Neat Freak</option>
                             </select>
 
                             <hr class="mb-4">
@@ -722,10 +708,14 @@
                 if (localStorage.getItem('name') != null) {
                     let name = localStorage.getItem('name');
                     console.log("name " + name);
+                    document.getElementById("userName").value = name;
+                    document.getElementById("userNamelooking").value = name;
                 }
                 if (localStorage.getItem('email') != null) {
                     let email = localStorage.getItem('email');
                     console.log("email " + email);
+                    document.getElementById("email").value = email;
+                    document.getElementById("emaillooking").value = email;
                 }
             }
             temp()
