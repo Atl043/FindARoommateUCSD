@@ -16,6 +16,7 @@
     "express3-handlebars": "*",
     "mongodb": "*",
     "mongoose": "*",
+    "passport": "^0.4.0",
     "passport-facebook": "^3.0.0"
   },
   "engines": {
