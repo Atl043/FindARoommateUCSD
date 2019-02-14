@@ -18,28 +18,25 @@
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
-<body>
+<body style="background-color:#E4F0E6;text-align:center">
 	<header>
 		<div class ="nav-container">
-
 			<!-- INSERT LOGO/IMAGE HERE -->
-			<h2>FindARoommate</h2>
 		</div>
 	</header>
-	<div id="login">
 		<div>
-			<loginHeader>Find a Roommate</loginHeader>
+			<h2>Find a Roommate</h2>
 		</div>
 		{{!-- <a href="/auth/facebook">Login with Facebook</a> --}}
 
-		<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" style="text-align:center;">
+		<div class="g-signin2"  data-theme="dark" style="text-align:center;">
+			data-onsuccess="onSignIn" 
 		</div>
 		<a href="/login" onclick="signOut();">Sign out GOOGLE TEST</a>
 		<div>
 			<schoolEmail>Sign in with your school email <br />to find
 				schoolmates</schoolEmail>
 		</div>
-	</div>
 </body>
 
 {{!-- javascript --}}
@@ -76,6 +73,7 @@
 			console.log('User signed out.');
 		});
 	}
+
 </script>
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="../js/bootstrap.min.js"></script>
