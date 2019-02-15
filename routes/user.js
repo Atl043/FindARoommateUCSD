@@ -60,10 +60,12 @@ exports.view_userProfile = function (req, res) {
             'cleanliness': req.query.cleanliness,
             'otherroommateNotes': req.query.otherroommateNotes
         };
-        console.log('sejoifcs');
+        console.log('sejoifcs'); // debug statement
         console.log(json)
         data.user.push(json);
     }
+    
+    console.log(data)
     console.log("teste")
     res.render('user', data);
 };
