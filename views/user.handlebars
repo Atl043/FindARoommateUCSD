@@ -31,26 +31,39 @@
 	</header>
 
 	<div class="user_body">
-		<div class="btn-container">
-			<div class="edit-profile_btn">
-				<h5><a href="/createProfile">Edit Profile</a></h5>
-			</div>
-		</div>
+		
 		{{#each user}}
 		<ul>
-			{{!-- <div class="user_li"> --}}
-			<li><img class="picPerson" src={{img_url}}></li>
-			<li>{{fullname}}</li>
-			{{!-- </div> --}}
-			<!-- INSERT USER IMAGE HERE -->
-			<li>Offering/Searching</li>
+			<li><img class="picPerson" src={{imgurl}}></li>
+			<li>{{name}}</li>
+			<li>{{userstate}}</li>
 			<div class="preference_deets">
 				<li>Preferences
 					<p>
-						Insert list of preferences
-						<!--<ul>
-						ADD LIST OF PREFERENCES
-					</ul>-->
+						<ul class="apt_details">
+							<li>Rent: {{rent}}</li>
+							<li>Has own bathroom: {{ownBath}}</li>
+							<li>Has Air Conditioning: {{AC}}</li>
+							<li>Has Heating: {{heating}}</li>
+							<li>Laundry Utilities: {{laundry}}</li>
+							<li>Parking: {{parking}}</li>
+							<li>Pets Allowed? {{pets}}</li>
+							<li>Bus Accessibility: {{bus}}</li>
+							<li>Gym: {{gym}}</li>
+							<li>Pool: {{pool}}</li>
+							<li>Notes: {{otherapartmentNotes}}</li>
+						</ul>
+					</p>
+
+				</li>
+				<li>Roommate Preferences
+					<p>
+						<ul class="rm_details">
+							<li>Preferred time of day: {{timeofday}}</li>
+							<li>Smoker tolerance: {{smokersetting}}</li>
+							<li>Cleanliness: {{cleanliness}}</li>
+							<li>Notes: {{otherroommateNotes}}</li>
+						</ul>
 					</p>
 				</li>
 			</div>

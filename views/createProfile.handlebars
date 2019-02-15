@@ -731,9 +731,13 @@
                             {{!-- <input type="submit" id="lookingApartmentButton"
                                 class="btn btn-default"
                                 value="Create Looking Apartment Profile"></input> --}}
-                            <button class="btn btn-primary btn-lg btn-block"
+                            {{!-- <button class="btn btn-primary btn-lg btn-block"
                                 id="lookingApartmentButton" type="submit">Create
-                                Profile</button>
+                                Profile</button> --}}
+                            <button id="offerApartmentButton"
+                            class="btn btn-primary btn-lg btn-block"
+                            onclick="submitLookingData()" type="button">Create
+                            Profile</button>
                         </form>
                     </div>
                 </div>
@@ -742,10 +746,58 @@
         <script src="js/form-validation.js"></script>
         <script>
 
-            document.getElementById("lookingApartmentButton").onclick = function () {
+            function temp() {
+                if (localStorage.getItem('name') != null) {
+                    let name = localStorage.getItem('name');
+                    console.log("name " + name);
+                    document.getElementById("userName").value = name;
+                    document.getElementById("userNamelooking").value = name;
+                }
+                if (localStorage.getItem('email') != null) {
+                    let email = localStorage.getItem('email');
+                    console.log("email " + email);
+                    document.getElementById("email").value = email;
+                    document.getElementById("emaillooking").value = email;
+                }
+            }
+            temp();
+
+            /**
+             * sends a request to the specified url from a form. this will change the window location.
+             * @param {string} path the path to send the post request to
+             * @param {object} params the paramiters to add to the url
+             * @param {string} [method=post] the method to use on the form
+             */
+
+            function post(path, params, method) {
+                method = method || "get"; // Set method to post by default if not specified.
+
+                // The rest of this code assumes you are not using a library.
+                // It can be made less wordy if you use one.
+                var form = document.createElement("form");
+                form.setAttribute("method", method);
+                // form.setAttribute("role", "form");
+                form.setAttribute("action", path);
+
+                for (var key in params) {
+                    if (params.hasOwnProperty(key)) {
+                        var hiddenField = document.createElement("input");
+                        //  hiddenField.setAttribute("type", "hidden");
+                        hiddenField.setAttribute("name", key);
+                        hiddenField.setAttribute("value", params[key]);
+                        form.appendChild(hiddenField);
+                    }
+                }
+
+                document.body.appendChild(form);
+                form.submit();
+            }
+
+            function submitLookingData() {
+                console.log('TEST'); // debug statement
                 let user = {
                     "name": document.getElementById("userNamelooking").value,
-                    "user-state": "1",
+                    "user-state": 1,
                     "img_url": "",
                     "email": document.getElementById("emaillooking").value,
                     "living": document.getElementById("lookinglivingRoom").checked,
@@ -795,57 +847,13 @@
                 }
                 console.log("user" + JSON.stringify(user));
                 post('/user', user, 'get');
+                console.log("Looking data stored")
             };
-            function temp() {
-                if (localStorage.getItem('name') != null) {
-                    let name = localStorage.getItem('name');
-                    console.log("name " + name);
-                    document.getElementById("userName").value = name;
-                    document.getElementById("userNamelooking").value = name;
-                }
-                if (localStorage.getItem('email') != null) {
-                    let email = localStorage.getItem('email');
-                    console.log("email " + email);
-                    document.getElementById("email").value = email;
-                    document.getElementById("emaillooking").value = email;
-                }
-            }
-            temp();
 
-            /**
-             * sends a request to the specified url from a form. this will change the window location.
-             * @param {string} path the path to send the post request to
-             * @param {object} params the paramiters to add to the url
-             * @param {string} [method=post] the method to use on the form
-             */
-
-            function post(path, params, method) {
-                method = method || "get"; // Set method to post by default if not specified.
-
-                // The rest of this code assumes you are not using a library.
-                // It can be made less wordy if you use one.
-                var form = document.createElement("form");
-                form.setAttribute("method", method);
-                // form.setAttribute("role", "form");
-                form.setAttribute("action", path);
-
-                for (var key in params) {
-                    if (params.hasOwnProperty(key)) {
-                        var hiddenField = document.createElement("input");
-                        //  hiddenField.setAttribute("type", "hidden");
-                        hiddenField.setAttribute("name", key);
-                        hiddenField.setAttribute("value", params[key]);
-                        form.appendChild(hiddenField);
-                    }
-                }
-
-                document.body.appendChild(form);
-                form.submit();
-            }
             function submitData() {
                 let user = {
                     "name": document.getElementById("userName").value,
-                    "userstate": "0",
+                    "userstate": 0,
                     "imgurl": "",
                     "email": document.getElementById("email").value,
                     "address": document.getElementById("address").value,
@@ -906,7 +914,7 @@
                 //  var data = JSON.stringify(user);
 
                 post('/user', user, 'get');
-                console.log("it done");
+                console.log("Offering data stored");
             };
 
         </script>
