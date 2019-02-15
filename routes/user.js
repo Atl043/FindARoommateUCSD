@@ -10,7 +10,7 @@ exports.view_userProfile = function (req, res) {
             'email': req.query.email,
             'imgurl': req.query.imgurl,
             'address': req.query.address,
-            'userstate': 'Offering',
+            'userstate': 'Offering apartment',
             'zip': req.query.zip,
             'roomsize': req.query.roomsize,
             'gender': req.query.gender,
@@ -38,13 +38,13 @@ exports.view_userProfile = function (req, res) {
             'email': req.query.email,
             'imgurl': req.query.imgurl,
             'address': req.query.address,
-            'userstate': 'Looking',
+            'userstate': 'Looking for apartment',
             'zip': req.query.zip,
             'roomsize': req.query.roomsize,
             'gender': req.query.gender,
-            'min-rent': req.query.min-rent,
-            'max-rent': req.query.max-rent,
-            'rent': req.query.min-rent + '-' + req.query.max-rent,
+            'min-rent': req.query.min - rent,
+            'max-rent': req.query.max - rent,
+            'rent': req.query.min - rent + '-' + req.query.max - rent,
             'ownBath': req.query.ownBath,
             'AC': req.query.AC,
             'heating': req.query.heating,
@@ -64,7 +64,7 @@ exports.view_userProfile = function (req, res) {
         console.log(json)
         data.user.push(json);
     }
-    
+
     console.log(data)
     console.log("teste")
     res.render('user', data);
