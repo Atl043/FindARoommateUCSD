@@ -20,23 +20,24 @@
 
 <body style="background-color:#E4F0E6;text-align:center">
 	<header>
-		<div class ="nav-container">
+		<div class="nav-container">
 			<!-- INSERT LOGO/IMAGE HERE -->
 		</div>
 	</header>
-		<div>
-			<h2>Find a Roommate</h2>
-		</div>
-		{{!-- <a href="/auth/facebook">Login with Facebook</a> --}}
+	<div>
+		<h2>Find a Roommate</h2>
+	</div>
+	{{!-- <a href="/auth/facebook">Login with Facebook</a> --}}
 
-		<div class="g-signin2"  data-theme="dark" style="text-align:center;">
-			data-onsuccess="onSignIn" 
-		</div>
-		<a href="/login" onclick="signOut();">Sign out GOOGLE TEST</a>
-		<div>
-			<schoolEmail>Sign in with your school email <br />to find
-				schoolmates</schoolEmail>
-		</div>
+	<div class="g-signin2" data-theme="dark" style="text-align:center;"
+		data-onsuccess="onSignIn">
+
+	</div>
+	<a href="/login" onclick="signOut();">Sign out GOOGLE TEST</a>
+	<div>
+		<schoolEmail>Sign in with your school email <br />to find
+			schoolmates</schoolEmail>
+	</div>
 </body>
 
 {{!-- javascript --}}
@@ -57,9 +58,9 @@
 		console.log("Image URL: " + profile.getImageUrl());
 		console.log("Email: " + profile.getEmail());
 
-		user_d = {fullname, given_name, family_name, img_url, email};
+		user_d = { fullname, given_name, family_name, img_url, email };
 		$(this).user.push(user_d)
-		
+
 
 		// The ID token you need to pass to your backend:
 		var id_token = googleUser.getAuthResponse().id_token;
@@ -78,5 +79,6 @@
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/accordian.js"></script>
+<script src="../js/google.js"></script>
 
 </html>

@@ -37,6 +37,8 @@ function onSignIn(googleUser) {
     console.log(loggedIn.currentUser[0].name);
     localStorage.setItem('name', String(loggedIn.currentUser[0].name));
     localStorage.setItem('email', String(loggedIn.currentUser[0].email));
+    localStorage.setItem('currentUser', String(loggedIn.currentUser[0].name));
+    localStorage.setItem('img', String(loggedIn.currentUser[0].imgURL));
     window.location.href = "/createProfile";
 
     // The ID token you need to pass to your backend:

@@ -15,7 +15,7 @@
 
 <body>
 	<header>
-		<div class ="nav-container">
+		<div class="nav-container">
 
 			<!-- INSERT LOGO/IMAGE HERE -->
 			<h2>FindARoommate</h2>
@@ -23,49 +23,49 @@
 				<ul>
 					<li><a href="/">Home</a></li>
 					<li><a href="/user">My Profile</a></li>
-					<li><a href="/settings">Settings</a></li> <!-- PLACEHOLDER LINK FOR SETTINGS PAGE (change '#' to '/settings') -->
+					<li><a href="/settings">Settings</a></li>
+					<!-- PLACEHOLDER LINK FOR SETTINGS PAGE (change '#' to '/settings') -->
 				</ul>
 			</nav>
 		</div>
 	</header>
 
-<div class="user_body">
-	<div class="btn-container">
-		<div class="edit-profile_btn">
-			<h5><a href="/createProfile">Edit Profile</a></h5>
+	<div class="user_body">
+		<div class="btn-container">
+			<div class="edit-profile_btn">
+				<h5><a href="/createProfile">Edit Profile</a></h5>
+			</div>
 		</div>
-	</div>	
-	{{#each user}}
-	<ul>
-		{{!-- <div class="user_li"> --}}
-		<li><img class="picPerson" src={{img_url}}></li>
-		<li>{{fullname}}</li>
-		{{!-- </div> --}}
-		<!-- INSERT USER IMAGE HERE -->
-		<li>Offering/Searching</li>
-		<div class="preference_deets">
-			<li>Preferences
-				<p>
-					Insert list of preferences
-					<!--<ul>
+		{{#each user}}
+		<ul>
+			{{!-- <div class="user_li"> --}}
+			<li><img class="picPerson" src={{img_url}}></li>
+			<li>{{fullname}}</li>
+			{{!-- </div> --}}
+			<!-- INSERT USER IMAGE HERE -->
+			<li>Offering/Searching</li>
+			<div class="preference_deets">
+				<li>Preferences
+					<p>
+						Insert list of preferences
+						<!--<ul>
 						ADD LIST OF PREFERENCES
 					</ul>-->
-				</p>
-			</li>
-		</div>
-		<li>Description</li>
-		<li>{{email}}</li>
-	</ul>
-	{{/each}}
+					</p>
+				</li>
+			</div>
+			<li>Description</li>
+			<li>{{email}}</li>
+		</ul>
+		{{/each}}
 
-</div>
+	</div>
 
-	
+
 </body>
 {{!-- javascript --}}
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="../js/bootstrap.min.js"></script>
-<script src="../js/slides.js"></script>
 <script src="../js/accordian.js"></script>
 {{!-- <script>
 	showSlides(1);
