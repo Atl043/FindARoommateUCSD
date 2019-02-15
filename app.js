@@ -59,10 +59,10 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', index.view);
+app.get('/index', index.view);
 app.get('/results', results.viewResults);
 app.get('/profile', profile.viewProfile);
-app.get('/login', login.viewLogin);
+app.get('/', login.viewLogin);
 app.get('/user', user.view_userProfile);
 app.get('/settings', settings.viewSettings);
 app.get('/createProfile', createProfile.viewCreateProfile);
@@ -82,7 +82,7 @@ app.get('/auth/facebook', passport.authenticate('facebook'));
 app.get('/auth/facebook/callback',
   passport.authenticate('facebook', {
     successRedirect: '/createProfile',
-    failureRedirect: '/login'
+    failureRedirect: '/'
   }));
 // app.get('/auth/facebook',
 //   passport.authenticate('facebook', { scope: ['read_stream', 'publish_actions'] })
