@@ -409,8 +409,9 @@
                             </div>
 
                             <hr class="mb-4">
-                            <button class="btn btn-primary btn-lg btn-block"
-                                onclick="submitData()">Create
+                            <button id="offerApartmentButton"
+                                class="btn btn-primary btn-lg btn-block"
+                                onclick="submitData()" type="button">Create
                                 Profile</button>
                             {{!-- <button class="btn btn-primary btn-lg btn-block" id="offerApartmentButton"
                                     onclick="submitData()" type="submit">Create
@@ -809,8 +810,7 @@
                     document.getElementById("emaillooking").value = email;
                 }
             }
-            temp()
-
+            temp();
 
             /**
              * sends a request to the specified url from a form. this will change the window location.
@@ -826,7 +826,7 @@
                 // It can be made less wordy if you use one.
                 var form = document.createElement("form");
                 form.setAttribute("method", method);
-                form.setAttribute("role", "form");
+                // form.setAttribute("role", "form");
                 form.setAttribute("action", path);
 
                 for (var key in params) {
