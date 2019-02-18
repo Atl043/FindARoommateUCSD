@@ -495,27 +495,13 @@ nav a::before {
 
   transition: all ease-in-out 200ms;
 }
-
+#profile-search-btn{
+  text-align:center;
+  background-color:rgb(243, 212, 212);
+}
 nav a:hover::before {
   width:100%;
   text-align:center;
-}
-
-.user_body ul {
-  list-style: none;
-  padding-left:0;
-  margin-bottom:0px;
-}
-.user_body li {
-  
-  margin-top:0px;
-  /* margin-left:25%; */
-  padding-top:40px;
-  padding-bottom:40px;
-  width:100%;
-  background-color:rgb(250, 250, 250);
-  text-align: center;
-  margin-bottom:0px;
 }
 
 h2 {
