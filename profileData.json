@@ -1,0 +1,56 @@
+{
+    "1": [
+        {
+            "name": "Patrica Kang",
+            "email": "test1@ucsd.edu",
+            "imgurl": "https://image.shutterstock.com/image-photo/headshot-portrait-happy-ginger-girl-260nw-623804987.jpg",
+            "address": "3845 Nobel Dr",
+            "zip": "92122",
+            "description": "Hello We are looking for a female to fit one of our singles",
+            "roomsize": "single",
+            "gender": "Female",
+            "rent": "800",
+            "ownBath": "Yes",
+            "AC": "Yes",
+            "heating": "Yes",
+            "laundry": "Yes",
+            "parking": "Yes",
+            "pets": "no",
+            "bus": "Yes",
+            "gym": "Yes",
+            "pool": "Yes",
+            "otherapartmentNotes": "close to some stores and bus will take you straight there",
+            "timeofday": "Early Bird",
+            "smokersetting": "No",
+            "cleanliness": "8",
+            "otherroommateNotes": "we generally are morning people"
+        }
+    ],
+    "2": [
+        {
+            "name": "Aaron Start",
+            "email": "test1@ucsd.edu",
+            "imgurl": "https://image.shutterstock.com/image-photo/casually-handsome-confident-young-man-260nw-439433326.jpg",
+            "address": "7655 Palmilla Dr",
+            "zip": "92122",
+            "description": "Hello We are looking for a guy to fit one of our living room",
+            "roomsize": "living room",
+            "gender": "male",
+            "rent": "400",
+            "ownBath": "no",
+            "AC": "Yes",
+            "heating": "Yes",
+            "laundry": "Yes",
+            "parking": "no",
+            "pets": "no",
+            "bus": "Yes",
+            "gym": "Yes",
+            "pool": "Yes",
+            "otherapartmentNotes": "close to some stores and bus",
+            "timeofday": "Early Bird",
+            "smokersetting": "No",
+            "cleanliness": "6",
+            "otherroommateNotes": "you will be sharing bathroom with a guy that has a morning schedule"
+        }
+    ]
+}
