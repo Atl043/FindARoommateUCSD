@@ -30,46 +30,61 @@
 		</div>
 	</header>
 
-	<div class="user_body">
-		<a href="/index">Go Search</a>
-		{{#each user}}
-		<ul>
-			<li><img class="picPerson" src={{imgurl}}></li>
-			<li>{{name}}</li>
-			<li>{{userstate}}</li>
-			<div class="preference_deets">
-				<li>Preferences
-					<p>
-						<ul class="apt_details">
-							<li>Rent: {{rent}}</li>
-							<li>Has own bathroom: {{ownBath}}</li>
-							<li>Has Air Conditioning: {{AC}}</li>
-							<li>Has Heating: {{heating}}</li>
-							<li>Laundry Utilities: {{laundry}}</li>
-							<li>Parking: {{parking}}</li>
-							<li>Pets Allowed? {{pets}}</li>
-							<li>Bus Accessibility: {{bus}}</li>
-							<li>Gym: {{gym}}</li>
-							<li>Pool: {{pool}}</li>
-							<li>Notes: {{otherapartmentNotes}}</li>
-						</ul>
-					</p>
 
-				</li>
-				<li>Roommate Preferences
-					<p>
-						<ul class="rm_details">
-							<li>Preferred time of day: {{timeofday}}</li>
-							<li>Smoker tolerance: {{smokersetting}}</li>
-							<li>Cleanliness: {{cleanliness}}</li>
-							<li>Notes: {{otherroommateNotes}}</li>
-						</ul>
-					</p>
-				</li>
+	<div class="user_body">
+		<div id="profile-search-btn">
+			<a href="/index" style="">Go Search</a>
+		</div>
+		{{#each user}}
+		<div class="img-header">
+
+		</div>
+
+		<div class="user-details">
+			<img class="picPerson" src={{imgurl}}>
+			<h4 id="name_header">{{name}}</h4>
+			<h5 id="state_header">{{userstate}}</h5>
+			<p id="desc-header">Description</p>
+			<p id="email-header">{{email}}</p>
+		</div>
+		<div class="preference_deets" id="prefs">
+			<p id="prefs-head">Preferences</p>
+			
+			<div class="pref-grid-row-1">
+				<p id="tag">Rent: {{rent}}</p>
+				<p id="tag">Has own bathroom: {{ownBath}}</p>
 			</div>
-			<li>Description</li>
-			<li>{{email}}</li>
-		</ul>
+			<div class="pref-grid-row-2">
+				<p id="tag">Has Air Conditioning: {{AC}}</p>
+				<p id="tag">Has Heating: {{heating}}</p>					
+			</div>
+			<div class="pref-grid-row-1">
+				<p id="tag">Laundry Utilities: {{laundry}}</p>
+				<p id="tag">Parking: {{parking}}</p>
+			</div>
+			<div class="pref-grid-row-2">
+				<p id="tag">Pets Allowed? {{pets}}</p>
+				<p id="tag">Bus Accessibility: {{bus}}</p>
+			</div>
+			<div class="pref-grid-row-1">
+				<p id="tag">Gym: {{gym}}</p>
+				<p id="tag">Pool: {{pool}}</p>
+			</div>
+
+			<p id="prefs-head">Notes: {{otherapartmentNotes}}</p>
+		</div>
+		<div class="preference-deets">
+			<p id="prefs-head">Roommate Preferences</p>
+			<div class="pref-grid-row-1">
+				<p id="tag">Preferred time of day: {{timeofday}}</p>
+				<p id="tag">Smoker tolerance: {{smokersetting}}</p>
+			</div>
+			<div class="pref-grid-row-2">
+				<p id="tag">Cleanliness: {{cleanliness}}</p>
+				<p id="tag">Notes: {{otherroommateNotes}}</p>					
+			</div>
+
+		</div>
 		{{/each}}
 
 	</div>

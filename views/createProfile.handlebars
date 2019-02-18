@@ -98,6 +98,15 @@
                             </div>
 
                             <div class="mb-3">
+                                <label for="description">Description</label>
+                                <input type="description" class="form-control"
+                                    id="description" placeholder="Add a short description of your self here!">
+                                <div class="invalid-feedback">
+                                    Please enter description
+                                </div>
+                                    
+                            </div>
+                            <div class="mb-3">
                                 <label for="address">Address</label>
                                 <input type="text" class="form-control" id="address"
                                     placeholder="1234 Main St">
@@ -304,7 +313,7 @@
                                         you
                                         offer</small>
                                     <div class="invalid-feedback">
-                                        Please enter a message in the textarea.
+                                        Please enter a message in the text area.
                                     </div>
                                 </div>
 
@@ -417,6 +426,13 @@
                                 </div>
                             </div>
 
+                            <div class="mb-3">
+                                <label for="description">Description</label>
+                                <input type="description" class="form-control"
+                                    id="description" placeholder="Add a short description of your self here!">
+                                <div class="invalid-feedback">
+                                    Please enter description
+                                </div>
 
                             <hr class="mb-4">
                             <div class="row" style="margin: auto">
@@ -728,6 +744,7 @@
                     "single": document.getElementById("lookingsingleRoom").checked,
                     "double": document.getElementById("lookingdoubleRoom").checked,
                     "gender": "",
+                    "description": document.getElementById('description').value,
                     "min-rent": document.getElementById("minRent").value,
                     "max-rent": document.getElementById("maxRent").value,
                     "own-Bath": document.getElementById("ownBathlooking").checked,
@@ -782,6 +799,7 @@
                     "email": document.getElementById("email").value,
                     "address": document.getElementById("address").value,
                     "zip": document.getElementById("zip").value,
+                    "description": document.getElementById('description').value,
                     "roomsize": "",
                     "gender": "",
                     "rent": document.getElementById("rent").value,
