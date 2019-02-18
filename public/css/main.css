@@ -237,10 +237,11 @@ body{
 
 }
 
-.col-xs-6 {
-  /* margin-top:10px; */
-  /* margin-left:20px; */
-  /* margin-right:20px; */
+/* please don't change the core CSS from bootstrap */
+/* .col-xs-6 { 
+  margin-top:10px; 
+   margin-left:20px; 
+   margin-right:20px; 
   justify-content: center;
   background-color:grey;
   
@@ -252,12 +253,14 @@ body{
   margin-right:20px;
   
 }
+*/
 
 .col-xs-6-h h5 {
   margin-top:40px;
   margin-left:35px;
 
-}
+} 
+
 /* Hide the browser's default checkbox */
 .checkboxContainer input {
   position: absolute;

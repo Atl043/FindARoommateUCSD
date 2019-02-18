@@ -56,8 +56,7 @@
 					<div style="" class="row startingDateRow">
 						<div>
 							Starting Date:
-							<input style="" type="date" class="startDate"
-								name="date">
+							<input style="" type="date" class="startDate" name="date">
 							<button class="accordion">
 								Preferences</button>
 
@@ -93,7 +92,7 @@
 		{{!-- Start of Name --}}
 		<div class="row">
 			<div class="col-xs-6-h">
-				<h5> Profile: </h5>
+				<h5> Profile: {{address}} </h5>
 			</div>
 			<!-- COMMENTED OUT BACK BUTTON -->
 			{{!-- <div class="col-xs-6" style="text-align:right">
@@ -106,29 +105,14 @@
 		</div>
 		{{!-- End of Name--}}
 
-		{{!-- Start of Person profile --}}
-		<div class="row" style="margin-bottom:10px;">
-			<div class="col-xs-6">
-				<img class="picPerson" src="/images/maleGeneric.jpg">
-			</div>
-			<div class="col-xs-6">
-				<p>
-					Hi, my name is Patrick! <br />
-					I'm offering a single room in my apartment for $800/month.
-				</p>
-			</div>
-		</div>
-		{{!-- end of person profile --}}
-
 		{{!-- Start of apartments --}}
-		<div class="apartment-container">
+		<div class="apartment-container" style="margin:10px">
 			<div id="carouselExampleIndicators" class="carousel slide"
 				data-ride="carousel">
 				<ol class="carousel-indicators">
-					<li data-target="#carouselExampleIndicators"
-						data-slide-to="0" class="active"></li>
-					<li data-target="#carouselExampleIndicators"
-						data-slide-to="1"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="0"
+						class="active"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
 				</ol>
 				<div class="carousel-inner">
 					<div class="carousel-item active">
@@ -140,30 +124,72 @@
 					</div>
 					<div class="carousel-item">
 						<a href="/profile">
-							<img class="d-block w-100"
-								src="images/apartment2.jpg" alt="Second slide">
+							<img class="d-block w-100" src="images/apartment2.jpg"
+								alt="Second slide">
 						</a>
 					</div>
 				</div>
-				<a class="carousel-control-prev"
-					href="#carouselExampleIndicators" role="button"
-					data-slide="prev">
-					<span class="carousel-control-prev-icon"
-						aria-hidden="true"></span>
+				<a class="carousel-control-prev" href="#carouselExampleIndicators"
+					role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 					<span class="sr-only">Previous</span>
 				</a>
-				<a class="carousel-control-next"
-					href="#carouselExampleIndicators" role="button"
-					data-slide="next">
-					<span class="carousel-control-next-icon"
-						aria-hidden="true"></span>
+				<a class="carousel-control-next" href="#carouselExampleIndicators"
+					role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
 					<span class="sr-only">Next</span>
 				</a>
 			</div>
 		</div>
 		{{!-- End of Apartments --}}
+		{{!-- Info Box --}}
+		<div style="margin:10px">
+			<h3 style="color:blue">Apartment Features</h3>
+			<ul class="list-group">
+				<li class="list-group-item" id="rent">Rent: {{rent}} per Month</li>
+				<li class="list-group-item" id="address">Address: {{address}}, {{zip}}
+				</li>
+				<li class="list-group-item" id="address">Gender: {{gender}} Apartment
+				</li>
+				<li class="list-group-item" id="bath">Own bathroom:{{ownBath}}</li>
+				<li class="list-group-item" id="ac">Air Conditioning: {{AC}}</li>
+				<li class="list-group-item" id="heat">Heating: {{heating}}</li>
+				<li class="list-group-item" id="laundry">Laundry In Unit: {{laundry}}</li>
+				<li class="list-group-item" id="parking">Parking: {{parking}} </li>
+				<li class="list-group-item" id="pets">Pets Allowed: {{pets}} </li>
+				<li class="list-group-item" id="bus">Bus Nearby: {{bus}}</li>
+				<li class="list-group-item" id="gym">Gym: {{gym}}</li>
+				<li class="list-group-item" id="pool">Pool: {{pool}}</li>
+				<li class="list-group-item" id="notes">Extra Notes:{{otherapartmentNotes}}
+				</li>
+			</ul>
+		</div>
+		{{!-- end of info box --}}
+
+		{{!-- Start of Person profile --}}
+		<div class="card mb-3">
+			<img class="card-img-top"
+				src="https://www.w3schools.com/w3css/img_avatar3.png"
+				{{!-- src="{{imgurl}}" --}} alt="Card image cap">
+			<div class="card-body">
+				<h5 class="card-title">Name: {{name}}</h5>
+				<p class="card-text">
+					About me:{{aboutMe}}
+				</p>
+				<div style="text-align:center">
+					<a href="mailto:{{email}}" class="btn btn-primary btn-lg"
+						style="color:red" tabindex="-1" role="button"
+						aria-disabled="true">Email Me</a>
+				</div>
+
+				{{!-- <p class="card-text"><small class="text-muted">Last updated 3 mins
+						ago</small></p> --}}
+			</div>
+		</div>
+		{{!-- end of person profile --}}
+
 		{{!-- start of map --}}
-		<div class="">
+		{{!-- <div class="">
 			<div class="mapouter">
 				<div class="gmap_canvas">
 					<iframe width="600" height="500" id="gmap_canvas"
@@ -173,18 +199,14 @@
 					</iframe>
 				</div>
 			</div>
-		</div>
+		</div> --}}
 		{{!-- end of map --}}
 	</div>
 </body>
 {{!-- javascript --}}
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="../js/bootstrap.min.js"></script>
-<script src="../js/slides.js"></script>
 <script src="../js/accordian.js"></script>
-<script>
-	showSlides(1);
-</script>
 
 
 </html>
