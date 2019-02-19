@@ -32,7 +32,7 @@ exports.view_userProfile = function (req, res) {
             'otherroommateNotes': req.query.otherroommateNotes
         };
         console.log(json);
-        data.user.push(json);
+        data.user[0] = json;
     } else if (req.query.userstate == 1) {
         json = {
             'name': req.query.name,
@@ -64,7 +64,7 @@ exports.view_userProfile = function (req, res) {
         };
         console.log('sejoifcs'); // debug statement
         console.log(json)
-        data.user.push(json);
+        data.user[0] = json;
     }
 
     console.log(data)
