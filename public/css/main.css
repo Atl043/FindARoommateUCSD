@@ -16,7 +16,14 @@
   background-color: rgb(165, 165, 185);
   /* text-align: center; */
 }
-
+.highlight-red{
+  border-color: #ff0000;
+  color: #ff0000;
+}
+.highlight-green{
+  border-color: #15ff00;
+  color: #15ff00;
+}
 .Input-container {
     position: relative;
 }
