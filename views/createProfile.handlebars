@@ -212,7 +212,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class=" mb-3">
+                                <div class=" mb-3" style="width:100%">
                                     <label for="rent">Rent Per Month</label>
                                     <input type="rent" class="form-control" id="rent"
                                         placeholder="Enter Amount per Month" name="rent">
@@ -229,9 +229,10 @@
                                         id="cleanness" name="cleanness">
                                         <option value="1"> One Quarter </option>
                                         <option value="2"> Two Quarters</option>
-                                        <option value="3">6 Months</option>
-                                        <option value="4">1 Year</option>
-                                        <option value="5">Sublet/Temporary</option>
+                                        <option value="3"> Three Quarters</option>
+                                        <option value="4">6 Months</option>
+                                        <option value="5">1 Year</option>
+                                        <option value="6">Sublet/Temporary</option>
                                     </select>
                                 </div>
                                 <div class="mb-3" style="width:100%">
@@ -806,11 +807,11 @@
 
                 for (var key in user) {
                     if (user.hasOwnProperty(key)) {
-                        if (key == true) {
-                            key = "Yes";
+                        if (user[key] === true) {
+                            user[key] = "Yes";
                         }
-                        else {
-                            key = "No"
+                        else if (user[key] === false) {
+                            user[key] = "No"
                         }
                     }
                 }
@@ -874,11 +875,11 @@
                 }
                 for (var key in user) {
                     if (user.hasOwnProperty(key)) {
-                        if (key == true) {
-                            key = "Yes";
+                        if (user[key] === true) {
+                            user[key] = "Yes";
                         }
-                        else {
-                            key = "No"
+                        else if (user[key] === false) {
+                            user[key] = "No"
                         }
                     }
                 }
