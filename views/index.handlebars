@@ -43,7 +43,7 @@
 		{{!-- Search Bar --}}
 		<div class="searchbar" id="search">
 			<div class="search">
-				<form>
+				<form action="/results">
 					<div>
 						<input type="text" class="searchTerm" name="search"
 							placeholder="Search Area...">
@@ -84,6 +84,16 @@
 									<input type="checkbox" name="tripleRoom">
 									<span class="checkmark"></span>
 								</label>
+								<div class="col-md-12 mb-3">
+									<label for="minRent">
+										Min Rent</label>
+									<input type="rent" class="form-control" id="minRent"
+										name="minRent" placeholder="Min">
+									<label for="maxRent">
+										Max Rent</label>
+									<input type="rent" class="form-control" id="maxRent"
+										name="maxRent" placeholder="Max">
+								</div>
 							</div>
 						</div>
 					</div>

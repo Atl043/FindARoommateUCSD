@@ -56,8 +56,7 @@
 					<div style="" class="row startingDateRow">
 						<div>
 							Starting Date:
-							<input style="" type="date" class="startDate"
-								name="date">
+							<input style="" type="date" class="startDate" name="date">
 							<button class="accordion">
 								Preferences</button>
 
@@ -104,9 +103,9 @@
 		{{!-- End of "Showing Results" and "back" --}}
 
 		{{!-- Start of apartments --}}
-		<div class="row" style="margin-top:10px">
+		<div class="row container" style="margin-top:20px">
 			<div class="col-xs-2" style="background-color: #eee;">
-				<a href="/profile">
+				<a href="/profile/1">
 					<p>
 						picture of person
 					</p>
@@ -118,16 +117,27 @@
 			</div>
 			</a>
 		</div>
+		{{!-- start of apartment that can load --}}
+		{{#each apartments}}
+		<div class="container">
+			<h4>{{name}}, {{rent}} per Month</h4>
+			<a href="/profile/{{id}}">
+				<div class="row" style="margin-top:20px">
+					<div class="col-3">
+						<img style="width:100%" src="{{imgurl}}">
+					</div>
+					<div class="col-9">
+						<img style="width:100%" src="{{aptimgurl}}">
+					</div>
+				</div>
+			</a>
+		</div>
+		{{/each}}
 	</div>
 </body>
 {{!-- javascript --}}
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="../js/bootstrap.min.js"></script>
-<script src="../js/slides.js"></script>
 <script src="../js/accordian.js"></script>
-<script>
-	showSlides(1);
-</script>
-
 
 </html>

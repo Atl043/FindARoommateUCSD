@@ -1,5 +1,5 @@
 {
-    "1": [
+    "apartments": [
         {
             "name": "Patrica Kang",
             "id": "1",
@@ -26,9 +26,7 @@
             "smokersetting": "No",
             "cleanliness": "8",
             "otherroommateNotes": "we generally are morning people"
-        }
-    ],
-    "2": [
+        },
         {
             "name": "Aaron Start",
             "id": "2",

@@ -17,6 +17,15 @@
   /* text-align: center; */
 }
 
+.Input-container {
+    position: relative;
+}
+.Input-container-addon {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    padding: 13.5px;
+}
 
 #name_header {
   display:inline-flex;
