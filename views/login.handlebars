@@ -16,7 +16,7 @@
 		content="519007915746-m0l845vmot8vj2lin1j167ifu5lslmcj.apps.googleusercontent.com"> --}}
 	<meta name="google-signin-client_id"
 		content="519007915746-9ujr3t866k76vt0kr2sk5uoi3q0v8d8a.apps.googleusercontent.com">
-		
+
 	{{> facebook}}
 	<script src="/js/facebook.js"></script>
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -28,16 +28,18 @@
 			<!-- INSERT LOGO/IMAGE HERE -->
 		</div>
 	</header>
-	<div>
-		<h2>Find a Roommate</h2>
+	<div style="margin-top: 50%">
+		<h2>FindARoommate</h2>
 	</div>
-	{{!-- <a href="/auth/facebook">Login with Facebook</a> --}}
+
 	<div class="row">
 		<div class="col-xs-9" style="margin-right: 35%">
 		</div>
 		<div class="col-xs-3">
+			<div style="margin-bottom:20px; margin-top:20px">
 			<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 			</fb:login-button>
+			</div>
 			<div class="g-signin2" data-theme="dark" style="text-align:center;"
 				data-onsuccess="onSignIn">
 			</div>
@@ -45,8 +47,8 @@
 	</div>
 	<a href="/" onclick="signOut();">Sign out GOOGLE</a>
 	<div>
-		<schoolEmail>Sign in with your school email <br />to find
-			schoolmates</schoolEmail>
+		<div class="schoolEmail">Sign in with your school email <br />to find
+			schoolmates</div>
 	</div>
 </body>
 
