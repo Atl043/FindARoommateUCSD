@@ -78,9 +78,9 @@
 
                             <div class="mb-3">
                                 <label for="userName">Name</label>
-                                <input type="text" class="form-control" id="userName"
-                                    placeholder="Your name here" value="" name="name">
-                                {{!-- required="" --}}
+                                <input type="text" class="form-control validate"
+                                    id="userName" placeholder="Your name here" value=""
+                                    name="name">
                                 <div class="invalid-feedback">
                                     Valid name is required.
                                 </div>
@@ -89,9 +89,9 @@
 
                             <div class="mb-3">
                                 <label for="email">Email</label>
-                                <input type="email" class="form-control" id="email"
-                                    placeholder="you@example.com" name="email">
-                                {{!-- required="" --}}
+                                <input type="email" class="form-control validate"
+                                    id="email" placeholder="you@example.com" name="email"
+                                    required="">
                                 <div class="invalid-feedback">
                                     Please enter a valid email address
                                 </div>
@@ -99,11 +99,11 @@
 
                             <div class="mb-3">
                                 <label for="address">Address</label>
-                                <input type="text" class="form-control" id="address"
-                                    placeholder="1234 Main St" name="address">
-                                {{!-- required="" --}}
+                                <input type="text" class="form-control validate"
+                                    id="address" placeholder="Put your address here"
+                                    name="address" required="">
                                 <div class="invalid-feedback">
-                                    Please enter your apartment address
+                                    Please enter your address
                                 </div>
                             </div>
 
@@ -135,9 +135,8 @@
                             </div> --}}
                                 <div class=" mb-3">
                                     <label for="zip">Zip</label>
-                                    <input type="text" class="form-control" id="zip"
-                                        placeholder="" name="zip">
-                                    {{!-- required="" --}}
+                                    <input type="text" class="form-control validate"
+                                        id="zip" placeholder="" name="zip" required="">
                                     <div class="invalid-feedback">
                                         Zip code required.
                                     </div>
@@ -212,31 +211,34 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class=" mb-3">
+                                <div class=" mb-3" style="width:100%">
                                     <label for="rent">Rent Per Month</label>
-                                    <input type="rent" class="form-control" id="rent"
-                                        placeholder="Enter Amount per Month" name="rent">
+                                    <input type="rent" class="form-control validate"
+                                        id="rent" placeholder="Enter Amount per Month"
+                                        name="rent">
                                     {{!-- required="" --}}
                                     <div class="invalid-feedback">
                                         Please enter a Price
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="custom-control-label" for="cleanness">
+                                    <label class="custom-control-label"
+                                        for="leaseDuration">
                                         Lease Duration
                                     </label>
                                     <select class="custom-select custom-select-lg mb-3"
-                                        id="cleanness" name="cleanness">
+                                        id="leaseDuration" name="leaseDuration" value="1">
                                         <option value="1"> One Quarter </option>
                                         <option value="2"> Two Quarters</option>
-                                        <option value="3">6 Months</option>
-                                        <option value="4">1 Year</option>
-                                        <option value="5">Sublet/Temporary</option>
+                                        <option value="3"> Three Quarters</option>
+                                        <option value="4">6 Months</option>
+                                        <option value="5">1 Year</option>
+                                        <option value="6">Sublet/Temporary</option>
                                     </select>
                                 </div>
                                 <div class="mb-3" style="width:100%">
                                     <label for="date">Starting Date:</label>
-                                    <input class="form-control" type="date"
+                                    <input class="form-control validate" type="date"
                                         class="startDate" id="date" name="date">
                                 </div>
                                 <hr />
@@ -322,7 +324,8 @@
                                     <label for="apartmentFeatures">Description</label>
                                     <textarea name="apartmentFeatures"
                                         class="form-control" id="apartmentFeatures"
-                                        placeholder="What is awesome about your place">
+                                        placeholder="What is awesome about your place"
+                                        value="">
                                         </textarea>
                                     <small class="text-muted">Put more things
                                         you
@@ -423,7 +426,7 @@
 
                 <div class="row container">
                     <div class="col-md-12">
-                        <h4 class="mb-3">Address</h4>
+                        <h4 class="mb-3">Contact Info</h4>
                     </div>
                     <div class="col-md-8 order-md-1">
                         <form class="needs-validation" novalidate="" role="form"
@@ -431,7 +434,8 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="userName">Name</label>
-                                    <input type="text" class="form-control"
+                                    <input type="text"
+                                        class="form-control validateLooking"
                                         id="userNamelooking" placeholder="input name here"
                                         value="" required="" name="userNamelooking">
                                     <div class="invalid-feedback">
@@ -442,9 +446,9 @@
 
                             <div class="mb-3">
                                 <label for="email">Email</label>
-                                <input type="email" class="form-control" id="emaillooking"
-                                    placeholder="you@ucsd.edu" required=""
-                                    name="emaillooking">
+                                <input type="email" class="form-control validateLooking"
+                                    id="emaillooking" placeholder="you@ucsd.edu"
+                                    required="" name="emaillooking">
                                 <div class="invalid-feedback">
                                     Please enter a valid email
                                     address
@@ -543,7 +547,8 @@
                                         <label for="minRent">Rent Per
                                             Month
                                             Min</label>
-                                        <input type="rent" class="form-control"
+                                        <input type="rent"
+                                            class="form-control validateLooking"
                                             id="minRent" name="minRent" placeholder="Min"
                                             required="">
                                         <div class="invalid-feedback">
@@ -552,7 +557,8 @@
                                         <label for="maxRent">Rent Per
                                             Month
                                             Max</label>
-                                        <input type="rent" class="form-control"
+                                        <input type="rent"
+                                            class="form-control validateLooking"
                                             id="maxRent" name="maxRent" placeholder="Max"
                                             required="">
                                         <div class="invalid-feedback">
@@ -726,204 +732,6 @@
             </div>
         </div>
         <script src="js/form-validation.js"></script>
-        <script>
-
-            function temp() {
-                if (localStorage.getItem('name') != null) {
-                    let name = localStorage.getItem('name');
-                    console.log("name " + name);
-                    document.getElementById("userName").value = name;
-                    document.getElementById("userNamelooking").value = name;
-                }
-                if (localStorage.getItem('email') != null) {
-                    let email = localStorage.getItem('email');
-                    console.log("email " + email);
-                    document.getElementById("email").value = email;
-                    document.getElementById("emaillooking").value = email;
-                }
-            }
-            temp();
-
-            /**
-             * sends a request to the specified url from a form. this will change the window location.
-             * @param {string} path the path to send the post request to
-             * @param {object} params the paramiters to add to the url
-             * @param {string} [method=post] the method to use on the form
-             */
-
-            function post(path, params, method) {
-                method = method || "get"; // Set method to post by default if not specified.
-
-                // The rest of this code assumes you are not using a library.
-                // It can be made less wordy if you use one.
-                var form = document.createElement("form");
-                form.setAttribute("method", method);
-                // form.setAttribute("role", "form");
-                form.setAttribute("action", path);
-
-                for (var key in params) {
-                    if (params.hasOwnProperty(key)) {
-                        var hiddenField = document.createElement("input");
-                        //  hiddenField.setAttribute("type", "hidden");
-                        hiddenField.setAttribute("name", key);
-                        hiddenField.setAttribute("value", params[key]);
-                        form.appendChild(hiddenField);
-                    }
-                }
-
-                document.body.appendChild(form);
-                form.submit();
-            }
-
-            function submitLookingData() {
-                console.log('TEST'); // debug statement
-                let user = {
-                    "name": document.getElementById("userNamelooking").value,
-                    "user-state": 1,
-                    "img_url": "",
-                    "email": document.getElementById("emaillooking").value,
-                    "living": document.getElementById("lookinglivingRoom").checked,
-                    "single": document.getElementById("lookingsingleRoom").checked,
-                    "double": document.getElementById("lookingdoubleRoom").checked,
-                    "gender": "",
-                    "description": document.getElementById('description').value,
-                    "min-rent": document.getElementById("minRent").value,
-                    "max-rent": document.getElementById("maxRent").value,
-                    "own-Bath": document.getElementById("ownBathlooking").checked,
-                    "AC": document.getElementById("AClooking").checked,
-                    "heating": document.getElementById("heatinglooking").checked,
-                    "laundry": document.getElementById("laundrylooking").checked,
-                    "parking": document.getElementById("parkinglooking").checked,
-                    "pets": document.getElementById("petslooking").checked,
-                    "bus": document.getElementById("busStoplooking").checked,
-                    "gym": document.getElementById("gymlooking").checked,
-                    "pool": document.getElementById("poollooking").checked,
-                    "time-of-day": "",
-                    "smoker-setting": document.getElementById("smokerlooking").checked,
-                    "cleanliness": document.getElementById("cleannesslooking").value,
-                    "other-roommateNotes": document.getElementById("aboutMe").value
-                }
-
-                for (var key in user) {
-                    if (user.hasOwnProperty(key)) {
-                        if (key == true) {
-                            key = "Yes";
-                        }
-                        else {
-                            key = "No"
-                        }
-                    }
-                }
-                // check the room size
-                if (localStorage.getItem('img') != null) {
-                    let img = localStorage.getItem('img');
-                    user["img_url"] = img;
-                }
-                // the Gender M, F, C
-                if (document.getElementById("male").value == "on") {
-                    user["gender"] = "Male";
-                }
-                else if (document.getElementById("singleRoom").value == "on") {
-                    user["gender"] = "Female";
-                }
-                else {
-                    user["gender"] = "Coed";
-                }
-                // the time N, E, L
-                if (document.getElementById("late").value == "on") {
-                    user["time-of-day"] = "Night Owl";
-                }
-                else if (document.getElementById("early").value == "on") {
-                    user["time-of-day"] = "Early Bird";
-                }
-                else {
-                    user["time-of-day"] = "Legend";
-                }
-                console.log("user" + JSON.stringify(user));
-                post('/user', user, 'get');
-                console.log("Looking data stored")
-            };
-
-            function submitData() {
-                let user = {
-                    "name": document.getElementById("userName").value,
-                    "userstate": 0,
-                    "imgurl": "",
-                    "email": document.getElementById("email").value,
-                    "address": document.getElementById("address").value,
-                    "zip": document.getElementById("zip").value,
-                    "description": document.getElementById('description').value,
-                    "roomsize": "",
-                    "gender": "",
-                    "rent": document.getElementById("rent").value,
-                    "date": document.getElementById("date").value,
-                    "ownBath": document.getElementById("ownBath").checked,
-                    "AC": document.getElementById("AC").checked,
-                    "heating": document.getElementById("heating").checked,
-                    "laundry": document.getElementById("laundry").checked,
-                    "parking": document.getElementById("parking").checked,
-                    "pets": document.getElementById("pets").checked,
-                    "bus": document.getElementById("busStop").checked,
-                    "gym": document.getElementById("gym").checked,
-                    "pool": document.getElementById("pool").checked,
-                    "otherapartmentNotes": document.getElementById("apartmentFeatures").value,
-                    "timeofday": "",
-                    "smokersetting": document.getElementById("smoker").checked,
-                    "cleanliness": document.getElementById("cleanness").value,
-                    "other-roommateNotes": document.getElementById("roommatePreference").value
-                }
-                for (var key in user) {
-                    if (user.hasOwnProperty(key)) {
-                        if (key == true) {
-                            key = "Yes";
-                        }
-                        else {
-                            key = "No"
-                        }
-                    }
-                }
-                // check the room size
-                if (localStorage.getItem('img') != null) {
-                    let img = localStorage.getItem('img');
-                    user["imgurl"] = img;
-                }
-                if (document.getElementById("livingRoom").checked) {
-                    user["roomsize"] = "livingRoom";
-                }
-                else if (document.getElementById("singleRoom").checked) {
-                    user["roomsize"] = "single";
-                }
-                else {
-                    user["roomsize"] = "double";
-                }
-                // the Gender M, F, C
-                if (document.getElementById("male").checked) {
-                    user["gender"] = "Male";
-                }
-                else if (document.getElementById("female").checked) {
-                    user["gender"] = "Female";
-                }
-                else {
-                    user["gender"] = "Coed";
-                }
-                // the time N, E, L
-                if (document.getElementById("late").checked) {
-                    user["timeofday"] = "Night Owl";
-                }
-                else if (document.getElementById("early").checked) {
-                    user["timeofday"] = "Early Bird";
-                }
-                else {
-                    user["timeofday"] = "Legend";
-                }
-                console.log("user" + JSON.stringify(user));
-                //  var data = JSON.stringify(user);
-
-                post('/user', user, 'get');
-                console.log("Offering data stored");
-            };
-
-        </script>
 </body>
 {{!-- javascript --}}
 <script src="https://code.jquery.com/jquery.js"></script>
