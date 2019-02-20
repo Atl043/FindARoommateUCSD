@@ -103,70 +103,21 @@
 		{{!-- End of Search Bar --}}
 		<br />
 		{{!-- Start of apartments --}}
-		<div class="row" style="margin-top:10px">
-			{{!-- <a href="/results"> --}}
-			<div class="col-xs-2" style="background-color:black;">
-				<a href="/profile">
-					<p>
-						picture of person
-					</p>
-				</a>
-			</div>
-			{{!-- style="border:3px;border-style:solid" --}}
-			<div class="col-xs-10">
-				<div id="carouselExampleIndicators" class="carousel slide"
-					data-ride="carousel">
-					<ol class="carousel-indicators">
-						<li data-target="#carouselExampleIndicators" data-slide-to="0"
-							class="active"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="1">
-						</li>
-					</ol>
-					<div class="carousel-inner">
-						<div class="carousel-item active">
-							<a href="/profile">
-								<img class="d-block w-100"
-									src="https://cdn.houseplans.com/product/o2d2ui14afb1sov3cnslpummre/w1024.jpg?v=15&fbclid=IwAR0CrvFqX3hdIS3-P-I843cO0bNS2XKjg8fbrHBF_khIG-PmKCczs7Rkglo"
-									alt="First slide">
-							</a>
-						</div>
-						<div class="carousel-item">
-							<a href="/profile">
-								<img class="d-block w-100" src="images/apartment2.jpg"
-									alt="Second slide">
-							</a>
-						</div>
+		{{#each apartments}}
+		<div class="container">
+			<h4>{{name}}, {{rent}} per Month</h4>
+			<a href="/profile/{{id}}">
+				<div class="row" style="margin-top:20px">
+					<div class="col-3">
+						<img style="width:100%" src="{{imgurl}}">
 					</div>
-					<a class="carousel-control-prev" href="#carouselExampleIndicators"
-						role="button" data-slide="prev">
-						<span class="carousel-control-prev-icon"
-							aria-hidden="true"></span>
-						<span class="sr-only">Previous</span>
-					</a>
-					<a class="carousel-control-next" href="#carouselExampleIndicators"
-						role="button" data-slide="next">
-						<span class="carousel-control-next-icon"
-							aria-hidden="true"></span>
-						<span class="sr-only">Next</span>
-					</a>
-				</div>
-			</div>
-		</div>
-		<div class="row" style="margin-top:10px">
-			<div class="col-xs-2" style="background-color: black;">
-				<a href="/profile">
-					<p>
-						picture of person
-					</p>
-				</a>
-			</div>
-			<a href="/profile">
-				<div class="col-xs-10" style="border:3px;border-style:solid">
-					<img class="picHouse"
-						src="https://images.pexels.com/photos/439391/pexels-photo-439391.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+					<div class="col-9">
+						<img style="width:100%" src="{{aptimgurl}}">
+					</div>
 				</div>
 			</a>
 		</div>
+		{{/each}}
 	</div>
 </body>
 {{!-- javascript --}}
