@@ -41,8 +41,8 @@
 	<div class="container">
 		{{!-- Search Bar --}}
 		<div class="searchbar" id="search">
-			<div class="">
-				<div class="search">
+			<div class="search">
+				<form action="/results">
 					<div>
 						<input type="text" class="searchTerm" name="search"
 							placeholder="Search Area...">
@@ -55,36 +55,48 @@
 					</div>
 					<div style="" class="row startingDateRow">
 						<div>
-							Starting Date:
-							<input style="" type="date" class="startDate" name="date">
-							<button class="accordion"></button>
+							<label for="date">Starting Date:</label>
+							<input style="" type="date" class="startDate" id="date"
+								name="date">
+							<button class="accordion" type="button">
 								Preferences</button>
 
 							<div class="panel">
 								<p>Pick more options</p>
 								<label class="checkboxContainer">Living room
-									<input type="checkbox">
+									<input type="checkbox" name="livingRoom">
 									<span class="checkmark"></span>
 								</label>
 
 								<label class="checkboxContainer">Single
-									<input type="checkbox" checked="checked">
+									<input type="checkbox" name="singleRoom">
+									{{!-- checked="checked" --}}
 									<span class="checkmark"></span>
 								</label>
 
 								<label class="checkboxContainer">Double
-									<input type="checkbox">
+									<input type="checkbox" name="doubleRoom">
 									<span class="checkmark"></span>
 								</label>
 
-								<label class="checkboxContainer">Triple
-									<input type="checkbox">
+								{{!-- <label class="checkboxContainer">Triple
+									<input type="checkbox" name="tripleRoom">
 									<span class="checkmark"></span>
-								</label>
+								</label> --}}
+								<div class="col-md-12 mb-3">
+									<label for="minRent">
+										Min Rent</label>
+									<input type="rent" class="form-control" id="minRent"
+										name="minRent" placeholder="Min">
+									<label for="maxRent">
+										Max Rent</label>
+									<input type="rent" class="form-control" id="maxRent"
+										name="maxRent" placeholder="Max">
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+				</form>
 			</div>
 		</div>
 		{{!-- End of Search Bar --}}

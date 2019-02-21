@@ -29,7 +29,7 @@ exports.view_userProfile = function (req, res) {
             'timeofday': req.query.timeofday,
             'smokersetting': req.query.smokersetting,
             'cleanliness': req.query.cleanliness,
-            'otherroommateNotes': "Notes: " + req.query.otherroommateNotes
+            'otherroommateNotes': req.query.otherroommateNotes
         };
         console.log(json);
         data.user[0] = json;
