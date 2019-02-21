@@ -53,7 +53,7 @@ function allFilledLooking() {
 
 function post(path, params, method) {
     method = method || "get"; // Set method to post by default if not specified.
-
+    // console.log(params);
     // The rest of this code assumes you are not using a library.
     // It can be made less wordy if you use one.
     var form = document.createElement("form");
@@ -80,7 +80,7 @@ function submitData() {
     if (filled === true) {
         let user = {
             "name": document.getElementById("userName").value,
-            "userstate": 0,
+            "user_state": 0,
             "imgurl": "",
             "email": document.getElementById("email").value,
             "address": document.getElementById("address").value,
@@ -166,17 +166,17 @@ function submitLookingData() {
     if (filled === true) {
         let user = {
             "name": document.getElementById("userNamelooking").value,
-            "user-state": 1,
-            "img_url": "",
+            "user_state": 1,
+            "imgurl": "",
             "email": document.getElementById("emaillooking").value,
             "living": document.getElementById("lookinglivingRoom").checked,
             "single": document.getElementById("lookingsingleRoom").checked,
             "double": document.getElementById("lookingdoubleRoom").checked,
             "gender": "",
             "description": document.getElementById('description').value,
-            "min-rent": document.getElementById("minRent").value,
-            "max-rent": document.getElementById("maxRent").value,
-            "own-Bath": document.getElementById("ownBathlooking").checked,
+            "min_rent": document.getElementById("minRent").value,
+            "max_rent": document.getElementById("maxRent").value,
+            "ownBath": document.getElementById("ownBathlooking").checked,
             "AC": document.getElementById("AClooking").checked,
             "heating": document.getElementById("heatinglooking").checked,
             "laundry": document.getElementById("laundrylooking").checked,
@@ -185,10 +185,10 @@ function submitLookingData() {
             "bus": document.getElementById("busStoplooking").checked,
             "gym": document.getElementById("gymlooking").checked,
             "pool": document.getElementById("poollooking").checked,
-            "time-of-day": "",
-            "smoker-setting": document.getElementById("smokerlooking").checked,
+            "timeofday": "",
+            "smokersetting": document.getElementById("smokerlooking").checked,
             "cleanliness": document.getElementById("cleannesslooking").value,
-            "other-roommateNotes": document.getElementById("aboutMe").value
+            "otherroommateNotes": document.getElementById("aboutMe").value
         }
 
         for (var key in user) {
@@ -226,8 +226,9 @@ function submitLookingData() {
         else {
             user["time-of-day"] = "Legend";
         }
-        console.log("user" + JSON.stringify(user));
+        // console.log("user" + JSON.stringify(user));
         post('/user', user, 'get');
+        // console.log(user);
         console.log("Looking data stored")
     }
     else {

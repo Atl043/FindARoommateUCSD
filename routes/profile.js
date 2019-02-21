@@ -1,8 +1,8 @@
 /*
  * GET profile page.
  */
-var images = require('../pictureData.json');
-var data = require('../profileData.json');
+var images = require('../data/pictureData.json');
+var data = require('../data/profileData.json');
 exports.viewProfile = function (req, res) {
     var id = req.params.id;
     // console.log("The id is: " + id);

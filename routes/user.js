@@ -1,10 +1,10 @@
 /*
  * GET profile page.
  */
-var data = require("../data.json");
+var data = require("../data/data.json");
 
 exports.view_userProfile = function (req, res) {
-    if (req.query.userstate == 0) {
+    if (req.query.user_state == 0) {
         json = {
             'name': req.query.name,
             'email': req.query.email,
@@ -33,7 +33,7 @@ exports.view_userProfile = function (req, res) {
         };
         console.log(json);
         data.user[0] = json;
-    } else if (req.query.userstate == 1) {
+    } else if (req.query.user_state == 1) {
         json = {
             'name': req.query.name,
             'email': req.query.email,
@@ -44,9 +44,9 @@ exports.view_userProfile = function (req, res) {
             'description': req.query.description,
             'roomsize': req.query.roomsize,
             'gender': req.query.gender,
-            'min-rent': req.query.min - rent,
-            'max-rent': req.query.max - rent,
-            'rent': req.query.min - rent + '-' + req.query.max - rent,
+            'min_rent': req.query.min_rent,
+            'max_rent': req.query.max_rent,
+            'rent': req.query.min_rent + '-' + req.query.max_rent,
             'ownBath': req.query.ownBath,
             'AC': req.query.AC,
             'heating': req.query.heating,
@@ -62,12 +62,10 @@ exports.view_userProfile = function (req, res) {
             'cleanliness': req.query.cleanliness,
             'otherroommateNotes': req.query.otherroommateNotes
         };
-        console.log('sejoifcs'); // debug statement
         console.log(json)
         data.user[0] = json;
     }
 
     console.log(data)
-    console.log("teste")
     res.render('user', data);
 };

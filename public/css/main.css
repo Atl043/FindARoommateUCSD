@@ -12,6 +12,22 @@
     margin-left: auto;
 }
 
+.container-prof{
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 1px solid rgb(187, 187, 187);
+  border-radius:10px;
+  margin-bottom:20px;
+  margin-top:20px;
+}
+
+.container-prof h4 {
+  margin-top:10px;
+}
+
 .user-details {
   background-color: white;
   /* text-align: center; */
@@ -56,6 +72,9 @@
 
 }
 
+.col-9 img{
+  margin-bottom:10px;
+}
 #email-header {
   display:flex;
   padding-bottom:10px;

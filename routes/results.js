@@ -2,8 +2,8 @@
 /*
  * GET results page.
  */
-var images = require('../pictureData.json');
-var data = require('../resultsData.json');
+var images = require('../data/pictureData.json');
+var data = require('../data/resultsData.json');
 
 exports.viewResults = function (req, res) {
     // console.log("The id is: " + id);
