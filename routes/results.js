@@ -17,7 +17,7 @@ exports.viewResults = function (req, res) {
         console.log(myZip);
         for (var key in data.apartments) {
             let zip = data.apartments[key].zip;
-            if (zip.includes(myZip)) {
+            if (zip.includes(myZip)) { // if zip includes it then console.log test
                 console.log("test");
             }
         }
