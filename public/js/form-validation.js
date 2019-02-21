@@ -103,7 +103,7 @@ function submitData() {
             "timeofday": "",
             "smokersetting": document.getElementById("smoker").checked,
             "cleanliness": document.getElementById("cleanness").value,
-            "other-roommateNotes": document.getElementById("roommatePreference").value
+            "otherroommateNotes": document.getElementById("roommatePreference").value
         }
         for (var key in user) {
             if (user.hasOwnProperty(key)) {
