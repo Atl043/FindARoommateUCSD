@@ -10,7 +10,7 @@ exports.view_userProfile = function (req, res) {
             'email': req.query.email,
             'imgurl': req.query.imgurl,
             'address': req.query.address,
-            'user_state': 0,
+            'state': true,
             'userstate': 'Offering apartment',
             'zip': req.query.zip,
             'description': req.query.description,
@@ -34,7 +34,8 @@ exports.view_userProfile = function (req, res) {
         };
         console.log(json);
         data.user[0] = json;
-    } else if (req.query.user_state == 1) {
+    }
+    else if (req.query.user_state == 1) {
         let room = "";
         if (req.query.living === "Yes") {
             room += "Living Room";
@@ -56,7 +57,7 @@ exports.view_userProfile = function (req, res) {
             'email': req.query.email,
             'imgurl': req.query.imgurl,
             'address': req.query.address,
-            'user_state': 1,
+            'state': false,
             'userstate': 'Looking for apartment',
             'zip': req.query.zip,
             'description': req.query.description,
@@ -80,10 +81,9 @@ exports.view_userProfile = function (req, res) {
             'cleanliness': req.query.cleanliness,
             'otherroommateNotes': req.query.otherroommateNotes
         };
-        console.log(json)
         data.user[0] = json;
     }
 
-    console.log(data)
+    // console.log(data)
     res.render('user', data);
 };
