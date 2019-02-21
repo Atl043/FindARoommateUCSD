@@ -9,11 +9,14 @@
 	<link href="../css/main.css" rel="stylesheet">
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	{{!--
-	<link href="/css/introHCI.css" rel="stylesheet"> --}}
+	<meta name="google-signin-scope" content="profile email">
+	{{!-- <meta name="google-signin-client_id"
+			content="519007915746-m0l845vmot8vj2lin1j167ifu5lslmcj.apps.googleusercontent.com"> --}}
 	<meta name="google-signin-client_id"
 		content="519007915746-9ujr3t866k76vt0kr2sk5uoi3q0v8d8a.apps.googleusercontent.com">
 
+	{{> facebook}}
+	<script src="/js/facebook.js"></script>
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
@@ -35,39 +38,55 @@
 	</header>
 
 	<h2>Settings</h2>
+
 	<div class="btn-container">
 		<h5>
-		<div class="edit-profile_btn">
-			<a href="/">Login</a>
-		</div>
-		<hr></hr>
-		<div class="edit-profile_btn">
-			<a href="/createProfile">Edit Profile</a>
-		</div>
-		<hr></hr>
-		<div class="edit-profile_btn">
-			<a href="" onclick="signOut();">Sign out GOOGLE</a>
-		</div>
+			<div class="edit-profile_btn">
+				<a href="/">Login</a>
+			</div>
+			<hr>
+			</hr>
+			<div class="edit-profile_btn">
+				<a href="/createProfile">Edit Profile
+				</a>
+			</div>
+			<hr>
+			</hr>
+			<div class="edit-profile_btn">
+				<a href="/" onclick="signOutTest();">Sign out GOOGLE</a>
+			</div>
 		</h5>
 	</div>
-
+	{{!-- javascript --}}
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script>
+		//editProfileSetup()
+		//function editProfileSetup() {
+		//	console.log("reeeeee")
+		//	localStorage.setItem('editProfile', true);
+		//	//window.location.href = "/createProfile";
+		//}
+	</script>
+	<script src="../js/accordian.js"></script>
+	<script src="../js/google.js"></script>
+	<script src="https://apis.google.com/js/platform.js?onload=onLoad" async
+		defer></script>
+	<script>
+		function signOutTest() {
+			var auth2 = gapi.auth2.getAuthInstance();
+			auth2.signOut().then(function () {
+				console.log('User signed out.');
+			});
+		}
+		onLoad()
+		function onLoad() {
+			gapi.load('auth2', function () {
+				gapi.auth2.init();
+			});
+		}
+	</script>
 </body>
-{{!-- javascript --}}
-<script src="https://code.jquery.com/jquery.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script>
-	function signOut() {
-		var auth2 = gapi.auth2.getAuthInstance();
-		auth2.signOut().then(function () {
-			console.log('User signed out.');
-		});
-	}
-
-</script>
-<script src="../js/accordian.js"></script>
-{{!-- <script>
-	showSlides(1);
-</script> --}}
 
 
 </html>
