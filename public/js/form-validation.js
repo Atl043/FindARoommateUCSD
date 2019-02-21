@@ -173,7 +173,7 @@ function submitLookingData() {
             "single": document.getElementById("lookingsingleRoom").checked,
             "double": document.getElementById("lookingdoubleRoom").checked,
             "gender": "",
-            "description": document.getElementById('description').value,
+            "description": document.getElementById('descriptionlooking').value,
             "min_rent": document.getElementById("minRent").value,
             "max_rent": document.getElementById("maxRent").value,
             "ownBath": document.getElementById("ownBathlooking").checked,
@@ -188,7 +188,7 @@ function submitLookingData() {
             "timeofday": "",
             "smokersetting": document.getElementById("smokerlooking").checked,
             "cleanliness": document.getElementById("cleannesslooking").value,
-            "otherroommateNotes": document.getElementById("aboutMe").value
+            //  "otherroommateNotes": document.getElementById("aboutMe").value
         }
 
         for (var key in user) {
@@ -204,27 +204,28 @@ function submitLookingData() {
         // check the room size
         if (localStorage.getItem('img') != null) {
             let img = localStorage.getItem('img');
-            user["img_url"] = img;
+            user["imgurl"] = img;
         }
+
         // the Gender M, F, C
-        if (document.getElementById("male").value == "on") {
+        if (document.getElementById("lookingmale").value == "on") {
             user["gender"] = "Male";
         }
-        else if (document.getElementById("singleRoom").value == "on") {
+        else if (document.getElementById("lookingfemale").value == "on") {
             user["gender"] = "Female";
         }
         else {
             user["gender"] = "Coed";
         }
         // the time N, E, L
-        if (document.getElementById("late").value == "on") {
-            user["time-of-day"] = "Night Owl";
+        if (document.getElementById("latelooking").value == "on") {
+            user["timeofday"] = "Night Owl";
         }
-        else if (document.getElementById("early").value == "on") {
-            user["time-of-day"] = "Early Bird";
+        else if (document.getElementById("earlylooking").value == "on") {
+            user["timeofday"] = "Early Bird";
         }
         else {
-            user["time-of-day"] = "Legend";
+            user["timeofday"] = "Legend No Sleep";
         }
         // console.log("user" + JSON.stringify(user));
         post('/user', user, 'get');

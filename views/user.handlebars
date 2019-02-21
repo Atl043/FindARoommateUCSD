@@ -44,12 +44,14 @@
 			<img class="picPerson" src={{imgurl}}>
 			<h4 id="name_header">{{name}}</h4>
 			<h5 id="state_header">{{userstate}}</h5>
-			<p id="desc-header">Description</p>
+			<p id="desc-header">Description: {{description}}</p>
 			<p id="email-header">{{email}}</p>
 		</div>
 		<div class="preference_deets" id="prefs">
 			<p id="prefs-head">Preferences</p>
-
+			<div class="pref-grid-row-1">
+				<p id="tag">Room: {{roomsize}}</p>
+			</div>
 			<div class="pref-grid-row-1">
 				<p id="tag">Rent: {{rent}}</p>
 				<p id="tag">Has own bathroom: {{ownBath}}</p>
@@ -76,12 +78,12 @@
 		<div class="preference-deets">
 			<p id="prefs-head">Roommate Preferences</p>
 			<div class="pref-grid-row-1">
-				<p id="tag">Preferred time of day: {{timeofday}}</p>
+				<p id="tag">Preferred time of day:{{timeofday}}</p>
 				<p id="tag">Smoker tolerance: {{smokersetting}}</p>
 			</div>
 			<div class="pref-grid-row-2">
 				<p id="tag">Cleanliness: {{cleanliness}}</p>
-				<p id="tag">Notes: {{otherroommateNotes}}</p>
+				<p id="tag">{{otherroommateNotes}}</p>
 			</div>
 
 		</div>

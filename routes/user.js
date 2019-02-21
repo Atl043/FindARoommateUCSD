@@ -29,11 +29,27 @@ exports.view_userProfile = function (req, res) {
             'timeofday': req.query.timeofday,
             'smokersetting': req.query.smokersetting,
             'cleanliness': req.query.cleanliness,
-            'otherroommateNotes': req.query.otherroommateNotes
+            'otherroommateNotes': "Notes: " + req.query.otherroommateNotes
         };
         console.log(json);
         data.user[0] = json;
     } else if (req.query.user_state == 1) {
+        let room = "";
+        if (req.query.living === "Yes") {
+            room += "Living Room";
+        }
+        if (room !== "") {
+            room += ", "
+        }
+        if (req.query.single === "Yes") {
+            room += "Single";
+        }
+        if (room !== "") {
+            room += ", "
+        }
+        if (req.query.double === "Yes") {
+            room += "Double";
+        }
         json = {
             'name': req.query.name,
             'email': req.query.email,
@@ -42,7 +58,7 @@ exports.view_userProfile = function (req, res) {
             'userstate': 'Looking for apartment',
             'zip': req.query.zip,
             'description': req.query.description,
-            'roomsize': req.query.roomsize,
+            'roomsize': room,
             'gender': req.query.gender,
             'min_rent': req.query.min_rent,
             'max_rent': req.query.max_rent,
