@@ -345,9 +345,9 @@ body{
 }
 
 .edit-profile-btn {
-  padding-top:20px;
+  padding-top:10px;
   text-align:center;
-  padding-bottom:20px;
+  padding-bottom:10px;
 
 }
 
@@ -553,6 +553,8 @@ nav a::before {
 #profile-search-btn{
   text-align:center;
   background-color:rgb(243, 212, 212);
+  padding-top: 20px;
+  padding-bottom: 20px; 
 }
 nav a:hover::before {
   width:100%;
