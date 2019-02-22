@@ -2,6 +2,7 @@ function checkLoginState() {
   FB.getLoginStatus(function (response) {
     statusChangeCallback(response);
   });
+  window.location.href = "/createProfile";
 }
 
 function statusChangeCallback(response) {
@@ -16,12 +17,12 @@ function statusChangeCallback(response) {
     console.log('Successfully logged in with Facebook');
     FB.api('/me?fields=name,first_name,picture.width(480)', changeUser);
   }
-  window.location.href = "/createProfile";
+
 
 }
 function changeUser(response) {
-  //  $ ('.facebookLogin').hide();
-  //  $ ('#name').text(response.name);
-  //  $ ('#photo').attr("src",response.picture.data.url);
+  $('.facebookLogin').hide();
+  $("#name").text(response.name);
+  $("#photo").attr("src", response.picture.data.url);
 
 }
