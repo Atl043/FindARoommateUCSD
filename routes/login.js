@@ -1,9 +1,12 @@
 /*
  * GET login page.
  */
+var data = require("../data/data.json");
 
 exports.viewLogin = function (req, res) {
-  res.render('login');
 
+  json = {};
+  data.user[0] = json;
+  res.render('login');
 };
 

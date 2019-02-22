@@ -53,7 +53,12 @@
 			<hr>
 			</hr>
 			<div class="edit-profile_btn">
-				<a href="/" onclick="signOutTest();">Sign out GOOGLE</a>
+				<a href="/" onclick="signOutTest();">Sign out of Google</a>
+			</div>
+			<hr>
+			</hr>
+			<div class="edit-profile_btn">
+				<a href="/" onclick="signOutTest()">Delete Profile</a>
 			</div>
 		</h5>
 	</div>
@@ -73,6 +78,7 @@
 	<script src="https://apis.google.com/js/platform.js?onload=onLoad" async
 		defer></script>
 	<script>
+
 		function signOutTest() {
 			var auth2 = gapi.auth2.getAuthInstance();
 			auth2.signOut().then(function () {

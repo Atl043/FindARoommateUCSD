@@ -17,6 +17,7 @@ exports.viewProfile = function (req, res) {
         'aptimgurl': data[id][0].aptimgurl,
         'address': data[id][0].address,
         'zip': data[id][0].zip,
+        'date': data[id][0].date,
         'description': data[id][0].description,
         'roomsize': data[id][0].roomsize,
         'gender': data[id][0].gender,
