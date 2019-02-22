@@ -5,6 +5,7 @@ function allFilled() {
         if ($(this).val() == '') {
             filled = false;
             $(this).addClass("highlight-red");
+            $(".incompleteErrorMsg").addClass("highlight-red");
         }
         else {
             $(this).addClass("highlight-green");
@@ -27,6 +28,7 @@ function loadNameEmail() {
         document.getElementById("email").value = email;
         document.getElementById("emaillooking").value = email;
     }
+
 }
 
 function allFilledLooking() {
@@ -36,6 +38,7 @@ function allFilledLooking() {
         if ($(this).val() == '') {
             filled = false;
             $(this).addClass("highlight-red");
+            $(".incompleteErrorMsg").addClass("highlight-red");
         }
         else {
             $(this).addClass("highlight-green");
