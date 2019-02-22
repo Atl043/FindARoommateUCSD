@@ -25,7 +25,7 @@ var passport = require('passport')
 passport.use(new FacebookStrategy({
   clientID: "352041492055393",
   clientSecret: "e4a74fb20b4494a279ddac434888257d",
-  callbackURL: "https://find-a-roommate-ucsd.herokuapp.com/"
+  callbackURL: "https://a7-findaroommate.herokuapp.com/"
 },
   function (accessToken, refreshToken, profile, done) {
     User.findOrCreate(function (err, user) {
