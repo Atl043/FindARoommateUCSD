@@ -29,6 +29,12 @@
         }
     </style>
 
+    <link rel='stylesheet prefetch'
+        href='//cdn.materialdesignicons.com/1.8.36/css/materialdesignicons.min.css'>
+    <style class="cp-pen-styles">
+        @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+    </style>
+
 </head>
 
 <body class="bg-light" data-gr-c-s-loaded="true">
@@ -50,21 +56,22 @@
     <div class="container">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" id="offeringApartment-tab" data-toggle="tab"
-                    href="#offeringApartment" role="tab" aria-controls="offeringApartment"
-                    aria-selected="true">Offering an Apartment</a>
+                <a class="nav-link active" id="lookingApartment-tab" data-toggle="tab"
+                    href="#lookingApartment" role="tab" aria-controls="profile"
+                    aria-selected="true">Looking for Apartment</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="lookingApartment-tab" data-toggle="tab"
-                    href="#lookingApartment" role="tab" aria-controls="profile"
-                    aria-selected="false">Looking for Apartment</a>
+                <a class="nav-link" id="offeringApartment-tab" data-toggle="tab"
+                    href="#offeringApartment" role="tab" aria-controls="offeringApartment"
+                    aria-selected="false">Offering an Apartment</a>
             </li>
+
         </ul>
         <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="offeringApartment" role="tabpanel"
+            <div class="tab-pane fade" id="offeringApartment" role="tabpanel"
                 aria-labelledby="offeringApartment-tab" style="background-color:white;">
                 <div class="py-5 text-center">
-                    <h2>Create Profile Form</h2>
+                    <h2>Create Profile Offering Apartment</h2>
                     <p class="lead">Below is the form if you are offering a
                         apartment</p>
                 </div>
@@ -319,6 +326,16 @@
                                         </div>
                                     </div>
                                 </div>
+                                <h4>Upload Photo of your Apartment</h4>
+                                <div class="box">
+                                    <div class="js--image-preview"></div>
+                                    <div class="upload-options">
+                                        <label>
+                                            <input type="file" class="image-upload"
+                                                accept="image/*" />
+                                        </label>
+                                    </div>
+                                </div>
 
                                 <div class="mb-3 col-md-12">
                                     <label for="apartmentFeatures">Description</label>
@@ -409,15 +426,16 @@
                                 class="btn btn-default"
                                 value="Create Offering Apartment Profile"
                                 onclick="submitData()"></input> --}}
-                                <div class="incompleteErrorMsg"> Please complete required fields to proceed </div>
+                            <div class="incompleteErrorMsg"> Please complete required
+                                fields to proceed </div>
                         </form>
                     </div>
                 </div>
             </div>
-            <div class=" tab-pane fade" id="lookingApartment" role="tabpanel"
+            <div class=" tab-pane fade show active" id="lookingApartment" role="tabpanel"
                 aria-labelledby="lookingingApartment-tab" style="background-color: white">
                 <div class="py-5 text-center">
-                    <h2>Create Profile Form</h2>
+                    <h2>Create Profile Looking for Apartment</h2>
                     <p class="lead">Below is the form if you are
                         looking for
                         a
@@ -712,7 +730,8 @@
                                     class="btn btn-primary btn-lg btn-block"
                                     onclick="submitLookingData()" type="button">Create
                                     Profile</button>
-                                <div class="incompleteErrorMsg"> Please complete required fields to proceed </div>
+                                <div class="incompleteErrorMsg"> Please complete required
+                                    fields to proceed </div>
                         </form>
                     </div>
                 </div>
@@ -723,5 +742,103 @@
 {{!-- javascript --}}
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script
+    src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script>
+<script>function initImageUpload(box) {
+        let uploadField = box.querySelector('.image-upload');
+
+        uploadField.addEventListener('change', getFile);
+
+        function getFile(e) {
+            let file = e.currentTarget.files[0];
+            checkType(file);
+        }
+
+        function previewImage(file) {
+            let thumb = box.querySelector('.js--image-preview'),
+                reader = new FileReader();
+
+            reader.onload = function () {
+                thumb.style.backgroundImage = 'url(' + reader.result + ')';
+            }
+            reader.readAsDataURL(file);
+            thumb.className += ' js--no-default';
+        }
+
+        function checkType(file) {
+            let imageType = /image.*/;
+            if (!file.type.match(imageType)) {
+                throw 'Datei ist kein Bild';
+            } else if (!file) {
+                throw 'Kein Bild gewählt';
+            } else {
+                previewImage(file);
+            }
+        }
+
+    }
+
+    // initialize box-scope
+    var boxes = document.querySelectorAll('.box');
+
+    for (let i = 0; i < boxes.length; i++) {
+        if (window.CP.shouldStopExecution(1)) { break; }
+        let box = boxes[i];
+        initDropEffect(box);
+        initImageUpload(box);
+    }
+    window.CP.exitedLoop(1);
+
+
+
+
+    /// drop-effect
+    function initDropEffect(box) {
+        let area, drop, areaWidth, areaHeight, maxDistance, dropWidth, dropHeight, x, y;
+
+        // get clickable area for drop effect
+        area = box.querySelector('.js--image-preview');
+        area.addEventListener('click', fireRipple);
+
+        function fireRipple(e) {
+            area = e.currentTarget
+            // create drop
+            if (!drop) {
+                drop = document.createElement('span');
+                drop.className = 'drop';
+                this.appendChild(drop);
+            }
+            // reset animate class
+            drop.className = 'drop';
+
+            // calculate dimensions of area (longest side)
+            areaWidth = getComputedStyle(this, null).getPropertyValue("width");
+            areaHeight = getComputedStyle(this, null).getPropertyValue("height");
+            maxDistance = Math.max(parseInt(areaWidth, 10), parseInt(areaHeight, 10));
+
+            // set drop dimensions to fill area
+            drop.style.width = maxDistance + 'px';
+            drop.style.height = maxDistance + 'px';
+
+            // calculate dimensions of drop
+            dropWidth = getComputedStyle(this, null).getPropertyValue("width");
+            dropHeight = getComputedStyle(this, null).getPropertyValue("height");
+
+            // calculate relative coordinates of click
+            // logic: click coordinates relative to page - parent's position relative to page - half of self height/width to make it controllable from the center
+            x = e.pageX - this.offsetLeft - (parseInt(dropWidth, 10) / 2);
+            y = e.pageY - this.offsetTop - (parseInt(dropHeight, 10) / 2) - 30;
+
+            // position drop and animate
+            drop.style.top = y + 'px';
+            drop.style.left = x + 'px';
+            drop.className += ' animate';
+            e.stopPropagation();
+
+        }
+    }
+
+//# sourceURL=pen.js
+</script>
 
 </html>
