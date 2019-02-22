@@ -1,5 +1,5 @@
 function checkLoginState() {
-  FB.getLoginStatus(function(response) {
+  FB.getLoginStatus(function (response) {
     statusChangeCallback(response);
   });
 }
@@ -13,14 +13,15 @@ function statusChangeCallback(response) {
   // for FB.getLoginStatus().
   if (response.status === 'connected') {
     // Logged into your app and Facebook.
-        console.log('Successfully logged in with Facebook');
-         FB.api('/me?fields=name,first_name,picture.width(480)', changeUser);
+    console.log('Successfully logged in with Facebook');
+    FB.api('/me?fields=name,first_name,picture.width(480)', changeUser);
   }
+  window.location.href = "/createProfile";
 
 }
 function changeUser(response) {
-//  $ ('.facebookLogin').hide();
-//  $ ('#name').text(response.name);
-//  $ ('#photo').attr("src",response.picture.data.url);
+  //  $ ('.facebookLogin').hide();
+  //  $ ('#name').text(response.name);
+  //  $ ('#photo').attr("src",response.picture.data.url);
 
 }
