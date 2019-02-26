@@ -34,77 +34,78 @@
 	<div class="user_body">
 		<div id="profile-search-btn">
 			<a href="/index" style="">Go Search</a>
-			<hr></hr>
-			<a href="/createProfile">Edit Profile</a>		
+			<hr>
+			</hr>
+			<a href="/createProfile">Edit Profile</a>
 		</div>
 
-		</div>
-		
-		{{#if state}}
-		<div class="img-header">
+	</div>
 
-		</div>
-		{{#each user}}
+	{{#if state}}
+	<div class="img-header">
 
-		<div class="user-details">
-			<img class="picPerson" src={{imgurl}}>
-			<h4 id="name_header">{{name}}</h4>
-			<h5 id="state_header">{{userstate}}</h5>
-			<p id="desc-header">Description: {{description}}</p>
-			<p id="email-header">{{email}}</p>
-		</div>
-		<div class="preference_deets" id="prefs">
-			<p id="prefs-head">Preferences</p>
+	</div>
+	{{#each user}}
 
-			<div class="pref-grid-row">
-				<p id="tag">Rent: {{rent}}</p>
-			</div>
-			<div class="pref-grid-row">
-				<p id="tag">Has own bathroom: {{ownBath}}</p>
-			</div>
+	<div class="user-details">
+		<img class="picPerson" src={{imgurl}}>
+		<h4 id="name_header">{{name}}</h4>
+		<h5 id="state_header">{{userstate}}</h5>
+		<p id="desc-header">Description: {{description}}</p>
+		<p id="email-header">{{email}}</p>
+	</div>
+	<div class="preference_deets" id="prefs">
+		<p id="prefs-head">Preferences</p>
+
+		<div class="pref-grid-row">
+			<p id="tag">Rent: {{rent}}</p>
 		</div>
 		<div class="pref-grid-row">
-			<p id="tag">Has Air Conditioning: {{AC}}</p>
+			<p id="tag">Has own bathroom: {{ownBath}}</p>
+		</div>
+	</div>
+	<div class="pref-grid-row">
+		<p id="tag">Has Air Conditioning: {{AC}}</p>
+	</div>
+	<div class="pref-grid-row">
+		<p id="tag">Has Heating: {{heating}}</p>
+	</div>
+	<div class="pref-grid-row">
+		<p id="tag">Laundry Utilities: {{laundry}}</p>
+	</div>
+	<div class="pref-grid-row">
+		<p id="tag">Parking: {{parking}}</p>
+	</div>
+	<div class="pref-grid-row">
+		<p id="tag">Pets Allowed? {{pets}}</p>
+	</div>
+	<div class="pref-grid-row">
+		<p id="tag">Bus Accessibility: {{bus}}</p>
+	</div>
+	<div class="pref-grid-row">
+		<p id="tag">Gym: {{gym}}</p>
+	</div>
+	<div class="pref-grid-row">
+		<p id="tag">Pool: {{pool}}</p>
+	</div>
+	<div class="pref-grid-row">
+		<p id="tag">Notes: {{otherapartmentNotes}}</p>
+	</div>
+	<div class="preference-deets">
+		<p id="prefs-head">Roommate Preferences</p>
+		<div class="pref-grid-row">
+			<p id="tag">Preferred time of day: {{timeofday}}</p>
 		</div>
 		<div class="pref-grid-row">
-			<p id="tag">Has Heating: {{heating}}</p>
+			<p id="tag">Smoker tolerance: {{smokersetting}}</p>
 		</div>
-		<div class="pref-grid-row">
-			<p id="tag">Laundry Utilities: {{laundry}}</p>
-		</div>
-		<div class="pref-grid-row">
-			<p id="tag">Parking: {{parking}}</p>
-		</div>
-		<div class="pref-grid-row">
-			<p id="tag">Pets Allowed? {{pets}}</p>
-		</div>
-		<div class="pref-grid-row">
-			<p id="tag">Bus Accessibility: {{bus}}</p>
-		</div>
-		<div class="pref-grid-row">
-			<p id="tag">Gym: {{gym}}</p>
-		</div>
-		<div class="pref-grid-row">
-			<p id="tag">Pool: {{pool}}</p>
-		</div>
-		<div class="pref-grid-row">
-			<p id="tag">Notes: {{otherapartmentNotes}}</p>
-		</div>
-		<div class="preference-deets">
-			<p id="prefs-head">Roommate Preferences</p>
-			<div class="pref-grid-row">
-				<p id="tag">Preferred time of day: {{timeofday}}</p>
-			</div>
-			<div class="pref-grid-row">
-				<p id="tag">Smoker tolerance: {{smokersetting}}</p>
-			</div>
-		</div>
-		<div class="pref-grid-row">
-			<p id="tag">Cleanliness: {{cleanliness}}</p>
-		</div>
-		<div class="pref-grid-row">
-			<p id="tag">Notes: {{otherroommateNotes}}</p>
-		</div>
+	</div>
+	<div class="pref-grid-row">
+		<p id="tag">Cleanliness: {{cleanliness}}</p>
+	</div>
+	<div class="pref-grid-row">
+		<p id="tag">Notes: {{otherroommateNotes}}</p>
+	</div>
 	</div>
 	{{/each}}
 	{{else}}
@@ -155,7 +156,7 @@
 		<p id="tag">Notes: {{otherapartmentNotes}}</p>
 	</div> --}}
 	<div class="preference-deets">
-		<p id="prefs-head">Roommate Preferences</p>
+		<p id="prefs-head">Who you are</p>
 		<div class="pref-grid-row">
 			<p id="tag">Preferred time of day: {{timeofday}}</p>
 		</div>
