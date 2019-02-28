@@ -19,6 +19,20 @@
           justify-content: center;
 }
 
+
+.imageBelow
+	{
+		position: relative;
+		top: 0;
+		left: 0;
+	}
+	.imageAbove
+	{
+		position: absolute;
+		top: 5px;
+		left: 5px;
+  }
+  
 .box {
   display: block;
   min-width: 300px;

@@ -40,7 +40,7 @@
 	{{!-- end of top title --}}
 	<div class="container">
 		{{!-- Search Bar --}}
-		<div class="searchbar" id="search">
+		<div class="searchbar" id="search" style="padding-bottom:1em;">
 			<div class="search">
 				<form action="/results">
 					<div>
@@ -54,7 +54,7 @@
 						</a>
 					</div>
 					<div style="" class="row startingDateRow">
-						<div style="margin-bottom:20px;">
+						<div style="margin-bottom:10px;">
 							<label for="date">Starting Date:</label>
 							<input style="" type="date" class="startDate" id="date"
 								name="date">
@@ -84,16 +84,17 @@
 									<span class="checkmark"></span>
 								</label> --}}
 								<p>I am:</p>
-								<label class="checkboxContainer">Offering an apartment/Looking for a Roommate
+								<label class="checkboxContainer">Offering an
+									apartment/Looking for a Roommate
 									<input type="checkbox" name="offering_apartment">
 									<span class="checkmark"></span>
 								</label>
-								
+
 								<label class="checkboxContainer">Looking for an apartment
 									<input type="checkbox" name="lookingfor_apartment">
 									<span class="checkmark"></span>
 								</label>
-								
+
 								<div class="col-md-12 mb-3">
 									<label for="minRent">
 										Min Rent</label>
@@ -115,28 +116,31 @@
 		{{!-- Start of "Showing Results" and "back" --}}
 
 		{{!-- start of apartment that can load --}}
-		{{#each apartments}}
-		<div class="container-prof">
-			<a href="/profile/{{id}}">
-				<div class="row" style="">
-					<div class="col-3" style="color:black;">
-						<img id="apt-img" src="{{imgurl}}">
-						<h4>{{name}}, ${{rent}}/month</h4>
-						<h3>{{roomsize}}</h3>
-						<h3 style="font-size:12px;">{{zip}}</h3>
-						{{!-- <div style="height:50px;width:80px;background-color:blue;">
+		<div style="margin-top: 1em">
+			{{#each apartments}}
+			<div class="container-prof">
+				<a href="/profile/{{id}}">
+					<div class="row" style="">
+						<div class="col-3" style="color:black;">
+							<img id="apt-img" src="{{imgurl}}">
+							<h4>{{name}}, ${{rent}}/month</h4>
+							<h3>{{roomsize}}</h3>
+							<h3 style="font-size:12px;">{{zip}}</h3>
+							{{!-- <div style="height:50px;width:80px;background-color:blue;">
 							Save button?
 						</div> --}}
-						{{!-- <p style="font-size:12px;">{{otherapartmentNotes}}</p> --}}
-						
+							{{!-- <p style="font-size:12px;">{{otherapartmentNotes}}</p> --}}
+
+						</div>
+						<div class="col-9">
+							<img style="width:100%;border-radius:10px;max-height:200px;margin-bottom:5px;margin-top:5px;"
+								src="{{aptimgurl}}">
+						</div>
 					</div>
-					<div class="col-9">
-						<img style="width:100%;border-radius:10px;max-height:200px;margin-bottom:5px;margin-top:5px;" src="{{aptimgurl}}">
-					</div>
-				</div>
-			</a>
+				</a>
+			</div>
+			{{/each}}
 		</div>
-		{{/each}}
 		{{!-- End of "Showing Results" and "back" --}}
 	</div>
 </body>
