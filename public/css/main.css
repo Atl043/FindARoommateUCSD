@@ -157,7 +157,41 @@ i.material-icons {
   }
 }
 
+.result-details {
+  margin-left:10px;
+}
+.result-details h4 {
+  color:black;
+}
 
+.result-details h5 {
+  color:grey;
+}
+
+.result-details h6 {
+  color:grey;
+}
+
+.col-3 h4 {
+  font-size:14px; 
+  display:inline;
+  text-decoration:none;
+  color:black;
+}
+
+.col-3 h3 {
+  font-size:14px;
+  margin:5px;
+  margin-left:0px;
+  color:grey;
+}
+
+#apt-img {
+  width:100%; 
+  margin-bottom:10px;
+  border-radius:20px;
+  max-height:250px;
+}
 
  .backButton {
     border: 3px;
@@ -180,10 +214,17 @@ i.material-icons {
   margin-left: auto;
   border: 1px solid rgb(187, 187, 187);
   border-radius:10px;
-  margin-bottom:20px;
-  margin-top:20px;
+  margin-bottom:10px;
+  margin-top:10px;
 }
 
+.container-prof-2 {
+  align-self:center;
+  border: 1px solid rgb(187, 187, 187);
+  border-radius:20px;
+  margin-bottom:10px;
+  margin-top:10px;
+}
 .container-prof h4 {
   margin-top:10px;
 }

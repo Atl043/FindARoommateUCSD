@@ -114,32 +114,30 @@
 
 		{{!-- Start of "Showing Results" and "back" --}}
 
-		<!-- I DIDN'T THINK WE NEEDED A BACK BUTTON NOW THAT WE HAVE THE NAVBAR -->
-		{{!-- <div>
-			Showing Results:
-			<a href="/">
-				<button class="backButton">
-					Back
-				</button>
-			</a>
-		</div> --}}
-		{{!-- End of "Showing Results" and "back" --}}
 		{{!-- start of apartment that can load --}}
 		{{#each apartments}}
 		<div class="container-prof">
-			<h4>{{name}}, {{rent}} per Month</h4>
 			<a href="/profile/{{id}}">
-				<div class="row" style="margin-top:20px">
-					<div class="col-3">
-						<img style="width:100%" src="{{imgurl}}">
+				<div class="row" style="">
+					<div class="col-3" style="color:black;">
+						<img id="apt-img" src="{{imgurl}}">
+						<h4>{{name}}, ${{rent}}/month</h4>
+						<h3>{{roomsize}}</h3>
+						<h3 style="font-size:12px;">{{zip}}</h3>
+						{{!-- <div style="height:50px;width:80px;background-color:blue;">
+							Save button?
+						</div> --}}
+						{{!-- <p style="font-size:12px;">{{otherapartmentNotes}}</p> --}}
+						
 					</div>
 					<div class="col-9">
-						<img style="width:100%" src="{{aptimgurl}}">
+						<img style="width:100%;border-radius:10px;max-height:200px;margin-bottom:5px;margin-top:5px;" src="{{aptimgurl}}">
 					</div>
 				</div>
 			</a>
 		</div>
 		{{/each}}
+		{{!-- End of "Showing Results" and "back" --}}
 	</div>
 </body>
 {{!-- javascript --}}

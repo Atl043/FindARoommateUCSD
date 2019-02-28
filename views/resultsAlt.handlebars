@@ -1,0 +1,139 @@
+<html></html>
+<head>
+	<title>Results</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="../css/main.css" rel="stylesheet">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	{{!--
+	<link href="/css/introHCI.css" rel="stylesheet"> --}}
+</head>
+
+<body>
+	<header>
+		<div class="nav-container">
+
+			<!-- INSERT LOGO/IMAGE HERE -->
+			<h2>FindARoommate</h2>
+			<nav>
+				<ul>
+					<li><a href="/index">Home</a></li>
+					<li><a href="/user">My Profile</a></li>
+					<li><a href="/settings">Settings</a></li>
+					<!-- PLACEHOLDER LINK FOR SETTINGS PAGE (change '#' to '/settings') -->
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+
+	{{!-- Top Title
+	<div id="topTitle" class="top">
+		<a href="/"> <b>Find a Roommate</b> </a>
+		<hr style="height:1px;border:none;color:#333;background-color:#333;">
+	</div> --}}
+	{{!-- <hr style="height:1px;border:none;color:#333;background-color:#333;"> --}}
+	{{!-- end of top title --}}
+	<div class="container">
+		{{!-- Search Bar --}}
+		<div class="searchbar" id="search">
+			<div class="search">
+				<form action="/resultsAlt">
+					<div>
+						<input type="text" class="searchTerm" name="search"
+							placeholder="Search Area...">
+						<a href="/resultsAlt">
+							<button type="submit" class="searchButton">
+								<i class="fa fa-search"></i>
+								{{!-- Search --}}
+							</button>
+						</a>
+					</div>
+					<div style="" class="row startingDateRow">
+						<div style="margin-bottom:20px;">
+							<label for="date">Starting Date:</label>
+							<input style="" type="date" class="startDate" id="date"
+								name="date">
+							<button class="accordion" type="button">
+								Preferences</button>
+
+							<div class="panel">
+								<p>Pick more options</p>
+								<label class="checkboxContainer">Living room
+									<input type="checkbox" name="livingRoom">
+									<span class="checkmark"></span>
+								</label>
+
+								<label class="checkboxContainer">Single
+									<input type="checkbox" name="singleRoom">
+									{{!-- checked="checked" --}}
+									<span class="checkmark"></span>
+								</label>
+
+								<label class="checkboxContainer">Double
+									<input type="checkbox" name="doubleRoom">
+									<span class="checkmark"></span>
+								</label>
+
+								{{!-- <label class="checkboxContainer">Triple
+									<input type="checkbox" name="tripleRoom">
+									<span class="checkmark"></span>
+								</label> --}}
+								<p>I am:</p>
+								<label class="checkboxContainer">Offering an apartment/Looking for a Roommate
+									<input type="checkbox" name="offering_apartment">
+									<span class="checkmark"></span>
+								</label>
+								
+								<label class="checkboxContainer">Looking for an apartment
+									<input type="checkbox" name="lookingfor_apartment">
+									<span class="checkmark"></span>
+								</label>
+								
+								<div class="col-md-12 mb-3">
+									<label for="minRent">
+										Min Rent</label>
+									<input type="rent" class="form-control" id="minRent"
+										name="minRent" placeholder="Min">
+									<label for="maxRent">
+										Max Rent</label>
+									<input type="rent" class="form-control" id="maxRent"
+										name="maxRent" placeholder="Max">
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		{{!-- End of Search Bar --}}
+
+		{{!-- Start of "Showing Results" and "back" --}}
+
+		{{!-- start of apartment that can load --}}
+		{{#each apartments}}
+		<div class="container-prof-2">
+			<a href="/profile/{{id}}">
+                <div style="margin-bottom:10px;">	
+                    <img id="apt-img" src="{{aptimgurl}}">
+                    <div class="result-details">
+                        <h4>{{name}}</h4>
+                        <h5>{{roomsize}}</h5>
+                        <h6>{{zip}}</h6>
+                    </div>
+                </div>
+			</a>
+		</div>
+		{{/each}}
+		{{!-- End of "Showing Results" and "back" --}}
+	</div>
+</body>
+{{!-- javascript --}}
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/accordian.js"></script>
+
+</html>
