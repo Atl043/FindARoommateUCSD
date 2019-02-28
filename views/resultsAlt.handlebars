@@ -118,22 +118,24 @@
 		{{!-- Start of "Showing Results" and "back" --}}
 
 		{{!-- start of apartment that can load --}}
-		{{#each apartments}}
-		<div class="container-prof-2">
-			<a href="/profile/{{id}}">
-				<div style="margin-bottom:10px; position: relative; left: 0; top: 0;">
-					<img id="apt-img-2" src="{{aptimgurl}}" class="imageBelow">
-					<img id="apt-img-2" src="{{imgurl}}" class="imageAbove"
-						style="max-width: 20%; height:auto">
-					<div class="result-details">
-						<h4>{{name}}, ${{rent}}/month</h4>
-						<h5>{{roomsize}}</h5>
-						<h6>{{zip}}</h6>
+		<div class="row">
+			{{#each apartments}}
+			<div class="container-prof-2 col-6">
+				<a href="/profile/{{id}}">
+					<div style="margin-bottom:10px; position: relative; left: 0; top: 0;">
+						<img id="apt-img-2" src="{{aptimgurl}}" class="imageBelow">
+						<img id="apt-img-2" src="{{imgurl}}" class="imageAbove"
+							style="max-width: 20%; height:auto">
+						<div class="result-details">
+							<h4>{{name}}, ${{rent}}/month</h4>
+							<h5>{{roomsize}}</h5>
+							<h6>{{zip}}</h6>
+						</div>
 					</div>
-				</div>
-			</a>
+				</a>
+			</div>
+			{{/each}}
 		</div>
-		{{/each}}
 		{{!-- End of "Showing Results" and "back" --}}
 	</div>
 </body>
