@@ -287,11 +287,8 @@ i.material-icons {
 }
 
 #desc-header {
-  display:flex;
   padding-bottom:10px;
-  margin-bottom:0px;
-  margin-left:35px;text-align:right;
-
+  margin-left: 35px
 }
 
 .col-9 img{
