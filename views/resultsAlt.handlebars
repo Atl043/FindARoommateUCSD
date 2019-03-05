@@ -4,12 +4,12 @@
 
 <head>
 
-	
-	
+
+
+	<!-- Google Analytics Content Experiment code -->
 	<!-- Google Analytics Content Experiment code -->
 	<script>function utmx_section() { } function utmx() { } (function () {
-			var
-				k = '190352116-0', d = document, l = d.location, c = d.cookie;
+			var k = '190352116-1', d = document, l = d.location, c = d.cookie;
 			if (l.search.indexOf('utm_expid=' + k) > 0) return;
 			function f(n) {
 				if (c) {
@@ -27,6 +27,9 @@
 				'" type="text/javascript" charset="utf-8"><\/sc' + 'ript>')
 		})();
 	</script>
+	<script>utmx('url', 'A/B');</script>
+	<!-- End of Google Analytics Content Experiment code -->
+
 
 	<!-- Google Analytics -->
 	<script>
@@ -58,8 +61,7 @@
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="../css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="../css/main.css" rel="stylesheet">
-	<link rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	{{!--
 	<link href="/css/introHCI.css" rel="stylesheet"> --}}
 </head>
@@ -95,8 +97,7 @@
 			<div class="search">
 				<form action="/resultsAlt">
 					<div>
-						<input type="text" class="searchTerm" name="search"
-							placeholder="Search Area...">
+						<input type="text" class="searchTerm" name="search" placeholder="Search Area...">
 						<a href="/resultsAlt">
 							<button type="submit" class="searchButton">
 								<i class="fa fa-search"></i>
@@ -107,8 +108,7 @@
 					<div style="" class="row startingDateRow">
 						<div style="margin-bottom:20px;">
 							<label for="date">Starting Date:</label>
-							<input style="" type="date" class="startDate" id="date"
-								name="date">
+							<input style="" type="date" class="startDate" id="date" name="date">
 							<button class="accordion" type="button">
 								Preferences</button>
 
@@ -149,12 +149,12 @@
 								<div class="col-md-12 mb-3">
 									<label for="minRent">
 										Min Rent</label>
-									<input type="rent" class="form-control" id="minRent"
-										name="minRent" placeholder="Min">
+									<input type="rent" class="form-control" id="minRent" name="minRent"
+										placeholder="Min">
 									<label for="maxRent">
 										Max Rent</label>
-									<input type="rent" class="form-control" id="maxRent"
-										name="maxRent" placeholder="Max">
+									<input type="rent" class="form-control" id="maxRent" name="maxRent"
+										placeholder="Max">
 								</div>
 							</div>
 						</div>
@@ -173,8 +173,7 @@
 				<a href="/profile/{{id}}">
 					<div style="margin-bottom:10px; position: relative; left: 0; top: 0;">
 						<img id="apt-img-2" src="{{aptimgurl}}" class="imageBelow">
-						<img id="apt-img-2" src="{{imgurl}}" class="imageAbove"
-							style="max-width: 20%; height:auto">
+						<img id="apt-img-2" src="{{imgurl}}" class="imageAbove" style="max-width: 20%; height:auto">
 						<div class="result-details">
 							<h4>${{rent}}/month</h4>
 							<h5>{{roomsize}}</h5>
