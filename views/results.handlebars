@@ -45,9 +45,16 @@
 
 			var endTime = new Date().getTime();
 			var timeSpent = endTime - startTime;
-
-			_gaq.push(['_trackTiming', 'Duration', 'callback_timeout', timeSpent, 'animation']);
+			ga("send", "Duration", "timeSpent", timeSpent);
+			//_gaq.push(['_trackTiming', 'Duration', 'callback_timeout', timeSpent, 'animation']);
 		}
+	</script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-134959338-1', { 'optimize_id': 'GTM-WZV88MF' });
 	</script>
 
 	<!-- End Google Analytics -->
