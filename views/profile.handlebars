@@ -11,6 +11,13 @@
 	{{!--
 	<link href="/css/introHCI.css" rel="stylesheet"> --}}
 	<script src="../js/back.js"></script>
+	<script src="/js/mapQuest.js"></script>
+	
+
+	<script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+	<link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+
+
 </head>
 
 <body>
@@ -93,8 +100,9 @@
 
 		{{!-- Start of Name --}}
 		<div class="row">
-			<div class="col-xs-6-h">
+			<div id="map-container" class="col-xs-6-h">
 				<h5> Zip: {{zip}} </h5>
+				<div id="map" style="align-self:center;margin-left:35px;height:0 auto;width:110% auto;"></div>
 				<h5> Available Since: {{date}}</h5>
 			</div>
 			<!-- COMMENTED OUT BACK BUTTON -->
@@ -149,7 +157,7 @@
 				<li class="list-group-item" id="address">Address: {{address}},
 					{{zip}}
 				</li>
-				<li class="list-group-item" id="address">Gender: {{gender}}
+				<li class="list-group-item" id="gender">Gender: {{gender}}
 					Apartment
 				</li>
 				<li class="list-group-item" id="bath">Own bathroom:{{ownBath}}
@@ -174,19 +182,20 @@
 		{{!-- Start of Person profile --}}
 		<div class="card mb-3">
 			<div class="text-center">
-				<h3>About me</h3>
+				<h3 style="margin-top:10px;">About me</h3>
 			</div>
 
 			<img class="card-img-top" {{!-- src="https://www.w3schools.com/w3css/img_avatar3.png" --}} src="{{imgurl}}"
 				alt="Card image cap">
 			<div class="card-body">
-				<h5 class="card-title">Name: {{name}}</h5>
+				<h5 id="name" class="card-title">{{name}}</h5>
 				<p class="card-text">
-					About me: {{otherroommateNotes}}
+					{{otherroommateNotes}}
 				</p>
 				<div style="text-align:center">
 					<a href="mailto:{{email}}" class="btn btn-primary btn-lg" style="" tabindex="-1" role="button"
 						aria-disabled="true">Email Me</a>
+					<button class="btn btn-primary btn-lg" id="save_btn" onclick="saveProfile({{id}},{{name}},{{zip}},{{date}},{{aptimgurl}},{{imgURL}},{{rent}},{{address}},{{gender}},{{ownBath}},{{AC}},{{heating}},{{laundry}},{{parking}},{{pets}},{{bus}},{{gym}},{{pool}},{{email}},{{otherroommateNotes}},{{otherapartmentNotes}},{{description}},{{roomsize}},{{cleanliness}},{{timeofday}},{{smokersetting}})">Save</button>
 				</div>
 
 				{{!-- <p class="card-text"><small class="text-muted">Last updated 3 mins
@@ -214,6 +223,46 @@
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/accordian.js"></script>
+<script src="../js/save.js"></script>
+<script>
+	$(document).ready(function() {
+    initMap();
+})
+</script>
+{{!-- THIS SCRIPT IS FOR SAVING PROFILES - SET UP TO SAVE TO LOCAL STORAGE --}}
+<script>
+	function saveProfile(id,name,zip,date,aptimgurl,imgurl,rent,address,gender,own_bath,ac,heating,laundry,parking,pets,bus,gym,pool,email,roommateNotes,aptNotes,description,roomsize,cleanliness,timeofday,smokersetting) {
+		json = {
+		'id':id,
+        'name': name.
+        'email': email,
+        'imgurl': imgurl,
+        'aptimgurl': aptimgurl,
+        'address': address,
+        'zip': zip,
+        'date': date,
+        'description': description,
+        'roomsize': roomsize,
+        'gender': gender,
+        'rent': rent,
+        'ownBath': ownBath,
+        'AC': AC,
+        'heating': heating,
+        'laundry': laundry,
+        'parking': parking,
+        'pets': pets,
+        'bus': bus,
+        'gym': gym,
+        'pool': pool,
+        'otherapartmentNotes': otherapartmentNotes,
+        'timeofday': timeofday,
+        'smokersetting': smokersetting,
+        'cleanliness': cleanliness,
+        'otherroommateNotes': otherroommateNotes
+		}
+		console.log(json)
+	}
+</script>
 
 
 </html>

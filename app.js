@@ -16,6 +16,7 @@ var user = require('./routes/user');
 var settings = require('./routes/settings');
 var createProfile = require('./routes/createProfile');
 var resultsAlt = require('./routes/resultsAlt.js');
+var saved = require('./routes/saved');
 
 // Example route
 // var user = require('./routes/user');
@@ -69,6 +70,7 @@ app.get('/user', user.view_userProfile);
 app.get('/settings', settings.viewSettings);
 app.get('/createProfile', createProfile.viewCreateProfile);
 app.get('/resultsAlt', resultsAlt.viewResults);
+app.get('/saved', saved.viewSaved);
 // Example route
 // app.get('/users', user.list);
 
