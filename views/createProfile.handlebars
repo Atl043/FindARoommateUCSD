@@ -7,8 +7,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     {{!--
 	<link href="/css/introHCI.css" rel="stylesheet"> --}}
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/checkout/">
@@ -29,16 +28,29 @@
         }
     </style>
 
-    <link rel='stylesheet prefetch'
-        href='//cdn.materialdesignicons.com/1.8.36/css/materialdesignicons.min.css'>
+    <link rel='stylesheet prefetch' href='//cdn.materialdesignicons.com/1.8.36/css/materialdesignicons.min.css'>
     <style class="cp-pen-styles">
         @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
     </style>
+    <meta name="google-signin-scope" content="profile email">
+    {{!-- <meta name="google-signin-client_id"
+			content="519007915746-m0l845vmot8vj2lin1j167ifu5lslmcj.apps.googleusercontent.com"> --}}
+    <meta name="google-signin-client_id"
+        content="519007915746-9ujr3t866k76vt0kr2sk5uoi3q0v8d8a.apps.googleusercontent.com">
+
+    {{> facebook}}
+    <script src="/js/facebook.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 </head>
 
 <body class="bg-light" data-gr-c-s-loaded="true">
     <header>
+        <div class="row">
+            <button class="btn btn-link btn-lg" style="width:50%;" onclick="goBack()">Back</button>
+            <button class="btn btn-link btn-lg" style="width:50%;" onclick="signOutTest()">Sign
+                Out</button>
+        </div>
         <div class="nav-container">
 
             <!-- INSERT LOGO/IMAGE HERE -->
@@ -55,21 +67,19 @@
     </header>
     <div class="container">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link active" id="lookingApartment-tab" data-toggle="tab"
-                    href="#lookingApartment" role="tab" aria-controls="profile"
-                    aria-selected="true">Looking for Apartment</a>
+            <li class="nav-item" style="width:50%">
+                <a class="nav-link active" id="lookingApartment-tab" data-toggle="tab" href="#lookingApartment"
+                    role="tab" aria-controls="profile" aria-selected="true">Looking for Apartment</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" id="offeringApartment-tab" data-toggle="tab"
-                    href="#offeringApartment" role="tab" aria-controls="offeringApartment"
-                    aria-selected="false">Offering an Apartment</a>
+            <li class="nav-item" style="width:50%">
+                <a class="nav-link" id="offeringApartment-tab" data-toggle="tab" href="#offeringApartment" role="tab"
+                    aria-controls="offeringApartment" aria-selected="false">Offering an Apartment</a>
             </li>
 
         </ul>
         <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade" id="offeringApartment" role="tabpanel"
-                aria-labelledby="offeringApartment-tab" style="background-color:white;">
+            <div class="tab-pane fade" id="offeringApartment" role="tabpanel" aria-labelledby="offeringApartment-tab"
+                style="background-color:white;">
                 <div class="py-5 text-center">
                     <h2>Create Profile Offering Apartment</h2>
                     <p class="lead">Below is the form if you are offering a
@@ -85,9 +95,8 @@
 
                             <div class="mb-3">
                                 <label for="userName">Name</label>
-                                <input type="text" class="form-control validate"
-                                    id="userName" placeholder="Your name here" value=""
-                                    name="name">
+                                <input type="text" class="form-control validate" id="userName"
+                                    placeholder="Your name here" value="" name="name">
                                 <div class="invalid-feedback">
                                     Valid name is required.
                                 </div>
@@ -96,9 +105,8 @@
 
                             <div class="mb-3">
                                 <label for="email">Email</label>
-                                <input type="email" class="form-control validate"
-                                    id="email" placeholder="you@example.com" name="email"
-                                    required="">
+                                <input type="email" class="form-control validate" id="email"
+                                    placeholder="you@example.com" name="email" required="">
                                 <div class="invalid-feedback">
                                     Please enter a valid email address
                                 </div>
@@ -106,19 +114,17 @@
 
                             <div class="mb-3">
                                 <label for="address">Address</label>
-                                <input type="text" class="form-control validate"
-                                    id="address" placeholder="Put your address here"
-                                    name="address" required="">
+                                <input type="text" class="form-control validate" id="address"
+                                    placeholder="Put your address here" name="address" required="">
                                 <div class="invalid-feedback">
                                     Please enter your address
                                 </div>
                             </div>
 
                             <div class="mb-3">
-                                <label for="address2">Address 2 <span
-                                        class="text-muted">(Optional)</span></label>
-                                <input type="text" class="form-control" id="address2"
-                                    placeholder="Apartment or suite" name="address2">
+                                <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
+                                <input type="text" class="form-control" id="address2" placeholder="Apartment or suite"
+                                    name="address2">
                             </div>
 
                             <div class="mb-3">
@@ -142,11 +148,16 @@
                             </div> --}}
                                 <div class=" mb-3">
                                     <label for="zip">Zip</label>
-                                    <input type="text" class="form-control validate"
-                                        id="zip" placeholder="" name="zip" required="">
+                                    <input type="text" class="form-control validate" id="zip" placeholder="" name="zip"
+                                        required="">
                                     <div class="invalid-feedback">
                                         Zip code required.
                                     </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="description">Describe Yourself</label>
+                                    <textarea name="description" class="form-control" id="description"
+                                        placeholder="Tell them about you and your roommates..."></textarea>
                                 </div>
                             </div>
                             <hr class="mb-4">
@@ -156,85 +167,70 @@
                                     <h4 class="mb-3">Details & Description of Apartment
                                     </h4>
                                 </div>
-                                <label class="custom-control-label"
-                                    for="roomSize"><strong>Room
+                                <label class="custom-control-label" for="roomSize"><strong>Room
                                         Size:</strong></label>
                                 <div class="col-md-12">
 
                                     <div class="d-block my-3" id="roomSize">
                                         <div class="custom-control custom-radio">
-                                            <input id="livingRoom"
-                                                name="apartmentOffering" type="radio"
+                                            <input id="livingRoom" name="apartmentOffering" type="radio"
                                                 class="custom-control-input" checked="">
                                             {{!-- required="" --}}
-                                            <label class="custom-control-label"
-                                                for="livingRoom">Living
+                                            <label class="custom-control-label" for="livingRoom">Living
                                                 Room</label>
                                         </div>
                                         <div class="custom-control custom-radio">
-                                            <input id="singleRoom"
-                                                name="apartmentOffering" type="radio"
+                                            <input id="singleRoom" name="apartmentOffering" type="radio"
                                                 class="custom-control-input">
                                             {{!-- required="" --}}
-                                            <label class="custom-control-label"
-                                                for="singleRoom">Single</label>
+                                            <label class="custom-control-label" for="singleRoom">Single</label>
                                         </div>
                                         <div class="custom-control custom-radio">
-                                            <input id="doubleRoom"
-                                                name="apartmentOffering" type="radio"
+                                            <input id="doubleRoom" name="apartmentOffering" type="radio"
                                                 class="custom-control-input">
                                             {{!-- required="" --}}
-                                            <label class="custom-control-label"
-                                                for="doubleRoom">Spot in a
+                                            <label class="custom-control-label" for="doubleRoom">Spot in a
                                                 Double</label>
                                         </div>
                                     </div>
                                 </div>
-                                <label class="custom-control-label"
-                                    for="genderLook"><strong>Gender:</strong></label>
+                                <label class="custom-control-label" for="genderLook"><strong>Gender:</strong></label>
                                 <div class="col-md-12">
 
                                     <div class="d-block my-3" id="genderLook">
                                         <div class="custom-control custom-radio">
-                                            <input id="male" name="Gender" type="radio"
-                                                class="custom-control-input" checked="">
+                                            <input id="male" name="Gender" type="radio" class="custom-control-input"
+                                                checked="">
                                             {{!-- required="" --}}
-                                            <label class="custom-control-label"
-                                                for="male">Male</label>
+                                            <label class="custom-control-label" for="male">Male</label>
                                         </div>
                                         <div class="custom-control custom-radio">
-                                            <input id="female" name="Gender" type="radio"
-                                                class="custom-control-input">
+                                            <input id="female" name="Gender" type="radio" class="custom-control-input">
                                             {{!-- required="" --}}
-                                            <label class="custom-control-label"
-                                                for="female">Female</label>
+                                            <label class="custom-control-label" for="female">Female</label>
                                         </div>
                                         <div class="custom-control custom-radio">
-                                            <input id="coed" name="Gender" type="radio"
-                                                class="custom-control-input">
+                                            <input id="coed" name="Gender" type="radio" class="custom-control-input">
                                             {{!-- required="" --}}
-                                            <label class="custom-control-label"
-                                                for="coed">Coed</label>
+                                            <label class="custom-control-label" for="coed">Coed</label>
                                         </div>
                                     </div>
                                 </div>
                                 <div class=" mb-3" style="width:100%">
                                     <label for="rent">Rent Per Month</label>
-                                    <input type="rent" class="form-control validate"
-                                        id="rent" placeholder="Enter Amount per Month"
-                                        name="rent">
+                                    <input type="rent" class="form-control validate" id="rent"
+                                        placeholder="Enter Amount per Month" name="rent">
                                     {{!-- required="" --}}
                                     <div class="invalid-feedback">
                                         Please enter a Price
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="custom-control-label"
-                                        for="leaseDuration">
+                                    <label class="custom-control-label" for="leaseDuration">
                                         Lease Duration
                                     </label>
-                                    <select class="custom-select custom-select-lg mb-3"
-                                        id="leaseDuration" name="leaseDuration" value="1">
+                                    <select class="custom-select custom-select-lg mb-3" id="leaseDuration"
+                                        name="leaseDuration" value="1">
                                         <option value="1"> One Quarter </option>
                                         <option value="2"> Two Quarters</option>
                                         <option value="3"> Three Quarters</option>
@@ -245,124 +241,84 @@
                                 </div>
                                 <div class="mb-3" style="width:100%">
                                     <label for="date">Starting Date:</label>
-                                    <input class="form-control validate" type="date"
-                                        class="startDate" id="date" name="date">
+                                    <input class="form-control validate" type="date" class="startDate" id="date"
+                                        name="date">
                                 </div>
                                 <hr />
-                                <label class="custom-control-label"
-                                    for="restOfRoomPref"><strong>Other
+                                <label class="custom-control-label" for="restOfRoomPref"><strong>Other
                                         Offerings:</strong></label>
                                 <div class="col-md-6">
                                     <div id="restOfRoomPref">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox"
-                                                class="custom-control-input" id="ownBath"
+                                            <input type="checkbox" class="custom-control-input" id="ownBath"
                                                 name="ownBath">
-                                            <label class="custom-control-label"
-                                                for="ownBath">Own
+                                            <label class="custom-control-label" for="ownBath">Own
                                                 Bathroom</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox"
-                                                class="custom-control-input" id="AC"
-                                                name="AC">
-                                            <label class="custom-control-label"
-                                                for="AC">In
+                                            <input type="checkbox" class="custom-control-input" id="AC" name="AC">
+                                            <label class="custom-control-label" for="AC">In
                                                 Unit
                                                 AC</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox"
-                                                class="custom-control-input" id="heating"
+                                            <input type="checkbox" class="custom-control-input" id="heating"
                                                 name="heating">
-                                            <label class="custom-control-label"
-                                                for="heating">Heating</label>
+                                            <label class="custom-control-label" for="heating">Heating</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox"
-                                                class="custom-control-input" id="laundry"
+                                            <input type="checkbox" class="custom-control-input" id="laundry"
                                                 name="laundry">
-                                            <label class="custom-control-label"
-                                                for="laundry">In
+                                            <label class="custom-control-label" for="laundry">In
                                                 Unit Laundry</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox"
-                                                class="custom-control-input" id="parking"
+                                            <input type="checkbox" class="custom-control-input" id="parking"
                                                 name="parking">
-                                            <label class="custom-control-label"
-                                                for="parking">Parking
+                                            <label class="custom-control-label" for="parking">Parking
                                                 Space</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox"
-                                                class="custom-control-input" id="pets"
-                                                name="pets">
-                                            <label class="custom-control-label"
-                                                for="pets">Pets
+                                            <input type="checkbox" class="custom-control-input" id="pets" name="pets">
+                                            <label class="custom-control-label" for="pets">Pets
                                                 Allowed</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox"
-                                                class="custom-control-input" id="busStop"
+                                            <input type="checkbox" class="custom-control-input" id="busStop"
                                                 name="busStop">
-                                            <label class="custom-control-label"
-                                                for="busStop">Near Bus
+                                            <label class="custom-control-label" for="busStop">Near Bus
                                                 Stop</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox"
-                                                class="custom-control-input" id="gym"
-                                                name="gym">
-                                            <label class="custom-control-label"
-                                                for="gym">Gym</label>
+                                            <input type="checkbox" class="custom-control-input" id="gym" name="gym">
+                                            <label class="custom-control-label" for="gym">Gym</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox"
-                                                class="custom-control-input" id="pool"
-                                                name="pool">
-                                            <label class="custom-control-label"
-                                                for="pool">Pool</label>
+                                            <input type="checkbox" class="custom-control-input" id="pool" name="pool">
+                                            <label class="custom-control-label" for="pool">Pool</label>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="mb-3" style="width:100%">
+                                    <label for="apartmentFeatures">Description of your
+                                        apartment</label>
+                                    <textarea name="apartmentFeatures" class="form-control" id="apartmentFeatures"
+                                        placeholder="What is awesome about your place"></textarea>
+                                    <div class="invalid-feedback">
+                                        Please enter a message in the text area.
+                                    </div>
+                                </div>
+
                                 <h4 style="margin-top:20px;">Upload Photo of your
                                     Apartment</h4>
                                 <div class="box">
                                     <div class="js--image-preview"></div>
                                     <div class="upload-options">
                                         <label>
-                                            <input type="file" class="image-upload"
-                                                accept="image/*" />
+                                            <input type="file" class="image-upload" accept="image/*" />
                                         </label>
                                     </div>
                                 </div>
-
-                                <div class="mb-3 col-md-12">
-                                    <label for="apartmentFeatures">Description of your
-                                        apartment</label>
-                                    <textarea name="apartmentFeatures"
-                                        class="form-control" id="apartmentFeatures"
-                                        placeholder="What is awesome about your place"
-                                        value="">
-                                        </textarea>
-                                    <small class="text-muted">Put more things
-                                        you
-                                        offer</small>
-                                    <div class="invalid-feedback">
-                                        Please enter a message in the text area.
-                                    </div>
-                                </div>
-                                <div class="mb-3 col-md-12">
-                                    <label for="description">Description About You</label>
-                                    <input type="description" class="form-control"
-                                        id="description" name="description"
-                                        placeholder="Tell them about you and your roommates ">
-                                    <div class="invalid-feedback">
-                                        Please enter description
-                                    </div>
-                                </div>
-
                             </div>
                             <hr class="mb-4">
 
@@ -370,37 +326,31 @@
 
                             <div class="d-block my-3 ">
                                 <div class="custom-control custom-radio">
-                                    <input id="late" type="radio"
-                                        class="custom-control-input" name="time"
-                                        checked="" required="">
+                                    <input id="late" type="radio" class="custom-control-input" name="time" checked=""
+                                        required="">
                                     <label class="custom-control-label" for="late">Night
                                         Owl</label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <input id="early" name="time" type="radio"
-                                        class="custom-control-input" required="">
+                                    <input id="early" name="time" type="radio" class="custom-control-input" required="">
                                     <label class="custom-control-label" for="early">Early
                                         Bird</label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <input id="noSleep" name="time" type="radio"
-                                        class="custom-control-input" required="">
-                                    <label class="custom-control-label"
-                                        for="noSleep">Legendary No
+                                    <input id="noSleep" name="time" type="radio" class="custom-control-input"
+                                        required="">
+                                    <label class="custom-control-label" for="noSleep">Legendary No
                                         Sleeper</label>
                                 </div>
                             </div>
                             <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input"
-                                    id="smoker" name="smoker">
-                                <label class="custom-control-label" for="smoker"> Ok
-                                    with Smoker</label>
+                                <input type="checkbox" class="custom-control-input" id="smoker" name="smoker">
+                                <label class="custom-control-label" for="smoker"> They are Ok with Smoker(s)</label>
                             </div>
                             <label class="custom-control-label" for="cleanness">
                                 Cleanliness
                             </label>
-                            <select class="custom-select custom-select-lg mb-3"
-                                id="cleanness" name="cleanness">
+                            <select class="custom-select custom-select-lg mb-3" id="cleanness" name="cleanness">
                                 <option value="1" selected>Messy</option>
                                 <option value="2">Kind of Clean</option>
                                 <option value="3">Neat Freak</option>
@@ -408,18 +358,15 @@
                             <div class="mb-3">
                                 <label for="roommatePreference">Other Roommate
                                     Preferences</label>
-                                <textarea class="form-control" name="roommatePreference"
-                                    id="roommatePreference" placeholder=""></textarea>
+                                <textarea class="form-control" name="roommatePreference" id="roommatePreference"
+                                    placeholder="Put more things you looking for in a roommate"></textarea>
                                 <div class="invalid-feedback">
                                     Please enter a message in the textarea.
                                 </div>
-                                <small class="text-muted">Put more things you
-                                    looking for in a roommate</small>
                             </div>
 
                             <hr class="mb-4">
-                            <button id="offerApartmentButton"
-                                class="btn btn-primary btn-lg btn-block"
+                            <button id="offerApartmentButton" class="btn btn-primary btn-lg btn-block"
                                 onclick="submitData()" type="button">Create
                                 Profile</button>
                             {{!-- <button class="btn btn-primary btn-lg btn-block" id="offerApartmentButton"
@@ -450,15 +397,12 @@
                         <h4 class="mb-3">Contact Info</h4>
                     </div>
                     <div class="col-md-8 order-md-1">
-                        <form class="needs-validation" novalidate="" role="form"
-                            method="get" id="formLooking">
+                        <form class="needs-validation" novalidate="" role="form" method="get" id="formLooking">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="userName">Name</label>
-                                    <input type="text"
-                                        class="form-control validateLooking"
-                                        id="userNamelooking" placeholder="input name here"
-                                        value="" required="" name="userNamelooking">
+                                    <input type="text" class="form-control validateLooking" id="userNamelooking"
+                                        placeholder="input name here" value="" required="" name="userNamelooking">
                                     <div class="invalid-feedback">
                                         Valid name is required.
                                     </div>
@@ -467,9 +411,8 @@
 
                             <div class="mb-3">
                                 <label for="email">Email</label>
-                                <input type="email" class="form-control validateLooking"
-                                    id="emaillooking" placeholder="you@ucsd.edu"
-                                    required="" name="emaillooking">
+                                <input type="email" class="form-control validateLooking" id="emaillooking"
+                                    placeholder="you@ucsd.edu" required="" name="emaillooking">
                                 <div class="invalid-feedback">
                                     Please enter a valid email
                                     address
@@ -477,10 +420,9 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="descriptionlooking">Description</label>
-                                <input type="description" class="form-control"
-                                    id="descriptionlooking" name="descriptionlooking"
-                                    placeholder="Add a short description of yourself here!">
+                                <label for="descriptionlooking">Describe Yourself</label>
+                                <textarea name="descriptionlooking" class="form-control" id="descriptionlooking"
+                                    placeholder="Add a short description of yourself here!"></textarea>
                                 <div class="invalid-feedback">
                                     Please enter description
                                 </div>
@@ -488,42 +430,32 @@
                                 <hr class="mb-4">
                                 <div class="row" style="margin: auto">
 
-                                    <div class="col-md-12">
+                                    <div style="width:100%">
                                         <h4 class="mb-3">Apartment Amentities You Want
                                         </h4>
                                     </div>
-                                    <label class="custom-control-label"
-                                        for="lookingroomSize"><strong>Room
+                                    <label class="custom-control-label" for="lookingroomSize"><strong>Room
                                             Size:</strong></label>
                                     <div class="col-md-6">
 
                                         <div class="d-block my-3" id="lookingroomSize">
 
                                             <div class="custom-control custom-checkbox">
-                                                <input type="checkbox"
-                                                    class="custom-control-input"
-                                                    id="lookinglivingRoom"
-                                                    name="lookinglivingRoom">
-                                                <label class="custom-control-label"
-                                                    for="lookinglivingRoom">Living
+                                                <input type="checkbox" class="custom-control-input"
+                                                    id="lookinglivingRoom" name="lookinglivingRoom">
+                                                <label class="custom-control-label" for="lookinglivingRoom">Living
                                                     Room</label>
                                             </div>
                                             <div class="custom-control custom-checkbox">
-                                                <input type="checkbox"
-                                                    class="custom-control-input"
-                                                    id="lookingsingleRoom"
-                                                    name="lookingsingleRoom">
-                                                <label class="custom-control-label"
-                                                    for="lookingsingleRoom">Single
+                                                <input type="checkbox" class="custom-control-input"
+                                                    id="lookingsingleRoom" name="lookingsingleRoom">
+                                                <label class="custom-control-label" for="lookingsingleRoom">Single
                                                     Room</label>
                                             </div>
                                             <div class="custom-control custom-checkbox">
-                                                <input type="checkbox"
-                                                    class="custom-control-input"
-                                                    id="lookingdoubleRoom"
-                                                    name="lookingdoubleRoom">
-                                                <label class="custom-control-label"
-                                                    for="lookingdoubleRoom">Double
+                                                <input type="checkbox" class="custom-control-input"
+                                                    id="lookingdoubleRoom" name="lookingdoubleRoom">
+                                                <label class="custom-control-label" for="lookingdoubleRoom">Double
                                                     Room</label>
                                             </div>
 
@@ -535,31 +467,22 @@
 
                                         <div class="d-block my-3" id="genderLooking">
                                             <div class="custom-control custom-radio">
-                                                <input id="lookingmale"
-                                                    name="genderLooking" type="radio"
-                                                    class="custom-control-input"
-                                                    required="">
-                                                <label class="custom-control-label"
-                                                    for="lookingmale">Male
+                                                <input id="lookingmale" name="genderLooking" type="radio"
+                                                    class="custom-control-input" required="">
+                                                <label class="custom-control-label" for="lookingmale">Male
                                                     Apartment</label>
                                             </div>
                                             <div class="custom-control custom-radio">
-                                                <input id="lookingfemale"
-                                                    name="genderLooking" type="radio"
-                                                    class="custom-control-input"
-                                                    checked="" required="">
-                                                <label class="custom-control-label"
-                                                    for="lookingfemale">Female
+                                                <input id="lookingfemale" name="genderLooking" type="radio"
+                                                    class="custom-control-input" checked="" required="">
+                                                <label class="custom-control-label" for="lookingfemale">Female
                                                     Apartment</label>
                                             </div>
 
                                             <div class="custom-control custom-radio">
-                                                <input id="lookingcoed"
-                                                    name="genderLooking" type="radio"
-                                                    class="custom-control-input"
-                                                    checked="" required="">
-                                                <label class="custom-control-label"
-                                                    for="lookingcoed">Coed
+                                                <input id="lookingcoed" name="genderLooking" type="radio"
+                                                    class="custom-control-input" checked="" required="">
+                                                <label class="custom-control-label" for="lookingcoed">Coed
                                                     Apartment</label>
                                             </div>
                                         </div>
@@ -568,104 +491,76 @@
                                         <label for="minRent">Rent Per
                                             Month
                                             Min</label>
-                                        <input type="rent"
-                                            class="form-control validateLooking"
-                                            id="minRent" name="minRent" placeholder="Min"
-                                            required="">
+                                        <input type="rent" class="form-control validateLooking" id="minRent"
+                                            name="minRent" placeholder="Min" required="">
                                         <div class="invalid-feedback">
                                             Please enter a Min Price
                                         </div>
                                         <label for="maxRent">Rent Per
                                             Month
                                             Max</label>
-                                        <input type="rent"
-                                            class="form-control validateLooking"
-                                            id="maxRent" name="maxRent" placeholder="Max"
-                                            required="">
+                                        <input type="rent" class="form-control validateLooking" id="maxRent"
+                                            name="maxRent" placeholder="Max" required="">
                                         <div class="invalid-feedback">
                                             Please enter a Max Price
                                         </div>
                                     </div>
-                                    <label class="custom-control-label"
-                                        for="restOfRoomPreflooking"><strong>Other
+                                    <label class="custom-control-label" for="restOfRoomPreflooking"><strong>Other
                                             Amentities:</strong></label>
                                     <div class="col-md-6">
                                         <div id="restOfRoomPreflooking">
                                             <div class="custom-control custom-checkbox">
-                                                <input type="checkbox"
-                                                    class="custom-control-input"
-                                                    id="ownBathlooking"
+                                                <input type="checkbox" class="custom-control-input" id="ownBathlooking"
                                                     name="ownBathlooking">
-                                                <label class="custom-control-label"
-                                                    for="ownBathlooking">Own
+                                                <label class="custom-control-label" for="ownBathlooking">Own
                                                     Bathroom</label>
                                             </div>
                                             <div class="custom-control custom-checkbox">
-                                                <input type="checkbox"
-                                                    class="custom-control-input"
-                                                    id="AClooking" name="AClooking">
-                                                <label class="custom-control-label"
-                                                    for="AClooking">In
+                                                <input type="checkbox" class="custom-control-input" id="AClooking"
+                                                    name="AClooking">
+                                                <label class="custom-control-label" for="AClooking">In
                                                     Unit
                                                     AC</label>
                                             </div>
                                             <div class="custom-control custom-checkbox">
-                                                <input type="checkbox"
-                                                    class="custom-control-input"
-                                                    id="heatinglooking"
+                                                <input type="checkbox" class="custom-control-input" id="heatinglooking"
                                                     name="heatinglooking">
-                                                <label class="custom-control-label"
-                                                    for="heatinglooking">Heating</label>
+                                                <label class="custom-control-label" for="heatinglooking">Heating</label>
                                             </div>
                                             <div class="custom-control custom-checkbox">
-                                                <input type="checkbox"
-                                                    class="custom-control-input"
-                                                    id="laundrylooking"
+                                                <input type="checkbox" class="custom-control-input" id="laundrylooking"
                                                     name="laundrylooking">
-                                                <label class="custom-control-label"
-                                                    for="laundrylooking">In
+                                                <label class="custom-control-label" for="laundrylooking">In
                                                     Unit Laundry</label>
                                             </div>
                                             <div class="custom-control custom-checkbox">
-                                                <input type="checkbox"
-                                                    class="custom-control-input"
-                                                    id="parkinglooking"
+                                                <input type="checkbox" class="custom-control-input" id="parkinglooking"
                                                     name="parkinglooking">
-                                                <label class="custom-control-label"
-                                                    for="parkinglooking">Parking
+                                                <label class="custom-control-label" for="parkinglooking">Parking
                                                     Space</label>
                                             </div>
                                             <div class="custom-control custom-checkbox">
-                                                <input type="checkbox"
-                                                    class="custom-control-input"
-                                                    id="petslooking" name="petslooking">
-                                                <label class="custom-control-label"
-                                                    for="petslooking">Pets
+                                                <input type="checkbox" class="custom-control-input" id="petslooking"
+                                                    name="petslooking">
+                                                <label class="custom-control-label" for="petslooking">Pets
                                                     Allowed</label>
                                             </div>
                                             <div class="custom-control custom-checkbox">
-                                                <input type="checkbox"
-                                                    class="custom-control-input"
-                                                    id="busStoplooking"
+                                                <input type="checkbox" class="custom-control-input" id="busStoplooking"
                                                     name="busStoplooking">
-                                                <label class="custom-control-label"
-                                                    for="busStoplooking">Near
+                                                <label class="custom-control-label" for="busStoplooking">Near
                                                     Bus
                                                     Stop</label>
                                             </div>
                                             <div class="custom-control custom-checkbox">
-                                                <input type="checkbox"
-                                                    class="custom-control-input"
-                                                    id="gymlooking" name="gymlooking">
-                                                <label class="custom-control-label"
-                                                    for="gymlooking">Gym</label>
+                                                <input type="checkbox" class="custom-control-input" id="gymlooking"
+                                                    name="gymlooking">
+                                                <label class="custom-control-label" for="gymlooking">Gym</label>
                                             </div>
                                             <div class="custom-control custom-checkbox">
-                                                <input type="checkbox"
-                                                    class="custom-control-input"
-                                                    id="poollooking" name="poollooking">
-                                                <label class="custom-control-label"
-                                                    for="poollooking">Pool</label>
+                                                <input type="checkbox" class="custom-control-input" id="poollooking"
+                                                    name="poollooking">
+                                                <label class="custom-control-label" for="poollooking">Pool</label>
                                             </div>
                                         </div>
                                     </div>
@@ -676,46 +571,36 @@
 
                                 <div class="d-block my-3 ">
                                     <div class="custom-control custom-radio">
-                                        <input id="latelooking" name="timelooking"
-                                            type="radio" class="custom-control-input"
-                                            checked="" required="">
-                                        <label class="custom-control-label"
-                                            for="latelooking">Night
+                                        <input id="latelooking" name="timelooking" type="radio"
+                                            class="custom-control-input" checked="" required="">
+                                        <label class="custom-control-label" for="latelooking">Night
                                             Owl</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input id="earlylooking" name="timelooking"
-                                            type="radio" class="custom-control-input"
-                                            required="">
-                                        <label class="custom-control-label"
-                                            for="earlylooking">Early
+                                        <input id="earlylooking" name="timelooking" type="radio"
+                                            class="custom-control-input" required="">
+                                        <label class="custom-control-label" for="earlylooking">Early
                                             Bird</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input id="noSleeplooking" name="timelooking"
-                                            type="radio" class="custom-control-input"
-                                            required="">
-                                        <label class="custom-control-label"
-                                            for="noSleeplooking">Legendary
-                                            No
-                                            Sleeper</label>
+                                        <input id="noSleeplooking" name="timelooking" type="radio"
+                                            class="custom-control-input" required="">
+                                        <label class="custom-control-label" for="noSleeplooking">Legendary
+                                            No Sleeper</label>
                                     </div>
                                 </div>
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input"
-                                        id="smokerlooking" name="smokerlooking">
-                                    <label class="custom-control-label"
-                                        for="smokerlooking">
-                                        Ok
-                                        with Smoker</label>
+                                    <input type="checkbox" class="custom-control-input" id="smokerlooking"
+                                        name="smokerlooking">
+                                    <label class="custom-control-label" for="smokerlooking">
+                                        I'm Ok With Smoker(s)</label>
                                 </div>
-                                <label class="custom-control-label"
-                                    for="cleannesslooking">
+                                <label class="custom-control-label" for="cleannesslooking">
                                     Cleanliness
                                 </label>
-                                <select class="custom-select custom-select-lg mb-3"
-                                    id="cleannesslooking" name="cleannesslooking">
-                                    <option value="1" selected>Messy
+                                <select class="custom-select custom-select-lg mb-3" id="cleannesslooking"
+                                    name="cleannesslooking">
+                                    <option value="1" selected> Messy
                                     </option>
                                     <option value="2">Kind of Clean
                                     </option>
@@ -729,8 +614,7 @@
                                 {{!-- <button class="btn btn-primary btn-lg btn-block"
                                 id="lookingApartmentButton" type="submit">Create
                                 Profile</button> --}}
-                                <button id="lookingApartmentButton"
-                                    class="btn btn-primary btn-lg btn-block"
+                                <button id="lookingApartmentButton" class="btn btn-primary btn-lg btn-block"
                                     onclick="submitLookingData()" type="button">Create
                                     Profile</button>
                                 <div class="incompleteErrorMsg"> Please complete required
@@ -745,6 +629,9 @@
 {{!-- javascript --}}
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="../js/google.js"></script>
+<script src="../js/back.js"></script>
+<script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
 <script
     src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script>
 <script>function initImageUpload(box) {
@@ -771,9 +658,9 @@
         function checkType(file) {
             let imageType = /image.*/;
             if (!file.type.match(imageType)) {
-                throw 'Datei ist kein Bild';
+                throw 'reee';
             } else if (!file) {
-                throw 'Kein Bild gewählt';
+                throw 'woah';
             } else {
                 previewImage(file);
             }

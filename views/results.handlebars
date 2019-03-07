@@ -1,23 +1,82 @@
 <html>
 
 <head>
+
+	<script src="../js/back.js"></script>
+	<!-- Google Analytics Content Experiment code -->
+	<script>function utmx_section() { } function utmx() { } (function () {
+			var k = '190352116-1', d = document, l = d.location, c = d.cookie;
+			if (l.search.indexOf('utm_expid=' + k) > 0) return;
+			function f(n) {
+				if (c) {
+					var i = c.indexOf(n + '='); if (i > -1) {
+						var j = c.
+							indexOf(';', i); return escape(c.substring(i + n.length + 1, j < 0 ? c.
+								length : j))
+					}
+				}
+			} var x = f('__utmx'), xx = f('__utmxx'), h = l.hash; d.write(
+				'<sc' + 'ript src="' + 'http' + (l.protocol == 'https:' ? 's://ssl' :
+					'://www') + '.google-analytics.com/ga_exp.js?' + 'utmxkey=' + k +
+				'&utmx=' + (x ? x : '') + '&utmxx=' + (xx ? xx : '') + '&utmxtime=' + new Date().
+					valueOf() + (h ? '&utmxhash=' + escape(h.substr(1)) : '') +
+				'" type="text/javascript" charset="utf-8"><\/sc' + 'ript>')
+		})();
+	</script>
+	<script>utmx('url', 'A/B');</script>
+	<!-- End of Google Analytics Content Experiment code -->
+
+
+	<!-- Google Analytics -->
+	<script>
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date(); a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+		ga('create', 'UA-134959338-1', 'auto');
+		ga('send', 'pageview');
+		var startTime = new Date().getTime();
+
+		setTimeout(myCallback, 200);
+
+		function myCallback(event) {
+
+			var endTime = new Date().getTime();
+			var timeSpent = endTime - startTime;
+			ga("send", "Duration", "timeSpent", timeSpent);
+			//_gaq.push(['_trackTiming', 'Duration', 'callback_timeout', timeSpent, 'animation']);
+		}
+	</script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-134959338-1', { 'optimize_id': 'GTM-WZV88MF' });
+	</script>
+
+	<!-- End Google Analytics -->
 	<title>Results</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="../css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="../css/main.css" rel="stylesheet">
-	<link rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	{{!--
 	<link href="/css/introHCI.css" rel="stylesheet"> --}}
 </head>
 
 <body>
 	<header>
+		<div class="row">
+			<button class="btn btn-link btn-lg" style="width:50%;" onclick="goBack()">Back</button>
+			<button class="btn btn-link btn-lg" style="width:50%;" onclick="signOutTest()">Sign
+				Out</button>
+		</div>
 		<div class="nav-container">
-
-			<!-- INSERT LOGO/IMAGE HERE -->
 			<h2>FindARoommate</h2>
 			<nav>
 				<ul>
@@ -44,8 +103,7 @@
 			<div class="search">
 				<form action="/results">
 					<div>
-						<input type="text" class="searchTerm" name="search"
-							placeholder="Search Area...">
+						<input type="text" class="searchTerm" name="search" placeholder="Search Area...">
 						<a href="/results">
 							<button type="submit" class="searchButton">
 								<i class="fa fa-search"></i>
@@ -56,8 +114,7 @@
 					<div style="" class="row startingDateRow">
 						<div style="margin-bottom:10px;">
 							<label for="date">Starting Date:</label>
-							<input style="" type="date" class="startDate" id="date"
-								name="date">
+							<input style="" type="date" class="startDate" id="date" name="date">
 							<button class="accordion" type="button">
 								Preferences</button>
 
@@ -98,12 +155,12 @@
 								<div class="col-md-12 mb-3">
 									<label for="minRent">
 										Min Rent</label>
-									<input type="rent" class="form-control" id="minRent"
-										name="minRent" placeholder="Min">
+									<input type="rent" class="form-control" id="minRent" name="minRent"
+										placeholder="Min">
 									<label for="maxRent">
 										Max Rent</label>
-									<input type="rent" class="form-control" id="maxRent"
-										name="maxRent" placeholder="Max">
+									<input type="rent" class="form-control" id="maxRent" name="maxRent"
+										placeholder="Max">
 								</div>
 							</div>
 						</div>

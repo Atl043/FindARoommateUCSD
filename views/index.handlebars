@@ -4,20 +4,21 @@
 	<title>Home</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="../js/back.js"></script>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="css/main.css" rel="stylesheet">
-	<link rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	{{!--
-	<link href="/css/introHCI.css" rel="stylesheet"> --}}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
 	<header>
+		<div class="row">
+			<button class="btn btn-link btn-lg" style="width:50%;" onclick="goBack()">Back</button>
+			<button class="btn btn-link btn-lg" style="width:50%;" onclick="signOutTest()">Sign
+				Out</button>
+		</div>
 		<div class="nav-container">
-
-			<!-- INSERT LOGO/IMAGE HERE -->
 			<h2>FindARoommate</h2>
 			<nav>
 				<ul>
@@ -45,8 +46,7 @@
 			<div class="search">
 				<form action="/results">
 					<div>
-						<input type="text" class="searchTerm" name="search"
-							placeholder="Search Area...">
+						<input type="text" class="searchTerm" name="search" placeholder="Search Area...">
 						<a href="/results">
 							<button type="submit" class="searchButton">
 								<i class="fa fa-search"></i>
@@ -57,8 +57,7 @@
 					<div style="" class="row startingDateRow">
 						<div>
 							<label for="date">Starting Date:</label>
-							<input style="" type="date" class="startDate" id="date"
-								name="date">
+							<input style="" type="date" class="startDate" id="date" name="date">
 							<button class="accordion" type="button">
 								Preferences</button>
 
@@ -89,21 +88,21 @@
 									<input type="checkbox" name="offering_apartment">
 									<span class="checkmark"></span>
 								</label>
-								
+
 								<label class="checkboxContainer">Looking for Apartment
 									<input type="checkbox" name="lookingfor_apartment">
 									<span class="checkmark"></span>
 								</label>
-								
+
 								<div class="col-md-12 mb-3">
 									<label for="minRent">
 										Min Rent</label>
-									<input type="rent" class="form-control" id="minRent"
-										name="minRent" placeholder="Min">
+									<input type="rent" class="form-control" id="minRent" name="minRent"
+										placeholder="Min">
 									<label for="maxRent">
 										Max Rent</label>
-									<input type="rent" class="form-control" id="maxRent"
-										name="maxRent" placeholder="Max">
+									<input type="rent" class="form-control" id="maxRent" name="maxRent"
+										placeholder="Max">
 								</div>
 							</div>
 						</div>
@@ -128,10 +127,11 @@
 							Save button?
 						</div> --}}
 						{{!-- <p style="font-size:12px;">{{otherapartmentNotes}}</p> --}}
-						
+
 					</div>
 					<div class="col-9">
-						<img style="width:100%;border-radius:10px;max-height:200px;margin-bottom:5px;margin-top:5px;" src="{{aptimgurl}}">
+						<img style="width:100%;border-radius:10px;max-height:200px;margin-bottom:5px;margin-top:5px;"
+							src="{{aptimgurl}}">
 					</div>
 				</div>
 			</a>

@@ -7,36 +7,41 @@
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="../css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="../css/main.css" rel="stylesheet">
-	<link rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	{{!--
 	<link href="/css/introHCI.css" rel="stylesheet"> --}}
+	<script src="../js/back.js"></script>
 </head>
 
 <body>
 	<header>
+		<div class="row">
+			<button class="btn btn-link btn-lg" style="width:50%;" onclick="goBack()">Back</button>
+			<button class="btn btn-link btn-lg" style="width:50%;" onclick="signOutTest()">Sign
+				Out</button>
+		</div>
 		<div class="nav-container">
-
-			<!-- INSERT LOGO/IMAGE HERE -->
 			<h2>FindARoommate</h2>
 			<nav>
 				<ul>
 					<li><a href="/index">Home</a></li>
 					<li><a href="/user">My Profile</a></li>
 					<li><a href="/settings">Settings</a></li>
-					<!-- PLACEHOLDER LINK FOR SETTINGS PAGE (change '#' to '/settings') -->
 				</ul>
 			</nav>
 		</div>
 	</header>
 
 
-	<div class="user_body">
-		<div id="profile-search-btn">
+	<div class="user_body row">
+		<div id="profile-search-btn" style="width:33%">
 			<a href="/index" style="">Go Search</a>
-			<hr>
-			</hr>
+		</div>
+		<div id="profile-search-btn" style="width:33%">
 			<a href="/createProfile">Edit Profile</a>
+		</div>
+		<div id="profile-search-btn" style="width:33%">
+			<a href="/saved">Saved</a>
 		</div>
 
 	</div>
