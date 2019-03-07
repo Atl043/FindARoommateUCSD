@@ -38,3 +38,11 @@ exports.viewProfile = function (req, res) {
         'otherroommateNotes': data[id][0].otherroommateNotes
     });
 };
+
+exports.addSaved = function (request, response) {
+    var rsvpEmail = request.body.rsvpEmail;
+    console.log(rsvpEmail);
+    data.rsvp.push(rsvpEmail);
+
+    response.send(rsvpEmail);
+};
