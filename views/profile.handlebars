@@ -31,8 +31,8 @@
 				<ul>
 					{{!-- <li><button class="btn btn-link btn-lg" style="width:50%;" onclick="goBack()"><img class="icon" src="images/icons/back.png"></img></button></li> --}}
 					<li><a onclick="goBack()"><img class="icon" src="../images/icons/back.png"></img></a></li>
-					<li><a href="/index"><img class="icon" src="../images/icons/home.png"></a></li>
 					<li><a href="/user"><img class="icon" src="../images/icons/user.png"></a></li>
+					<li><a href="/index"><img class="icon" src="../images/icons/home.png"></a></li>
 					<li><a href="/settings"><img class="icon" src="../images/icons/settings.png"></a></li>
 					<li><a onclick="signOutTest()" role="button"><img class="icon" src="../images/icons/signout.png"></img></button></li>
 					<!-- PLACEHOLDER LINK FOR SETTINGS PAGE (change '#' to '/settings') -->
@@ -191,7 +191,6 @@
 					<button class="btn btn-primary btn-lg" id="save_btn" onclick="saveProfile(1)">
 						Save</button>
 				</div>
-<<<<<<< HEAD
 				{{!-- <div style="text-align:center">
 					<a href="mailto:{{email}}" role="button"><img style="height:50px;width:50px;" class="icon" src="../images/icons/email.png"></img></a>
 					<a id="save_btn" onclick="saveProfile()"><img style="height:50px;width:50px;" class="icon" src="../images/icons/save.png"></img></a>
@@ -199,8 +198,6 @@
 
 				{{!-- <p class="card-text"><small class="text-muted">Last updated 3 mins
 						ago</small></p> --}}
-=======
->>>>>>> 61a05862f6296bb2d69554f660327d78a0c39855
 			</div>
 		</div>
 		{{!-- end of person profile --}}
@@ -224,7 +221,6 @@
 		str = str.substring(9);
 		console.log(str)
 		json = {
-<<<<<<< HEAD
 		'id':id,
         'name': name,
         'email': email,
@@ -251,9 +247,7 @@
         'smokersetting': smokersetting,
         'cleanliness': cleanliness,
         'otherroommateNotes': otherroommateNotes
-=======
 			'id': str
->>>>>>> 61a05862f6296bb2d69554f660327d78a0c39855
 		}
 		$.post('addSaved', { 'id': str });
 		alert("rsvp form successfully submitted");
