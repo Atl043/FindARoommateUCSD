@@ -71,6 +71,7 @@ app.get('/settings', settings.viewSettings);
 app.get('/createProfile', createProfile.viewCreateProfile);
 app.get('/resultsAlt', resultsAlt.viewResults);
 app.get('/saved', saved.viewSaved);
+app.post('/addSaved', profile.addSaved)
 // Example route
 // app.get('/users', user.list);
 

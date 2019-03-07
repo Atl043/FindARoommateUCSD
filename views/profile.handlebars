@@ -12,10 +12,8 @@
 	<link href="/css/introHCI.css" rel="stylesheet"> --}}
 	<script src="../js/back.js"></script>
 	<script src="/js/mapQuest.js"></script>
-	
-
 	<script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
-	<link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+	<link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
 
 
 </head>
@@ -39,16 +37,7 @@
 			</nav>
 		</div>
 	</header>
-
-
-	{{!-- Top Title
-	<div id="topTitle" class="top">
-		<a href="/"> <b>Find a Roommate</b> </a>
-		<hr style="height:1px;border:none;color:#333;background-color:#333;">
-	</div> --}}
-	{{!-- <hr style="height:1px;border:none;color:#333;background-color:#333;"> --}}
-	{{!-- end of top title --}}
-	<div class="container">
+	<div class="container" style="margin: 5px">
 		{{!-- Search Bar --}}
 		<div class="searchbar" id="search">
 			<div class="">
@@ -195,28 +184,12 @@
 				<div style="text-align:center">
 					<a href="mailto:{{email}}" class="btn btn-primary btn-lg" style="" tabindex="-1" role="button"
 						aria-disabled="true">Email Me</a>
-					<button class="btn btn-primary btn-lg" id="save_btn" onclick="saveProfile({{id}},{{name}},{{zip}},{{date}},{{aptimgurl}},{{imgURL}},{{rent}},{{address}},{{gender}},{{ownBath}},{{AC}},{{heating}},{{laundry}},{{parking}},{{pets}},{{bus}},{{gym}},{{pool}},{{email}},{{otherroommateNotes}},{{otherapartmentNotes}},{{description}},{{roomsize}},{{cleanliness}},{{timeofday}},{{smokersetting}})">Save</button>
+					<button class="btn btn-primary btn-lg" id="save_btn" onclick="saveProfile(1)">
+						Save</button>
 				</div>
-
-				{{!-- <p class="card-text"><small class="text-muted">Last updated 3 mins
-						ago</small></p> --}}
 			</div>
 		</div>
 		{{!-- end of person profile --}}
-
-		{{!-- start of map --}}
-		{{!-- <div class="">
-			<div class="mapouter">
-				<div class="gmap_canvas">
-					<iframe width="600" height="500" id="gmap_canvas"
-						src="https://maps.google.com/maps?q=la%20scalla&t=&z=13&ie=UTF8&iwloc=&output=embed"
-						frameborder="0" scrolling="no" marginheight="0"
-						marginwidth="0">
-					</iframe>
-				</div>
-			</div>
-		</div> --}}
-		{{!-- end of map --}}
 	</div>
 </body>
 {{!-- javascript --}}
@@ -225,44 +198,23 @@
 <script src="../js/accordian.js"></script>
 <script src="../js/save.js"></script>
 <script>
-	$(document).ready(function() {
-    initMap();
-})
+	$(document).ready(function () {
+		initMap();
+	})
 </script>
 {{!-- THIS SCRIPT IS FOR SAVING PROFILES - SET UP TO SAVE TO LOCAL STORAGE --}}
 <script>
-	function saveProfile(id,name,zip,date,aptimgurl,imgurl,rent,address,gender,own_bath,ac,heating,laundry,parking,pets,bus,gym,pool,email,roommateNotes,aptNotes,description,roomsize,cleanliness,timeofday,smokersetting) {
+	function saveProfile() {
+		let str = window.location.pathname;
+		// gets current id
+		str = str.substring(9);
+		console.log(str)
 		json = {
-		'id':id,
-        'name': name.
-        'email': email,
-        'imgurl': imgurl,
-        'aptimgurl': aptimgurl,
-        'address': address,
-        'zip': zip,
-        'date': date,
-        'description': description,
-        'roomsize': roomsize,
-        'gender': gender,
-        'rent': rent,
-        'ownBath': ownBath,
-        'AC': AC,
-        'heating': heating,
-        'laundry': laundry,
-        'parking': parking,
-        'pets': pets,
-        'bus': bus,
-        'gym': gym,
-        'pool': pool,
-        'otherapartmentNotes': otherapartmentNotes,
-        'timeofday': timeofday,
-        'smokersetting': smokersetting,
-        'cleanliness': cleanliness,
-        'otherroommateNotes': otherroommateNotes
+			'id': str
 		}
-		console.log(json)
+		$.post('addSaved', { 'id': str });
+		alert("rsvp form successfully submitted");
 	}
 </script>
-
 
 </html>

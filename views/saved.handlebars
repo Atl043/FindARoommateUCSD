@@ -34,13 +34,37 @@
 			</nav>
 		</div>
 	</header>
+	<div style="text-align:center">
+		<h3> Favorited Apartments</h3>
+	</div>
+	{{!-- start of apartment that can load --}}
+	<div style="margin-top: 1em" class="container">
+		{{#each apartments}}
+		<div class="container-prof">
+			<a href="/profile/{{id}}">
+				<div class="row">
+					<div class="col-3" style="color:black;">
 
-THIS IS THE FAVOURITES PAGE
+						&#9733;
+						<img id="apt-img" src="{{imgurl}}">
+						<h4>{{name}}, ${{rent}}/month</h4>
+						<h3>{{roomsize}}</h3>
+						<h3 style="font-size:12px;">{{zip}}</h3>
+						{{!-- <div style="height:50px;width:80px;background-color:blue;">
+							Save button?
+						</div> --}}
+						{{!-- <p style="font-size:12px;">{{otherapartmentNotes}}</p> --}}
 
-{{!-- LOAD PROFILES FROM SAVED DATA JSON / LOCAL STORAGE HERE --}}
-
-
-
+					</div>
+					<div class="col-9">
+						<img style="width:100%;border-radius:10px;max-height:200px;margin-bottom:5px;margin-top:5px;"
+							src="{{aptimgurl}}">
+					</div>
+				</div>
+			</a>
+		</div>
+		{{/each}}
+	</div>
 </body>
 {{!-- javascript --}}
 <script src="https://code.jquery.com/jquery.js"></script>

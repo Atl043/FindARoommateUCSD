@@ -1,0 +1,72 @@
+<html>
+
+<head>
+
+    <script src="../js/back.js"></script>
+    <title>Views</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {{!--
+	<link href="/css/introHCI.css" rel="stylesheet"> --}}
+</head>
+
+<body>
+    <header>
+        <div class="row">
+            <button class="btn btn-link btn-lg" style="width:50%;" onclick="goBack()">Back</button>
+            <button class="btn btn-link btn-lg" style="width:50%;" onclick="signOutTest()">Sign
+                Out</button>
+        </div>
+        <div class="nav-container">
+            <h2>FindARoommate</h2>
+            <nav>
+                <ul>
+                    <li><a href="/index">Home</a></li>
+                    <li><a href="/user">My Profile</a></li>
+                    <li><a href="/settings">Settings</a></li>
+                    <!-- PLACEHOLDER LINK FOR SETTINGS PAGE (change '#' to '/settings') -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        {{!-- start of apartment that can load --}}
+        <div style="margin-top: 1em">
+            {{#each apartments}}
+            <div class="container-prof">
+                <a href="/profile/{{id}}">
+                    <div class="row" style="">
+                        <div class="col-3" style="color:black;">
+                            <img id="apt-img" src="{{imgurl}}">
+                            <h4>{{name}}, ${{rent}}/month</h4>
+                            <h3>{{roomsize}}</h3>
+                            <h3 style="font-size:12px;">{{zip}}</h3>
+                            {{!-- <div style="height:50px;width:80px;background-color:blue;">
+							Save button?
+						</div> --}}
+                            {{!-- <p style="font-size:12px;">{{otherapartmentNotes}}</p> --}}
+
+                        </div>
+                        <div class="col-9">
+                            <img style="width:100%;border-radius:10px;max-height:200px;margin-bottom:5px;margin-top:5px;"
+                                src="{{aptimgurl}}">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {{/each}}
+        </div>
+        {{!-- End of "Showing Results" and "back" --}}
+    </div>
+</body>
+{{!-- javascript --}}
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/accordian.js"></script>
+
+</html>
