@@ -497,6 +497,10 @@ body{
   border-color:black;
 }
 
+/* .icon {
+  height:10%;
+  width:25%;
+} */
 .startingDateRow{
   display:inline-block;
   margin-top: 1em;
@@ -733,7 +737,7 @@ nav ul {
 }
 
 nav li {
-  width:30%;
+  width:19%;
   /* font-weight: bold; */
   display:inline-block;
   /* margin-left:50px; */

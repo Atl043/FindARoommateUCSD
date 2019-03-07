@@ -22,21 +22,25 @@
 
 <body>
 	<header>
-		<div class="row">
-			<button class="btn btn-link btn-lg" style="width:50%;" onclick="goBack()">Back</button>
-			<button class="btn btn-link btn-lg" style="width:50%;" onclick="signOutTest()">Sign
-				Out</button>
-		</div>
+		{{!-- <div class="row">
+            <button class="btn btn-link btn-lg" style="width:50%;" onclick="goBack()">Back</button>
+            <button class="btn btn-link btn-lg" style="width:50%;" onclick="signOutTest()">Sign
+                Out</button>
+	</div> --}}
 		<div class="nav-container">
-			<h2>FindARoommate</h2>
+			{{!-- <h2>FindARoommate</h2> --}}
 			<nav>
 				<ul>
-					<li><a href="/index">Home</a></li>
-					<li><a href="/user">My Profile</a></li>
-					<li><a href="/settings">Settings</a></li>
+					{{!-- <li><button class="btn btn-link btn-lg" style="width:50%;" onclick="goBack()"><img class="icon" src="images/icons/back.png"></img></button></li> --}}
+					<li><a onclick="goBack()"><img class="icon" src="../images/icons/back.png"></img></a></li>
+					<li><a href="/index"><img class="icon" src="../images/icons/home.png"></a></li>
+					<li><a href="/user"><img class="icon" src="../images/icons/user.png"></a></li>
+					<li><a href="/settings"><img class="icon" src="../images/icons/settings.png"></a></li>
+					<li><a onclick="signOutTest()" role="button"><img class="icon" src="../images/icons/signout.png"></img></button></li>
 					<!-- PLACEHOLDER LINK FOR SETTINGS PAGE (change '#' to '/settings') -->
 				</ul>
 			</nav>
+
 		</div>
 	</header>
 
@@ -197,6 +201,10 @@
 						aria-disabled="true">Email Me</a>
 					<button class="btn btn-primary btn-lg" id="save_btn" onclick="saveProfile({{id}},{{name}},{{zip}},{{date}},{{aptimgurl}},{{imgURL}},{{rent}},{{address}},{{gender}},{{ownBath}},{{AC}},{{heating}},{{laundry}},{{parking}},{{pets}},{{bus}},{{gym}},{{pool}},{{email}},{{otherroommateNotes}},{{otherapartmentNotes}},{{description}},{{roomsize}},{{cleanliness}},{{timeofday}},{{smokersetting}})">Save</button>
 				</div>
+				{{!-- <div style="text-align:center">
+					<a href="mailto:{{email}}" role="button"><img style="height:50px;width:50px;" class="icon" src="../images/icons/email.png"></img></a>
+					<a id="save_btn" onclick="saveProfile()"><img style="height:50px;width:50px;" class="icon" src="../images/icons/save.png"></img></a>
+				</div> --}}
 
 				{{!-- <p class="card-text"><small class="text-muted">Last updated 3 mins
 						ago</small></p> --}}
@@ -234,7 +242,7 @@
 	function saveProfile(id,name,zip,date,aptimgurl,imgurl,rent,address,gender,own_bath,ac,heating,laundry,parking,pets,bus,gym,pool,email,roommateNotes,aptNotes,description,roomsize,cleanliness,timeofday,smokersetting) {
 		json = {
 		'id':id,
-        'name': name.
+        'name': name,
         'email': email,
         'imgurl': imgurl,
         'aptimgurl': aptimgurl,
