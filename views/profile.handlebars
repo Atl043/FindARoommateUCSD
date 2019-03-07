@@ -7,17 +7,20 @@
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="../css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="../css/main.css" rel="stylesheet">
-	<link rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	{{!--
 	<link href="/css/introHCI.css" rel="stylesheet"> --}}
+	<script src="../js/back.js"></script>
 </head>
 
 <body>
 	<header>
+		<div class="row">
+			<button class="btn btn-link btn-lg" style="width:50%;" onclick="goBack()">Back</button>
+			<button class="btn btn-link btn-lg" style="width:50%;" onclick="signOutTest()">Sign
+				Out</button>
+		</div>
 		<div class="nav-container">
-
-			<!-- INSERT LOGO/IMAGE HERE -->
 			<h2>FindARoommate</h2>
 			<nav>
 				<ul>
@@ -44,8 +47,7 @@
 			<div class="">
 				<div class="search">
 					<div>
-						<input type="text" class="searchTerm" name="search"
-							placeholder="Search Area...">
+						<input type="text" class="searchTerm" name="search" placeholder="Search Area...">
 						<a href="/results">
 							<button type="submit" class="searchButton">
 								<i class="fa fa-search"></i>
@@ -107,11 +109,9 @@
 		{{!-- End of Name--}}
 		{{!-- start of Apartment photos --}}
 		<div class="apartment-container" style="margin:10px">
-			<div id="carouselExampleIndicators" class="carousel slide"
-				data-ride="carousel">
+			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 				<ol class="carousel-indicators">
-					<li data-target="#carouselExampleIndicators" data-slide-to="0"
-						class="active">
+					<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
 					</li>
 					{{#each images}}
 					<li data-target="#carouselExampleIndicators" data-slide-to="{{id}}">
@@ -126,13 +126,12 @@
 						<img class="d-block w-100" src="{{imgURL}}">
 					</div>
 					{{/each}}
-				</div> <a class="carousel-control-prev" href="#carouselExampleIndicators"
-					role="button" data-slide="prev">
+				</div> <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+					data-slide="prev">
 					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 					<span class="sr-only">Previous</span>
 				</a>
-				<a class="carousel-control-next" href="#carouselExampleIndicators"
-					role="button" data-slide="next">
+				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
 					<span class="carousel-control-next-icon" aria-hidden="true"></span>
 					<span class="sr-only">Next</span>
 				</a>
@@ -178,17 +177,16 @@
 				<h3>About me</h3>
 			</div>
 
-			<img class="card-img-top"
-				{{!-- src="https://www.w3schools.com/w3css/img_avatar3.png" --}}
-				src="{{imgurl}}" alt="Card image cap">
+			<img class="card-img-top" {{!-- src="https://www.w3schools.com/w3css/img_avatar3.png" --}} src="{{imgurl}}"
+				alt="Card image cap">
 			<div class="card-body">
 				<h5 class="card-title">Name: {{name}}</h5>
 				<p class="card-text">
 					About me: {{otherroommateNotes}}
 				</p>
 				<div style="text-align:center">
-					<a href="mailto:{{email}}" class="btn btn-primary btn-lg" style=""
-						tabindex="-1" role="button" aria-disabled="true">Email Me</a>
+					<a href="mailto:{{email}}" class="btn btn-primary btn-lg" style="" tabindex="-1" role="button"
+						aria-disabled="true">Email Me</a>
 				</div>
 
 				{{!-- <p class="card-text"><small class="text-muted">Last updated 3 mins
