@@ -1,6 +1,13 @@
  /* Commonly Used CSS*/
 
+@font-face {
+  font-family: 'antipasto';
+  src: url('../fonts/gravity_light.otf');
+}
 
+*{
+  font-family: 'antipasto';
+}
 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -275,6 +282,7 @@ i.material-icons {
 #name_header {
   display:inline-flex;
   padding:10px;
+  margin-left:15px;
 }
 
 #state_header {
@@ -407,6 +415,7 @@ i.material-icons {
     /* height:150px; */
     margin-left:35px;
     margin-top:20px;
+    border-radius:50px;
 
 }
 .picHouse{
@@ -673,7 +682,14 @@ body{
     color: rgba(112,112,112,1);
   }
 
+
 /* end of checkbox */
+
+#map-container {
+  width:80%;
+  /* height:50%; */
+}
+
 
 /* start of map.google */
 #map{  
