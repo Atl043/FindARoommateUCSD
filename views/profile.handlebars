@@ -14,7 +14,15 @@
 	<script src="/js/mapQuest.js"></script>
 	<script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
 	<link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css" />
+	<meta name="google-signin-scope" content="profile email">
+	{{!-- <meta name="google-signin-client_id"
+			content="519007915746-m0l845vmot8vj2lin1j167ifu5lslmcj.apps.googleusercontent.com"> --}}
+	<meta name="google-signin-client_id"
+		content="519007915746-9ujr3t866k76vt0kr2sk5uoi3q0v8d8a.apps.googleusercontent.com">
 
+	{{> facebook}}
+	<script src="/js/facebook.js"></script>
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
 
 </head>
 
@@ -208,6 +216,8 @@
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/accordian.js"></script>
 <script src="../js/save.js"></script>
+<script src="../js/google.js"></script>
+<script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
 <script>
 	$(document).ready(function () {
 		initMap();
@@ -252,6 +262,22 @@
 		$.post('addSaved', { 'id': str });
 		alert("rsvp form successfully submitted");
 	}
+</script>
+<script>
+
+		function signOutTest() {
+			var auth2 = gapi.auth2.getAuthInstance();
+			auth2.signOut().then(function () {
+				console.log('User signed out.');
+			});
+			window.location.href = "/";
+		}
+		onLoad()
+		function onLoad() {
+			gapi.load('auth2', function () {
+				gapi.auth2.init();
+			});
+		}
 </script>
 
 </html>

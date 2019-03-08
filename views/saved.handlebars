@@ -8,6 +8,16 @@
 	<link href="../css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="../css/main.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<meta name="google-signin-scope" content="profile email">
+	{{!-- <meta name="google-signin-client_id"
+			content="519007915746-m0l845vmot8vj2lin1j167ifu5lslmcj.apps.googleusercontent.com"> --}}
+	<meta name="google-signin-client_id"
+		content="519007915746-9ujr3t866k76vt0kr2sk5uoi3q0v8d8a.apps.googleusercontent.com">
+
+	{{> facebook}}
+	<script src="/js/facebook.js"></script>
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
 	{{!--
 	<link href="/css/introHCI.css" rel="stylesheet"> --}}
 	<script src="../js/back.js"></script>
@@ -24,8 +34,8 @@
 				<ul>
 					{{!-- <li><button class="btn btn-link btn-lg" style="width:50%;" onclick="goBack()"><img class="icon" src="images/icons/back.png"></img></button></li> --}}
 					<li><a onclick="goBack()"><img class="icon" src="images/icons/back.png"></img></a></li>
-					<li><a href="/index"><img class="icon" src="images/icons/home.png"></a></li>
 					<li><a href="/user"><img class="icon" src="images/icons/user.png"></a></li>
+					<li><a href="/index"><img class="icon" src="images/icons/home.png"></a></li>
 					<li><a href="/settings"><img class="icon" src="images/icons/settings.png"></a></li>
 					<li><a onclick="signOutTest()"><img class="icon" src="images/icons/signout.png"></img></button></li>
 					<!-- PLACEHOLDER LINK FOR SETTINGS PAGE (change '#' to '/settings') -->
@@ -70,6 +80,24 @@
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/accordian.js"></script>
 <script src="../js/save.js"></script>
+<script src="../js/google.js"></script>
+<script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+<script>
+
+		function signOutTest() {
+			var auth2 = gapi.auth2.getAuthInstance();
+			auth2.signOut().then(function () {
+				console.log('User signed out.');
+			});
+			window.location.href = "/";
+		}
+		onLoad()
+		function onLoad() {
+			gapi.load('auth2', function () {
+				gapi.auth2.init();
+			});
+		}
+</script>
 
 
 </html>
