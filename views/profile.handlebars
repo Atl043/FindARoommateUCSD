@@ -129,10 +129,10 @@
 					{{/each}}
 				</ol>
 				<div class="carousel-inner">
-					<div class="carousel-item active">
+					<div class="carousel-item active" style="max-height:220px">
 						<img class="d-block w-100" src="{{aptimgurl}}"> </div>
 					{{#each images}}
-					<div class="carousel-item">
+					<div class="carousel-item" style="max-height:220px">
 						<img class="d-block w-100" src="{{imgURL}}">
 					</div>
 					{{/each}}
@@ -257,21 +257,11 @@
 			'timeofday': timeofday,
 			'smokersetting': smokersetting,
 			'cleanliness': cleanliness,
-			'otherroommateNotes': otherroommateNotes
+			'otherroommateNotes': otherroommateNotes,
 			'id': str
 		}
 		$.post('addSaved', { 'id': str });
 		alert("rsvp form successfully submitted");
-	}
-</script>
-<script>
-
-	function signOutTest() {
-		var auth2 = gapi.auth2.getAuthInstance();
-		auth2.signOut().then(function () {
-			console.log('User signed out.');
-		});
-		window.location.href = "/";
 	}
 </script>
 
