@@ -46,7 +46,7 @@
 			// for FB.getLoginStatus().
 			if (response.status === 'connected') {
 				// Logged into your app and Facebook.
-				if (localStorage.getItem('connected')) {
+				if (localStorage.getItem('connected') == true) {
 					window.location.href = "/createProfile";
 				}
 			} else {
