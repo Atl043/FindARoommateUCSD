@@ -11,9 +11,12 @@ function signOutTest() {
         xfbml: true,  // parse social plugins on this page
         version: 'v3.2' // The Graph API version to use for the call
     });
-    FB.getLoginStatus(handleSessionResponse);
-    FB.logout(function (response) {
-        console.log('User signed out FB.');// user is now logged out
+    FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+            FB.logout(function (response) {
+                console.log("signed out FB")
+            });
+        }
     });
     auth2.signOut().then(function () {
         console.log('User signed out Google.');
