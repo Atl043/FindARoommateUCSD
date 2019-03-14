@@ -42,7 +42,8 @@
 					<li><a href="/user"><img class="icon" src="../images/icons/user.png"></a></li>
 					<li><a href="/index"><img class="icon" src="../images/icons/home.png"></a></li>
 					<li><a href="/settings"><img class="icon" src="../images/icons/settings.png"></a></li>
-					<li><a onclick="signOutTest()" role="button"><img class="icon" src="../images/icons/signout.png"></img></button></li>
+					<li><a onclick="signOutTest()" role="button"><img class="icon"
+								src="../images/icons/signout.png"></img></button></li>
 					<!-- PLACEHOLDER LINK FOR SETTINGS PAGE (change '#' to '/settings') -->
 				</ul>
 			</nav>
@@ -231,32 +232,32 @@
 		str = str.substring(9);
 		console.log(str)
 		json = {
-		'id':id,
-        'name': name,
-        'email': email,
-        'imgurl': imgurl,
-        'aptimgurl': aptimgurl,
-        'address': address,
-        'zip': zip,
-        'date': date,
-        'description': description,
-        'roomsize': roomsize,
-        'gender': gender,
-        'rent': rent,
-        'ownBath': ownBath,
-        'AC': AC,
-        'heating': heating,
-        'laundry': laundry,
-        'parking': parking,
-        'pets': pets,
-        'bus': bus,
-        'gym': gym,
-        'pool': pool,
-        'otherapartmentNotes': otherapartmentNotes,
-        'timeofday': timeofday,
-        'smokersetting': smokersetting,
-        'cleanliness': cleanliness,
-        'otherroommateNotes': otherroommateNotes
+			'id': id,
+			'name': name,
+			'email': email,
+			'imgurl': imgurl,
+			'aptimgurl': aptimgurl,
+			'address': address,
+			'zip': zip,
+			'date': date,
+			'description': description,
+			'roomsize': roomsize,
+			'gender': gender,
+			'rent': rent,
+			'ownBath': ownBath,
+			'AC': AC,
+			'heating': heating,
+			'laundry': laundry,
+			'parking': parking,
+			'pets': pets,
+			'bus': bus,
+			'gym': gym,
+			'pool': pool,
+			'otherapartmentNotes': otherapartmentNotes,
+			'timeofday': timeofday,
+			'smokersetting': smokersetting,
+			'cleanliness': cleanliness,
+			'otherroommateNotes': otherroommateNotes
 			'id': str
 		}
 		$.post('addSaved', { 'id': str });
@@ -265,19 +266,13 @@
 </script>
 <script>
 
-		function signOutTest() {
-			var auth2 = gapi.auth2.getAuthInstance();
-			auth2.signOut().then(function () {
-				console.log('User signed out.');
-			});
-			window.location.href = "/";
-		}
-		onLoad()
-		function onLoad() {
-			gapi.load('auth2', function () {
-				gapi.auth2.init();
-			});
-		}
+	function signOutTest() {
+		var auth2 = gapi.auth2.getAuthInstance();
+		auth2.signOut().then(function () {
+			console.log('User signed out.');
+		});
+		window.location.href = "/";
+	}
 </script>
 
 </html>

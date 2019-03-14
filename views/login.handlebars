@@ -33,15 +33,79 @@
 
 <body style="background-color:#E4F0E6;text-align:center">
 	<div id="fb-root"></div>
-	<script src="https://connect.facebook.net/en_US/sdk.js"></script>
+	<script async defer crossorigin="anonymous"
+		src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=352041492055393&autoLogAppEvents=1"></script>
 	<script>
-		FB.init({
-			appId: 352041492055393,
-			status: true,
-			xfbml: true,
-			version: 'v3.2'
-		});
-		FB.AppEvents.logPageView();
+		// This is called with the results from from FB.getLoginStatus().
+		function statusChangeCallback(response) {
+			console.log('statusChangeCallback');
+			console.log(response);
+			// The response object is returned with a status field that lets the
+			// app know the current login status of the person.
+			// Full docs on the response object can be found in the documentation
+			// for FB.getLoginStatus().
+			if (response.status === 'connected') {
+				// Logged into your app and Facebook.
+				testAPI();
+			} else {
+				// The person is not logged into your app or we are unable to tell.
+				document.getElementById('status').innerHTML = 'Please log ' +
+					'into this app.';
+			}
+		}
+
+		// This function is called when someone finishes with the Login
+		// Button.  See the onlogin handler attached to it in the sample
+		// code below.
+		function checkLoginState() {
+			FB.getLoginStatus(function (response) {
+				statusChangeCallback(response);
+			});
+		}
+
+		window.fbAsyncInit = function () {
+			FB.init({
+				appId: '352041492055393',
+				cookie: true,  // enable cookies to allow the server to access 
+				// the session
+				xfbml: true,  // parse social plugins on this page
+				version: 'v3.2' // The Graph API version to use for the call
+			});
+			// Now that we've initialized the JavaScript SDK, we call 
+			// FB.getLoginStatus().  This function gets the state of the
+			// person visiting this page and can return one of three states to
+			// the callback you provide.  They can be:
+			//
+			// 1. Logged into your app ('connected')
+			// 2. Logged into Facebook, but not your app ('not_authorized')
+			// 3. Not logged into Facebook and can't tell if they are logged into
+			//    your app or not.
+			//
+			// These three cases are handled in the callback function.
+			FB.getLoginStatus(function (response) {
+				statusChangeCallback(response);
+			});
+		};
+
+		// Load the SDK asynchronously
+		(function (d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "https://connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+
+		// Here we run a very simple test of the Graph API after login is
+		// successful.  See statusChangeCallback() for when this call is made.
+		function testAPI() {
+			console.log('Welcome!  Fetching your information.... ');
+			FB.api('/me', function (response) {
+				console.log('Successful login for: ' + response.name);
+				document.getElementById('status').innerHTML =
+					'Thanks for logging in, ' + response.name + '!';
+			});
+		}
 	</script>
 	<header>
 		<div class="nav-container">
@@ -59,16 +123,12 @@
 	<div style="margin: auto;
   width: 50%;
   padding: 10px;">
-		<div data-size="large" data-button-type="continue_with" data-auto-logout-link="false"
-			data-use-continue-as="false" class="fb-login-button fb_iframe_widget" login_text=""
-			fb-xfbml-state="rendered"
-			fb-iframe-plugin-query="app_id=352041492055393&amp;auto_logout_link=false&amp;button_type=continue_with&amp;container_width=734&amp;locale=en_US&amp;sdk=joey&amp;size=large&amp;use_continue_as=false">
-			<span style="vertical-align: bottom; width: 254px; height: 40px;"><iframe name="f2016527e2e2808"
-					width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true"
-					scrolling="no" allow="encrypted-media" title="fb:login_button Facebook Social Plugin"
-					src="https://www.facebook.com/v3.2/plugins/login_button.php?app_id=113869198637480&amp;auto_logout_link=false&amp;button_type=continue_with&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2Fm5nTkygCewO.js%3Fversion%3D44%23cb%3Dfb9d278adb755c%26domain%3Ddevelopers.facebook.com%26origin%3Dhttps%253A%252F%252Fdevelopers.facebook.com%252Ff13c853d3f6e8ec%26relation%3Dparent.parent&amp;container_width=734&amp;locale=en_US&amp;sdk=joey&amp;size=large&amp;use_continue_as=false"
-					style="border: none; visibility: visible; width: 254px; height: 40px;" class=""></iframe></span>
-		</div>
+		<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+		</fb:login-button>
+		<hr>
+		<div class="fb-login-button" data-size="large" data-button-type="continue_with" data-auto-logout-link="false"
+			data-use-continue-as="false"></div>
+
 		<div class="g-signin2" data-width="193" data-longtitle="true" data-theme="dark" style="text-align:center;"
 			data-onsuccess="onSignIn">
 		</div>
