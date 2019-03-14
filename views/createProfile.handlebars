@@ -45,6 +45,9 @@
 </head>
 
 <body class="bg-light" data-gr-c-s-loaded="true">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=352041492055393&autoLogAppEvents=1"></script>
     <header>
         {{!-- <div class="row">
             <button class="btn btn-link btn-lg" style="width:50%;" onclick="goBack()">Back</button>
@@ -52,20 +55,20 @@
                 Out</button>
         </div> --}}
         <div class="nav-container">
-			{{!-- <h2>FindARoommate</h2> --}}
-			<nav>
-				<ul>
-					{{!-- <li><button class="btn btn-link btn-lg" style="width:50%;" onclick="goBack()"><img class="icon" src="images/icons/back.png"></img></button></li> --}}
-					<li><a onclick="goBack()"><img class="icon" src="images/icons/back.png"></img></a></li>
-					<li><a href="/user"><img class="icon" src="images/icons/user.png"></a></li>
+            {{!-- <h2>FindARoommate</h2> --}}
+            <nav>
+                <ul>
+                    {{!-- <li><button class="btn btn-link btn-lg" style="width:50%;" onclick="goBack()"><img class="icon" src="images/icons/back.png"></img></button></li> --}}
+                    <li><a onclick="goBack()"><img class="icon" src="images/icons/back.png"></img></a></li>
+                    <li><a href="/user"><img class="icon" src="images/icons/user.png"></a></li>
                     <li><a href="/index"><img class="icon" src="images/icons/home.png"></a></li>
-					<li><a href="/settings"><img class="icon" src="images/icons/settings.png"></a></li>
-					<li><a onclick="signOutTest()"><img class="icon" src="images/icons/signout.png"></img></button></li>
-					<!-- PLACEHOLDER LINK FOR SETTINGS PAGE (change '#' to '/settings') -->
-				</ul>
-			</nav>
+                    <li><a href="/settings"><img class="icon" src="images/icons/settings.png"></a></li>
+                    <li><a onclick="signOutTest()"><img class="icon" src="images/icons/signout.png"></img></button></li>
+                    <!-- PLACEHOLDER LINK FOR SETTINGS PAGE (change '#' to '/settings') -->
+                </ul>
+            </nav>
 
-		</div>
+        </div>
     </header>
     <div class="container">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
