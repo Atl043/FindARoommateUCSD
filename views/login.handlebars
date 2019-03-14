@@ -28,19 +28,26 @@
 	<div style="margin-top: 50%">
 		<h2>FindARoommate</h2>
 	</div>
-
-	<div class="row">
-		<div class="col-xs-9" style="margin-right: 35%">
-		</div>
-		<div class="col-xs-3">
-			<div id="fb-signin">
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous"
+		src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=352041492055393&autoLogAppEvents=1"></script>
+	{{!-- <div class="row"> --}}
+	{{!-- <div id="fb-signin">
 				<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 				</fb:login-button>
-			</div>
-			<div class="g-signin2" data-theme="dark" style="text-align:center;" data-onsuccess="onSignIn">
+			</div> --}}
+	<div style="margin: auto;
+  width: 50%;
+  padding: 10px;">
+		<div class="fb-login-button" scope="public_profile,email" data-width="200" data-size="large"
+			data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
+		<div>
+			<div class="g-signin2" data-width="193" data-longtitle="true" data-theme="dark" style="text-align:center;"
+				data-onsuccess="onSignIn">
 			</div>
 		</div>
 	</div>
+	{{!-- </div> --}}
 	{{!-- <a href="/" onclick="signOut();">Sign out GOOGLE</a> --}}
 	<div>
 		<div class="schoolEmail">Sign in with your school email <br />to find
