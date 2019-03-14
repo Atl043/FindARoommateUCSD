@@ -45,6 +45,7 @@
 			// Full docs on the response object can be found in the documentation
 			// for FB.getLoginStatus().
 			if (response.status === 'connected') {
+				console.log("test2")
 				// Logged into your app and Facebook.
 				if (localStorage.getItem('connected') == 'true') {
 					window.location.href = "/createProfile";
@@ -58,12 +59,24 @@
 		// This function is called when someone finishes with the Login
 		// Button.  See the onlogin handler attached to it in the sample
 		// code below.
+		//function checkLoginState() {
+		//	FB.getLoginStatus(function (response) {
+		//		statusChangeCallback(response);
+		//	});
+		//	console.log('post login');
+		//	localStorage.setItem('connected', 'true');
+		//}
 		function checkLoginState() {
-			FB.getLoginStatus(function (response) {
-				statusChangeCallback(response);
-			});
-			console.log('post login');
-			localStorage.setItem('connected', 'true');
+			FB.login(
+				function (response) {
+					console.log(response);
+					window.location.href = "/createProfile";
+				},
+				{
+					scope: 'public_profile',
+					auth_type: 'rerequest'
+				}
+			);
 		}
 
 		window.fbAsyncInit = function () {
@@ -88,7 +101,6 @@
 			FB.getLoginStatus(function (response) {
 				statusChangeCallback(response);
 				console.log('post login2 ');
-				localStorage.setItem('connected', 'true');
 			});
 		};
 
@@ -120,7 +132,7 @@
   padding: 10px;">
 		<hr>
 		<div class="fb-login-button" data-size="large" data-width="193" data-button-type="login_with"
-			data-auto-logout-link="true" data-use-continue-as="true"></div>
+			data-auto-logout-link="true" data-use-continue-as="true" onlogin="checkLoginState()"></div>
 
 		<div class="g-signin2" data-width="193" data-longtitle="true" data-theme="dark" style="text-align:center;"
 			data-onsuccess="onSignIn">
