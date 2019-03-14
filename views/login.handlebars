@@ -46,7 +46,9 @@
 			// for FB.getLoginStatus().
 			if (response.status === 'connected') {
 				// Logged into your app and Facebook.
-				window.location.href = "/createProfile";
+				if (localStorage.getItem('connected')) {
+					window.location.href = "/createProfile";
+				}
 			} else {
 				// The person is not logged into your app or we are unable to tell.
 				document.getElementById('status').innerHTML = 'Please log ' +
@@ -61,6 +63,7 @@
 			FB.getLoginStatus(function (response) {
 				statusChangeCallback(response);
 			});
+			localStorage.setItem('connected', true);
 		}
 
 		window.fbAsyncInit = function () {
