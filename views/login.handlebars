@@ -46,13 +46,12 @@
 			// for FB.getLoginStatus().
 			if (response.status === 'connected') {
 				// Logged into your app and Facebook.
-				if (localStorage.getItem('connected') == true) {
+				if (localStorage.getItem('connected') == 'true') {
 					window.location.href = "/createProfile";
 				}
 			} else {
 				// The person is not logged into your app or we are unable to tell.
-				document.getElementById('status').innerHTML = 'Please log ' +
-					'into this app.';
+
 			}
 		}
 
@@ -63,7 +62,8 @@
 			FB.getLoginStatus(function (response) {
 				statusChangeCallback(response);
 			});
-			localStorage.setItem('connected', true);
+			console.log('post login');
+			localStorage.setItem('connected', 'true');
 		}
 
 		window.fbAsyncInit = function () {
@@ -87,6 +87,8 @@
 			// These three cases are handled in the callback function.
 			FB.getLoginStatus(function (response) {
 				statusChangeCallback(response);
+				console.log('post login2 ');
+				localStorage.setItem('connected', 'true');
 			});
 		};
 
