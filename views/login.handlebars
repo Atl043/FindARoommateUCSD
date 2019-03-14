@@ -17,9 +17,33 @@
 	{{> facebook}}
 	<script src="/js/facebook.js"></script>
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+	<script>
+		window.fbAsyncInit = function () {
+			FB.init({
+				appId: '352041492055393',
+				autoLogAppEvents: true,
+				xfbml: true,
+				version: 'v3.2'
+			});
+		};
+	</script>
+	<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 </head>
 
 <body style="background-color:#E4F0E6;text-align:center">
+	<div id="fb-root"></div>
+	<script src="https://connect.facebook.net/en_US/sdk.js"></script>
+	<script>
+		FB.init({
+			appId: 352041492055393,
+			status: true,
+			autoLogAppEvents: true,
+			xfbml: true,
+			version: 'v3.2'
+		});
+		FB.AppEvents.logPageView();
+	</script>
 	<header>
 		<div class="nav-container">
 			<!-- INSERT LOGO/IMAGE HERE -->
@@ -28,9 +52,6 @@
 	<div style="margin-top: 50%">
 		<h2>FindARoommate</h2>
 	</div>
-	<div id="fb-root"></div>
-	<script async defer crossorigin="anonymous"
-		src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=352041492055393&autoLogAppEvents=1"></script>
 	{{!-- <div class="row"> --}}
 	{{!-- <div id="fb-signin">
 				<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
@@ -39,8 +60,8 @@
 	<div style="margin: auto;
   width: 50%;
   padding: 10px;">
-		<div class="fb-login-button" scope="public_profile,email" data-width="200" data-size="large"
-			data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
+		<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with"
+			data-use-continue-as="true"></div>
 		<div>
 			<div class="g-signin2" data-width="193" data-longtitle="true" data-theme="dark" style="text-align:center;"
 				data-onsuccess="onSignIn">
