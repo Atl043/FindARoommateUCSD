@@ -4,8 +4,11 @@ function goBack() {
 
 function signOutTest() {
     var auth2 = gapi.auth2.getAuthInstance();
+    FB.logout(function (response) {
+        console.log('User signed out FB.');// user is now logged out
+    });
     auth2.signOut().then(function () {
-        console.log('User signed out.');
+        console.log('User signed out Google.');
     });
     window.location.href = "/";
 }
