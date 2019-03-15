@@ -44,7 +44,7 @@
 					<li><a href="/settings"><img class="icon" src="../images/icons/settings.png"></a></li>
 					<li><a onclick="signOutTest()" role="button"><img class="icon"
 								src="../images/icons/signout.png"></img></button></li>
-					<!-- PLACEHOLDER LINK FOR SETTINGS PAGE (change '#' to '/settings') -->
+					<li><a></a></li>
 				</ul>
 			</nav>
 
@@ -53,160 +53,161 @@
 	<div class="container">
 		{{!-- Search Bar --}}
 		<div style="background-color:rgb(228, 228, 228);padding:10px;border-radius:0px 0px 10px 10px;">
-		<div class="searchbar" id="search">
-			<input type="text" class="searchTerm" name="search" placeholder="Search Area..." style="margin-top:20px;">
-			<a href="/results">
-				<button type="submit" class="searchButton" style="margin-top:20px;">
-					<i class="fa fa-search"></i>
-					{{!-- Search --}}
-				</button>
-			</a>
-		<div style="align-content: center;">
-			<p style="margin-bottom:0px;margin:15px;">Starting Date:</p>
-			<input style="margin-left:15px;display:inline;" type="date" class="startDate" name="date">
-			<button class="accordion" style="margin-bottom:10px;">
-				Preferences</button>
+			<div class="searchbar" id="search">
+				<input type="text" class="searchTerm" name="search" placeholder="Search Area..."
+					style="margin-top:20px;">
+				<a href="/results">
+					<button type="submit" class="searchButton" style="margin-top:20px;">
+						<i class="fa fa-search"></i>
+						{{!-- Search --}}
+					</button>
+				</a>
+				<div style="align-content: center;">
+					<p style="margin-bottom:0px;margin:15px;">Starting Date:</p>
+					<input style="margin-left:15px;display:inline;" type="date" class="startDate" name="date">
+					<button class="accordion" style="margin-bottom:10px;">
+						Preferences</button>
 
-			<div class="panel">
-				<p>Pick more options</p>
-				<label class="checkboxContainer">Living room
-					<input type="checkbox">
-					<span class="checkmark"></span>
-				</label>
+					<div class="panel">
+						<p>Pick more options</p>
+						<label class="checkboxContainer">Living room
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
 
-				<label class="checkboxContainer">Single
-					<input type="checkbox" checked="checked">
-					<span class="checkmark"></span>
-				</label>
+						<label class="checkboxContainer">Single
+							<input type="checkbox" checked="checked">
+							<span class="checkmark"></span>
+						</label>
 
-				<label class="checkboxContainer">Double
-					<input type="checkbox">
-					<span class="checkmark"></span>
-				</label>
+						<label class="checkboxContainer">Double
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
 
-				<label class="checkboxContainer">Triple
-					<input type="checkbox">
-					<span class="checkmark"></span>
-				</label>
+						<label class="checkboxContainer">Triple
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
+					</div>
+				</div>
 			</div>
 		</div>
-		</div>
 	</div>
-	</div>
-		{{!-- End of Search Bar --}}
+	{{!-- End of Search Bar --}}
 
-		{{!-- Start of Name --}}
-		<div class="row">
-			
-			<div id="map-container" class="col-xs-6-h">
-				<h5 style="margin-top:20px; margin-bottom:20px;align-self:center;"> {{zip}} </h5>
-				<div id="map" style="align-self:center;height:0 auto;width:100% auto;padding-left:10px;padding-right:10px;"></div>
-				<h5 style="margin-top:20px;margin-bottom:20px;align-self:center;"> Available Since: {{date}}</h5>
+	{{!-- Start of Name --}}
+	<div class="row">
+
+		<div id="map-container" class="col-xs-6-h">
+			<h5 style="margin-top:20px; margin-bottom:20px;align-self:center;"> {{zip}} </h5>
+			<div id="map" style="align-self:center;height:0 auto;width:100% auto;padding-left:10px;padding-right:10px;">
 			</div>
-			
-			<!-- COMMENTED OUT BACK BUTTON -->
-			{{!-- <div class="col-xs-6" style="text-align:right">
+			<h5 style="margin-top:20px;margin-bottom:20px;align-self:center;"> Available Since: {{date}}</h5>
+		</div>
+
+		<!-- COMMENTED OUT BACK BUTTON -->
+		{{!-- <div class="col-xs-6" style="text-align:right">
 				<a href="/">
 					<button class="backButton">
 						Back
 					</button>
 				</a>
 			</div> --}}
-		</div>
-		{{!-- End of Name--}}
-		{{!-- start of Apartment photos --}}
-		<div class="apartment-container" style="">
-			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-				<ol class="carousel-indicators">
-					<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
-					</li>
-					{{#each images}}
-					<li data-target="#carouselExampleIndicators" data-slide-to="{{id}}">
-					</li>
-					{{/each}}
-				</ol>
-				<div class="carousel-inner">
-					<div class="carousel-item active" style="max-height:220px">
-						<img class="d-block w-100" src="{{aptimgurl}}"> </div>
-					{{#each images}}
-					<div class="carousel-item" style="max-height:220px">
-						<img class="d-block w-100" src="{{imgURL}}">
-					</div>
-					{{/each}}
-				</div> <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
-					data-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a>
-				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
-			</div>
-		</div>
-
-
-		{{!-- End of Apartments --}}
-		{{!-- Info Box --}}
-		<div style="margin:10px">
-			<h3 style="color:rgb(51, 51, 51); font-size:20px;text-align:center;">Apartment Features</h3>
-			<ul class="list-group">
-				<li class="list-group-item" id="rent">Rent: {{rent}} per Month
+	</div>
+	{{!-- End of Name--}}
+	{{!-- start of Apartment photos --}}
+	<div class="apartment-container" style="">
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
 				</li>
-				<li class="list-group-item" id="address">Address: {{address}},
-					{{zip}}
+				{{#each images}}
+				<li data-target="#carouselExampleIndicators" data-slide-to="{{id}}">
 				</li>
-				<li class="list-group-item" id="gender">Gender: {{gender}}
-					Apartment
-				</li>
-				<li class="list-group-item" id="bath">Own bathroom:{{ownBath}}
-				</li>
-				<li class="list-group-item" id="ac">Air Conditioning: {{AC}}</li>
-				<li class="list-group-item" id="heat">Heating: {{heating}}</li>
-				<li class="list-group-item" id="laundry">Laundry In Unit:
-					{{laundry}}</li>
-				<li class="list-group-item" id="parking">Parking: {{parking}}
-				</li>
-				<li class="list-group-item" id="pets">Pets Allowed: {{pets}} </li>
-				<li class="list-group-item" id="bus">Bus Nearby: {{bus}}</li>
-				<li class="list-group-item" id="gym">Gym: {{gym}}</li>
-				<li class="list-group-item" id="pool">Pool: {{pool}}</li>
-				<li class="list-group-item" id="notes">Extra Notes:
-					{{otherapartmentNotes}}
-				</li>
-			</ul>
-		</div>
-		{{!-- end of info box --}}
-
-		{{!-- Start of Person profile --}}
-		<div class="card mb-3">
-			<div class="text-center">
-				<h3 style="margin-top:10px;font-size:20px;">About me</h3>
-			</div>
-
-			<img class="card-img-top" {{!-- src="https://www.w3schools.com/w3css/img_avatar3.png" --}} src="{{imgurl}}"
-				alt="Card image cap">
-			<div class="card-body">
-				<h5 id="name" class="card-title">{{name}}</h5>
-				<p class="card-text">
-					{{otherroommateNotes}}
-				</p>
-				<div style="text-align:center">
-					<a href="mailto:{{email}}" class="btn btn-primary btn-lg" style="" tabindex="-1" role="button"
-						aria-disabled="true">Email Me</a>
-					<button class="btn btn-primary btn-lg" id="save_btn" onclick="saveProfile(1)">
-						Save</button>
+				{{/each}}
+			</ol>
+			<div class="carousel-inner">
+				<div class="carousel-item active" style="max-height:220px">
+					<img class="d-block w-100" src="{{aptimgurl}}"> </div>
+				{{#each images}}
+				<div class="carousel-item" style="max-height:220px">
+					<img class="d-block w-100" src="{{imgURL}}">
 				</div>
-				{{!-- <div style="text-align:center">
+				{{/each}}
+			</div> <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+
+
+	{{!-- End of Apartments --}}
+	{{!-- Info Box --}}
+	<div style="margin:10px">
+		<h3 style="color:rgb(51, 51, 51); font-size:20px;text-align:center;">Apartment Features</h3>
+		<ul class="list-group">
+			<li class="list-group-item" id="rent">Rent: {{rent}} per Month
+			</li>
+			<li class="list-group-item" id="address">Address: {{address}},
+				{{zip}}
+			</li>
+			<li class="list-group-item" id="gender">Gender: {{gender}}
+				Apartment
+			</li>
+			<li class="list-group-item" id="bath">Own bathroom:{{ownBath}}
+			</li>
+			<li class="list-group-item" id="ac">Air Conditioning: {{AC}}</li>
+			<li class="list-group-item" id="heat">Heating: {{heating}}</li>
+			<li class="list-group-item" id="laundry">Laundry In Unit:
+				{{laundry}}</li>
+			<li class="list-group-item" id="parking">Parking: {{parking}}
+			</li>
+			<li class="list-group-item" id="pets">Pets Allowed: {{pets}} </li>
+			<li class="list-group-item" id="bus">Bus Nearby: {{bus}}</li>
+			<li class="list-group-item" id="gym">Gym: {{gym}}</li>
+			<li class="list-group-item" id="pool">Pool: {{pool}}</li>
+			<li class="list-group-item" id="notes">Extra Notes:
+				{{otherapartmentNotes}}
+			</li>
+		</ul>
+	</div>
+	{{!-- end of info box --}}
+
+	{{!-- Start of Person profile --}}
+	<div class="card mb-3">
+		<div class="text-center">
+			<h3 style="margin-top:10px;font-size:20px;">About me</h3>
+		</div>
+
+		<img class="card-img-top" {{!-- src="https://www.w3schools.com/w3css/img_avatar3.png" --}} src="{{imgurl}}"
+			alt="Card image cap">
+		<div class="card-body">
+			<h5 id="name" class="card-title">{{name}}</h5>
+			<p class="card-text">
+				{{otherroommateNotes}}
+			</p>
+			<div style="text-align:center">
+				<a href="mailto:{{email}}" class="btn btn-primary btn-lg" style="" tabindex="-1" role="button"
+					aria-disabled="true">Email Me</a>
+				<button class="btn btn-primary btn-lg" id="save_btn" onclick="saveProfile(1)">
+					Save</button>
+			</div>
+			{{!-- <div style="text-align:center">
 					<a href="mailto:{{email}}" role="button"><img style="height:50px;width:50px;" class="icon" src="../images/icons/email.png"></img></a>
 					<a id="save_btn" onclick="saveProfile()"><img style="height:50px;width:50px;" class="icon" src="../images/icons/save.png"></img></a>
 				</div> --}}
 
-				{{!-- <p class="card-text"><small class="text-muted">Last updated 3 mins
+			{{!-- <p class="card-text"><small class="text-muted">Last updated 3 mins
 						ago</small></p> --}}
-			</div>
 		</div>
-		{{!-- end of person profile --}}
+	</div>
+	{{!-- end of person profile --}}
 	</div>
 </body>
 {{!-- javascript --}}

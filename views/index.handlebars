@@ -28,7 +28,6 @@
 	</div> --}}
 	<header>
 		<div class="nav-container">
-			{{!-- <h2>FindARoommate</h2> --}}
 			<nav>
 				<ul>
 					{{!-- <li><button class="btn btn-link btn-lg" style="width:50%;" onclick="goBack()"><img class="icon" src="images/icons/back.png"></img></button></li> --}}
@@ -37,10 +36,9 @@
 					<li><a href="/index"><img class="icon" src="images/icons/home.png"></a></li>
 					<li><a href="/settings"><img class="icon" src="images/icons/settings.png"></a></li>
 					<li><a onclick="signOutTest()"><img class="icon" src="images/icons/signout.png"></img></button></li>
-					<!-- PLACEHOLDER LINK FOR SETTINGS PAGE (change '#' to '/settings') -->
+					<li><a></a></li><!-- PLACEHOLDER LINK FOR SETTINGS PAGE (change '#' to '/settings') -->
 				</ul>
 			</nav>
-
 		</div>
 	</header>
 
@@ -52,76 +50,77 @@
 	</div> --}}
 	{{!-- <hr style="height:1px;border:none;color:#333;background-color:#333;"> --}}
 	{{!-- end of top title --}}
-	<div class="container">
+	<div class="container" style="top-margin: 10px">
 		{{!-- Search Bar --}}
 		<div style="background-color:rgb(228, 228, 228);padding:10px;border-radius:0px 0px 10px 10px;">
-		<div class="searchbar" id="search">
-			<input type="text" class="searchTerm" name="search" placeholder="Search Area..." style="margin-top:20px;">
-			<a href="/results">
-				<button type="submit" class="searchButton" style="margin-top:20px;">
-					<i class="fa fa-search"></i>
-					{{!-- Search --}}
-				</button>
-			</a>
-		<div style="align-content: center;">
-			<p style="margin-bottom:0px;margin:15px;">Starting Date:</p>
-			<input style="margin-left:15px;display:inline;" type="date" class="startDate" name="date">
-			<button class="accordion" style="margin-bottom:10px;">
-				Preferences</button>
+			<div class="searchbar" id="search">
+				<input type="text" class="searchTerm" name="search" placeholder="Search Area..."
+					style="margin-top:20px;">
+				<a href="/results">
+					<button type="submit" class="searchButton" style="margin-top:20px;">
+						<i class="fa fa-search"></i>
+						{{!-- Search --}}
+					</button>
+				</a>
+				<div style="align-content: center;">
+					<p style="margin-bottom:0px;margin:15px;">Starting Date:</p>
+					<input style="margin-left:15px;display:inline;" type="date" class="startDate" name="date">
+					<button class="accordion" style="margin-bottom:10px;">
+						Preferences</button>
 
-			<div class="panel">
-				<p>Pick more options</p>
-				<label class="checkboxContainer">Living room
-					<input type="checkbox">
-					<span class="checkmark"></span>
-				</label>
+					<div class="panel">
+						<p>Pick more options</p>
+						<label class="checkboxContainer">Living room
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
 
-				<label class="checkboxContainer">Single
-					<input type="checkbox" checked="checked">
-					<span class="checkmark"></span>
-				</label>
+						<label class="checkboxContainer">Single
+							<input type="checkbox" checked="checked">
+							<span class="checkmark"></span>
+						</label>
 
-				<label class="checkboxContainer">Double
-					<input type="checkbox">
-					<span class="checkmark"></span>
-				</label>
+						<label class="checkboxContainer">Double
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
 
-				<label class="checkboxContainer">Triple
-					<input type="checkbox">
-					<span class="checkmark"></span>
-				</label>
-			</div>
-		</div>
-		</div>
-	</div>
-	</div>
-		{{!-- End of Search Bar --}}
-		<br />
-		{{!-- Start of apartments --}}
-		{{#each apartments}}
-		<div class="container-prof">
-			<a href="/profile/{{id}}">
-				<div class="row" style="">
-					<div class="col-3" style="color:black;">
-						<img id="apt-img" src="{{imgurl}}">
-						<h4>${{rent}}/month</h4>
-						<h3>{{roomsize}}</h3>
-						<h3>{{gender}} apartment</h3>
-						<h3 style="font-size:12px;">{{zip}}</h3>
-						{{!-- <div style="height:50px;width:80px;background-color:blue;">
-							Save button?
-						</div> --}}
-						{{!-- <p style="font-size:12px;">{{otherapartmentNotes}}</p> --}}
-
-					</div>
-					<div class="col-9">
-						<img style="width:100%;border-radius:10px;max-height:200px;margin-bottom:5px;margin-top:5px;"
-							src="{{aptimgurl}}">
+						<label class="checkboxContainer">Triple
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
 					</div>
 				</div>
-			</a>
+			</div>
 		</div>
-		{{/each}}
+	</div>
+	{{!-- End of Search Bar --}}
+	<br />
+	{{!-- Start of apartments --}}
+	{{#each apartments}}
+	<div class="container-prof">
+		<a href="/profile/{{id}}">
+			<div class="row" style="">
+				<div class="col-3" style="color:black;">
+					<img id="apt-img" src="{{imgurl}}">
+					<h4>${{rent}}/month</h4>
+					<h3>{{roomsize}}</h3>
+					<h3>{{gender}} apartment</h3>
+					<h3 style="font-size:12px;">{{zip}}</h3>
+					{{!-- <div style="height:50px;width:80px;background-color:blue;">
+							Save button?
+						</div> --}}
+					{{!-- <p style="font-size:12px;">{{otherapartmentNotes}}</p> --}}
+
+				</div>
+				<div class="col-9">
+					<img style="width:100%;border-radius:10px;max-height:200px;margin-bottom:5px;margin-top:5px;"
+						src="{{aptimgurl}}">
+				</div>
+			</div>
+		</a>
+	</div>
+	{{/each}}
 	</div>
 </body>
 {{!-- javascript --}}
