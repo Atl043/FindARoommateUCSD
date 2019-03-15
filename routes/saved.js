@@ -3,7 +3,7 @@
  * GET saved page.
  */
 var images = require('../data/pictureData.json');
-var data = require('../data/resultsData.json');
+var data = require('../data/saveData.json');
 // console.log(data.apartments);
 
 exports.viewSaved = function (req, res) {

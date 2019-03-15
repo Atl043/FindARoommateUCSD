@@ -50,63 +50,60 @@
 
 		</div>
 	</header>
-	<div class="container" style="margin: 5px">
+	<div class="container">
 		{{!-- Search Bar --}}
+		<div style="background-color:rgb(228, 228, 228);padding:10px;border-radius:0px 0px 10px 10px;">
 		<div class="searchbar" id="search">
-			<div class="">
-				<div class="search">
-					<div>
-						<input type="text" class="searchTerm" name="search" placeholder="Search Area...">
-						<a href="/results">
-							<button type="submit" class="searchButton">
-								<i class="fa fa-search"></i>
-								{{!-- Search --}}
-							</button>
-						</a>
-					</div>
-					<div style="" class="row startingDateRow">
-						<div>
-							Starting Date:
-							<input style="" type="date" class="startDate" name="date">
-							<button class="accordion">
-								Preferences</button>
+			<input type="text" class="searchTerm" name="search" placeholder="Search Area..." style="margin-top:20px;">
+			<a href="/results">
+				<button type="submit" class="searchButton" style="margin-top:20px;">
+					<i class="fa fa-search"></i>
+					{{!-- Search --}}
+				</button>
+			</a>
+		<div style="align-content: center;">
+			<p style="margin-bottom:0px;margin:15px;">Starting Date:</p>
+			<input style="margin-left:15px;display:inline;" type="date" class="startDate" name="date">
+			<button class="accordion" style="margin-bottom:10px;">
+				Preferences</button>
 
-							<div class="panel">
-								<p>Pick more options</p>
-								<label class="checkboxContainer">Living room
-									<input type="checkbox">
-									<span class="checkmark"></span>
-								</label>
+			<div class="panel">
+				<p>Pick more options</p>
+				<label class="checkboxContainer">Living room
+					<input type="checkbox">
+					<span class="checkmark"></span>
+				</label>
 
-								<label class="checkboxContainer">Single
-									<input type="checkbox" checked="checked">
-									<span class="checkmark"></span>
-								</label>
+				<label class="checkboxContainer">Single
+					<input type="checkbox" checked="checked">
+					<span class="checkmark"></span>
+				</label>
 
-								<label class="checkboxContainer">Double
-									<input type="checkbox">
-									<span class="checkmark"></span>
-								</label>
+				<label class="checkboxContainer">Double
+					<input type="checkbox">
+					<span class="checkmark"></span>
+				</label>
 
-								<label class="checkboxContainer">Triple
-									<input type="checkbox">
-									<span class="checkmark"></span>
-								</label>
-							</div>
-						</div>
-					</div>
-				</div>
+				<label class="checkboxContainer">Triple
+					<input type="checkbox">
+					<span class="checkmark"></span>
+				</label>
 			</div>
 		</div>
+		</div>
+	</div>
+	</div>
 		{{!-- End of Search Bar --}}
 
 		{{!-- Start of Name --}}
 		<div class="row">
+			
 			<div id="map-container" class="col-xs-6-h">
-				<h5> Zip: {{zip}} </h5>
-				<div id="map" style="align-self:center;margin-left:35px;height:0 auto;width:110% auto;"></div>
-				<h5> Available Since: {{date}}</h5>
+				<h5 style="margin-top:20px; margin-bottom:20px;align-self:center;"> {{zip}} </h5>
+				<div id="map" style="align-self:center;height:0 auto;width:100% auto;padding-left:10px;padding-right:10px;"></div>
+				<h5 style="margin-top:20px;margin-bottom:20px;align-self:center;"> Available Since: {{date}}</h5>
 			</div>
+			
 			<!-- COMMENTED OUT BACK BUTTON -->
 			{{!-- <div class="col-xs-6" style="text-align:right">
 				<a href="/">
@@ -152,7 +149,7 @@
 		{{!-- End of Apartments --}}
 		{{!-- Info Box --}}
 		<div style="margin:10px">
-			<h3 style="color:blue">Apartment Features</h3>
+			<h3 style="color:rgb(51, 51, 51); font-size:20px;text-align:center;">Apartment Features</h3>
 			<ul class="list-group">
 				<li class="list-group-item" id="rent">Rent: {{rent}} per Month
 				</li>
@@ -184,7 +181,7 @@
 		{{!-- Start of Person profile --}}
 		<div class="card mb-3">
 			<div class="text-center">
-				<h3 style="margin-top:10px;">About me</h3>
+				<h3 style="margin-top:10px;font-size:20px;">About me</h3>
 			</div>
 
 			<img class="card-img-top" {{!-- src="https://www.w3schools.com/w3css/img_avatar3.png" --}} src="{{imgurl}}"

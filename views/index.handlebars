@@ -54,74 +54,47 @@
 	{{!-- end of top title --}}
 	<div class="container">
 		{{!-- Search Bar --}}
-		<div class="searchbar" id="search" style="margin-bottom: 15px">
-			<div class="search">
-				<form action="/results">
-					<div>
-						<input type="text" class="searchTerm" name="search" placeholder="Search Area...">
-						<a href="/results">
-							<button type="submit" class="searchButton">
-								<i class="fa fa-search"></i>
-								{{!-- Search --}}
-							</button>
-						</a>
-					</div>
-					<div style="" class="row startingDateRow">
-						<div>
-							<label for="date">Starting Date:</label>
-							<input style="" type="date" class="startDate" id="date" name="date">
-							<button class="accordion" type="button">
-								Preferences</button>
+		<div style="background-color:rgb(228, 228, 228);padding:10px;border-radius:0px 0px 10px 10px;">
+		<div class="searchbar" id="search">
+			<input type="text" class="searchTerm" name="search" placeholder="Search Area..." style="margin-top:20px;">
+			<a href="/results">
+				<button type="submit" class="searchButton" style="margin-top:20px;">
+					<i class="fa fa-search"></i>
+					{{!-- Search --}}
+				</button>
+			</a>
+		<div style="align-content: center;">
+			<p style="margin-bottom:0px;margin:15px;">Starting Date:</p>
+			<input style="margin-left:15px;display:inline;" type="date" class="startDate" name="date">
+			<button class="accordion" style="margin-bottom:10px;">
+				Preferences</button>
 
-							<div class="panel">
-								<p>Pick more options</p>
-								<label class="checkboxContainer">Living room
-									<input type="checkbox" name="livingRoom">
-									<span class="checkmark"></span>
-								</label>
+			<div class="panel">
+				<p>Pick more options</p>
+				<label class="checkboxContainer">Living room
+					<input type="checkbox">
+					<span class="checkmark"></span>
+				</label>
 
-								<label class="checkboxContainer">Single
-									<input type="checkbox" name="singleRoom">
-									{{!-- checked="checked" --}}
-									<span class="checkmark"></span>
-								</label>
+				<label class="checkboxContainer">Single
+					<input type="checkbox" checked="checked">
+					<span class="checkmark"></span>
+				</label>
 
-								<label class="checkboxContainer">Double
-									<input type="checkbox" name="doubleRoom">
-									<span class="checkmark"></span>
-								</label>
+				<label class="checkboxContainer">Double
+					<input type="checkbox">
+					<span class="checkmark"></span>
+				</label>
 
-								{{!-- <label class="checkboxContainer">Triple
-									<input type="checkbox" name="tripleRoom">
-									<span class="checkmark"></span>
-								</label> --}}
-								<p>I am:</p>
-								<label class="checkboxContainer">Offering Apartment/Looking for a roommate
-									<input type="checkbox" name="offering_apartment">
-									<span class="checkmark"></span>
-								</label>
-
-								<label class="checkboxContainer">Looking for Apartment
-									<input type="checkbox" name="lookingfor_apartment">
-									<span class="checkmark"></span>
-								</label>
-
-								<div class="col-md-12 mb-3">
-									<label for="minRent">
-										Min Rent</label>
-									<input type="rent" class="form-control" id="minRent" name="minRent"
-										placeholder="Min">
-									<label for="maxRent">
-										Max Rent</label>
-									<input type="rent" class="form-control" id="maxRent" name="maxRent"
-										placeholder="Max">
-								</div>
-							</div>
-						</div>
-					</div>
-				</form>
+				<label class="checkboxContainer">Triple
+					<input type="checkbox">
+					<span class="checkmark"></span>
+				</label>
 			</div>
 		</div>
+		</div>
+	</div>
+	</div>
 		{{!-- End of Search Bar --}}
 		<br />
 		{{!-- Start of apartments --}}
